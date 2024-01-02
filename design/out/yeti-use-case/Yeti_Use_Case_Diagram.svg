@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="1621px" preserveAspectRatio="none" style="width:2338px;height:1621px;background:#FFFFFF;" version="1.1" viewBox="0 0 2338 1621" width="2338px" zoomAndPan="magnify"><defs/><g><rect fill="none" height="27.6094" id="_title" style="stroke:none;stroke-width:1.0;" width="175" x="1074.535" y="5"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="165" x="1079.535" y="24.5332">Yeti - Use case diagram</text><!--MD5=[c76473a14b5f0209b7099a3935779dd8]
+cluster Offline_Process--><g id="cluster_Offline_Process"><path d="M1353.57,188.1094 L1466.57,188.1094 A3.75,3.75 0 0 1 1469.07,190.6094 L1476.07,211.7188 L1534.57,211.7188 A2.5,2.5 0 0 1 1537.07,214.2188 L1537.07,293.6094 A2.5,2.5 0 0 1 1534.57,296.1094 L1353.57,296.1094 A2.5,2.5 0 0 1 1351.07,293.6094 L1351.07,190.6094 A2.5,2.5 0 0 1 1353.57,188.1094 " fill="none" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="1351.07" x2="1476.07" y1="211.7188" y2="211.7188"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="112" x="1355.07" y="204.6426">Offline_Process</text></g><!--MD5=[9b9a880c92ad9238c449c9fb1ac63d10]
+cluster Analytics_Service--><g id="cluster_Analytics_Service"><path d="M350.57,538.1094 L475.57,538.1094 A3.75,3.75 0 0 1 478.07,540.6094 L485.07,561.7188 L1996.57,561.7188 A2.5,2.5 0 0 1 1999.07,564.2188 L1999.07,1612.1094 A2.5,2.5 0 0 1 1996.57,1614.6094 L350.57,1614.6094 A2.5,2.5 0 0 1 348.07,1612.1094 L348.07,540.6094 A2.5,2.5 0 0 1 350.57,538.1094 " fill="none" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="348.07" x2="485.07" y1="561.7188" y2="561.7188"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="124" x="352.07" y="554.6426">Analytics_Service</text></g><!--MD5=[e13d32a514d3c3203a4c1c136517d6ce]
+cluster Individual_Analytics--><g id="cluster_Individual_Analytics"><path d="M374.57,1259.1094 L514.57,1259.1094 A3.75,3.75 0 0 1 517.07,1261.6094 L524.07,1282.7188 L1260.57,1282.7188 A2.5,2.5 0 0 1 1263.07,1285.2188 L1263.07,1588.1094 A2.5,2.5 0 0 1 1260.57,1590.6094 L374.57,1590.6094 A2.5,2.5 0 0 1 372.07,1588.1094 L372.07,1261.6094 A2.5,2.5 0 0 1 374.57,1259.1094 " fill="none" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="372.07" x2="524.07" y1="1282.7188" y2="1282.7188"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="139" x="376.07" y="1275.6426">Individual_Analytics</text></g><!--MD5=[f29c745cdbd5be75aceb9a130b501e7a]
+cluster Zone_Analytics--><g id="cluster_Zone_Analytics"><path d="M1289.57,1246.6094 L1395.57,1246.6094 A3.75,3.75 0 0 1 1398.07,1249.1094 L1405.07,1270.2188 L1972.57,1270.2188 A2.5,2.5 0 0 1 1975.07,1272.7188 L1975.07,1402.1094 A2.5,2.5 0 0 1 1972.57,1404.6094 L1289.57,1404.6094 A2.5,2.5 0 0 1 1287.07,1402.1094 L1287.07,1249.1094 A2.5,2.5 0 0 1 1289.57,1246.6094 " fill="none" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="1287.07" x2="1405.07" y1="1270.2188" y2="1270.2188"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="105" x="1291.07" y="1263.1426">Zone_Analytics</text></g><!--MD5=[16dcdc5372932b25c936fdf7b301d16c]
+cluster To_External--><g id="cluster_To_External"><path d="M2025.57,1047.6094 L2109.57,1047.6094 A3.75,3.75 0 0 1 2112.07,1050.1094 L2119.07,1071.2188 L2208.57,1071.2188 A2.5,2.5 0 0 1 2211.07,1073.7188 L2211.07,1178.1094 A2.5,2.5 0 0 1 2208.57,1180.6094 L2025.57,1180.6094 A2.5,2.5 0 0 1 2023.07,1178.1094 L2023.07,1050.1094 A2.5,2.5 0 0 1 2025.57,1047.6094 " fill="none" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="2023.07" x2="2119.07" y1="1071.2188" y2="1071.2188"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="83" x="2027.07" y="1064.1426">To_External</text></g><g id="elem_ProvideClientDetails"><ellipse cx="1444.1091" cy="252.0128" fill="#F1F1F1" rx="76.5391" ry="27.9034" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="88" x="1398.1091" y="246.9366">Provide Client</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="43" x="1422.6091" y="264.546">Details</text></g><g id="elem_AddClient"><ellipse cx="1444.022" cy="602.1765" fill="#F1F1F1" rx="57.952" ry="15.5671" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="65" x="1408.522" y="606.6931">Add Client</text></g><g id="elem_AddCamera"><ellipse cx="1265.9178" cy="601.9789" fill="#F1F1F1" rx="84.8478" ry="19.3696" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="126" x="1202.9178" y="605.7075">Add Camera Details</text></g><g id="elem_AddCameraFeed"><ellipse cx="1266.2157" cy="764.5128" fill="#F1F1F1" rx="87.1457" ry="27.9034" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="79" x="1224.7157" y="759.4366">Add Camera</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="107" x="1212.7157" y="777.046">Feed information</text></g><g id="elem_AddFrameZone"><ellipse cx="1133.1741" cy="927.0128" fill="#F1F1F1" rx="63.1041" ry="27.9034" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="68" x="1097.1741" y="921.9366">Add Zones</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="73" x="1096.6741" y="939.546">from Frame</text></g><g id="elem_ProcessFeed"><ellipse cx="1215.3015" cy="1123.9645" fill="#F1F1F1" rx="85.7315" ry="40.3551" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="101" x="1162.8015" y="1110.0836">Process Feed &amp;</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="94" x="1166.3015" y="1127.693">Store Analytics</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="30" x="1200.3015" y="1145.3024">Data</text></g><g id="elem_ViewAnalyticsData"><ellipse cx="1804.1949" cy="602.0128" fill="#F1F1F1" rx="75.1249" ry="27.9034" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="66" x="1769.1949" y="596.9366">View Feed</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="90" x="1759.1949" y="614.546">Analytics Data</text></g><g id="elem_PersonDetection"><ellipse cx="693.0233" cy="1335.4645" fill="#F1F1F1" rx="77.9533" ry="40.3551" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="90" x="646.0233" y="1321.5836">Detect Person</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="69" x="656.5233" y="1339.193">entering or</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="93" x="646.5233" y="1356.8024">existing a zone</text></g><g id="elem_AgeIdentification"><ellipse cx="483.0354" cy="1521.524" fill="#F1F1F1" rx="94.9654" ry="27.9147" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="114" x="422.0813" y="1516.9773">Identify age range</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="85" x="438.5813" y="1534.5866">of the Person</text></g><g id="elem_FaceDetection"><ellipse cx="932.837" cy="1335.4645" fill="#F1F1F1" rx="89.267" ry="40.3551" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="105" x="880.337" y="1321.5836">Identify a person</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="110" x="877.837" y="1339.193">and tag for future</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="61" x="902.337" y="1356.8024">reference</text></g><g id="elem_GenderDetection"><ellipse cx="693.1446" cy="1521.5128" fill="#F1F1F1" rx="80.0746" ry="27.9034" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="97" x="644.6446" y="1516.4366">Identify Gender</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="84" x="651.1446" y="1534.046">of the person</text></g><g id="elem_PersonDwellTime"><ellipse cx="898.0441" cy="1521.4645" fill="#F1F1F1" rx="89.9741" ry="40.3551" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="111" x="842.5441" y="1507.5836">Record dwell time</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="87" x="852.5441" y="1525.193">of a person in</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="102" x="847.0441" y="1542.8024">a specified zone</text></g><g id="elem_PersonZoneCount"><ellipse cx="1134.9644" cy="1521.4162" fill="#F1F1F1" rx="111.8944" ry="52.8068" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="122" x="1073.9644" y="1498.7307">Identify person who</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="110" x="1077.9644" y="1516.34">has visited in and</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="134" x="1065.9644" y="1533.9494">out of a zone multiple</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="142" x="1063.9644" y="1551.5588">times in given duration</text></g><g id="elem_PeopleCounter"><ellipse cx="1602.0086" cy="1335.4645" fill="#F1F1F1" rx="86.4386" ry="40.3551" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="106" x="1549.0086" y="1321.5836">Count number of</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="86" x="1557.0086" y="1339.193">people in and</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="82" x="1561.0086" y="1356.8024">out of a zone</text></g><g id="elem_AverageDwellTime"><ellipse cx="1841.1213" cy="1335.4645" fill="#F1F1F1" rx="117.5513" ry="40.3551" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="150" x="1766.1213" y="1321.5836">Calculate average dwell</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="104" x="1787.1213" y="1339.193">time of people in</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="105" x="1788.6213" y="1356.8024">a particular zone</text></g><g id="elem_CountViewingAngle"><ellipse cx="1392.1299" cy="1335.4162" fill="#F1F1F1" rx="88.5599" ry="52.8068" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="105" x="1337.6299" y="1312.7307">Count how many</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="89" x="1345.6299" y="1330.34">people looked</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="87" x="1346.6299" y="1347.9494">at a particular</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="88" x="1348.1299" y="1365.5588">spot in a zone</text></g><g id="elem_CreateDashboard"><ellipse cx="2117.0233" cy="1123.9645" fill="#F1F1F1" rx="77.9533" ry="40.3551" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="80" x="2075.0233" y="1110.0836">Create Feed</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="90" x="2070.0233" y="1127.693">Analytics Data</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="70" x="2082.0233" y="1145.3024">Dashboard</text></g><!--MD5=[0ba5ee7700168656dc1b457c6fe9fdac]
+entity Client--><g id="elem_Client"><ellipse cx="1444.07" cy="60.6094" fill="#F1F1F1" rx="16" ry="16" style="stroke:#181818;stroke-width:1.5;"/><path d="M1444.07,80.6094 C1448.07,80.6094 1451.07,80.6094 1455.07,76.6094 C1463.07,76.6094 1471.07,84.6094 1471.07,92.6094 L1471.07,96.6094 C1471.07,100.6094 1467.07,104.6094 1463.07,104.6094 L1425.07,104.6094 C1421.07,104.6094 1417.07,100.6094 1417.07,96.6094 L1417.07,92.6094 C1417.07,84.6094 1425.07,76.6094 1433.07,76.6094 C1437.07,80.6094 1440.07,80.6094 1444.07,80.6094 " fill="#F1F1F1" style="stroke:#181818;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="36" x="1426.07" y="120.6426">Client</text></g><!--MD5=[97ab183161fd5d1db7fba7485cf76add]
+entity Admin--><g id="elem_Admin"><ellipse cx="1444.07" cy="377.6094" fill="#F1F1F1" rx="16" ry="16" style="stroke:#181818;stroke-width:1.5;"/><path d="M1444.07,397.6094 C1448.07,397.6094 1451.07,397.6094 1455.07,393.6094 C1463.07,393.6094 1471.07,401.6094 1471.07,409.6094 L1471.07,413.6094 C1471.07,417.6094 1467.07,421.6094 1463.07,421.6094 L1425.07,421.6094 C1421.07,421.6094 1417.07,417.6094 1417.07,413.6094 L1417.07,409.6094 C1417.07,401.6094 1425.07,393.6094 1433.07,393.6094 C1437.07,397.6094 1440.07,397.6094 1444.07,397.6094 " fill="#F1F1F1" style="stroke:#181818;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="83" x="1402.57" y="437.6426">Administrator</text></g><!--MD5=[af54f794c51d02debec8222389d053f2]
+entity Schedular--><g id="elem_Schedular"><ellipse cx="300.07" cy="579.1094" fill="#F1F1F1" rx="16" ry="16" style="stroke:#181818;stroke-width:1.5;"/><path d="M300.07,599.1094 C304.07,599.1094 307.07,599.1094 311.07,595.1094 C319.07,595.1094 327.07,603.1094 327.07,611.1094 L327.07,615.1094 C327.07,619.1094 323.07,623.1094 319.07,623.1094 L281.07,623.1094 C277.07,623.1094 273.07,619.1094 273.07,615.1094 L273.07,611.1094 C273.07,603.1094 281.07,595.1094 289.07,595.1094 C293.07,599.1094 296.07,599.1094 300.07,599.1094 " fill="#F1F1F1" style="stroke:#181818;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="64" x="268.07" y="639.1426">Schedular</text></g><!--MD5=[45eee4c5a57edb1e2ac175c76a239d17]
+entity DataStore--><g id="elem_DataStore"><ellipse cx="2117.07" cy="1312.6094" fill="#F1F1F1" rx="16" ry="16" style="stroke:#181818;stroke-width:1.5;"/><path d="M2117.07,1332.6094 C2121.07,1332.6094 2124.07,1332.6094 2128.07,1328.6094 C2136.07,1328.6094 2144.07,1336.6094 2144.07,1344.6094 L2144.07,1348.6094 C2144.07,1352.6094 2140.07,1356.6094 2136.07,1356.6094 L2098.07,1356.6094 C2094.07,1356.6094 2090.07,1352.6094 2090.07,1348.6094 L2090.07,1344.6094 C2090.07,1336.6094 2098.07,1328.6094 2106.07,1328.6094 C2110.07,1332.6094 2113.07,1332.6094 2117.07,1332.6094 " fill="#F1F1F1" style="stroke:#181818;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="64" x="2085.07" y="1372.6426">DataStore</text></g><!--MD5=[7f62685678746839eddda14500f93391]
+entity Analyst--><g id="elem_Analyst"><ellipse cx="2115.07" cy="904.1094" fill="#F1F1F1" rx="16" ry="16" style="stroke:#181818;stroke-width:1.5;"/><path d="M2115.07,924.1094 C2119.07,924.1094 2122.07,924.1094 2126.07,920.1094 C2134.07,920.1094 2142.07,928.1094 2142.07,936.1094 L2142.07,940.1094 C2142.07,944.1094 2138.07,948.1094 2134.07,948.1094 L2096.07,948.1094 C2092.07,948.1094 2088.07,944.1094 2088.07,940.1094 L2088.07,936.1094 C2088.07,928.1094 2096.07,920.1094 2104.07,920.1094 C2108.07,924.1094 2111.07,924.1094 2115.07,924.1094 " fill="#F1F1F1" style="stroke:#181818;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="46" x="2092.07" y="964.1426">Analyst</text></g><!--MD5=[ef114fa06677641c577d496c3dc5e7f6]
+link Client to ProvideClientDetails--><g id="link_Client_ProvideClientDetails"><path d="M1444.07,124.4894 C1444.07,153.3494 1444.07,191.8594 1444.07,218.8094 " fill="none" id="Client-to-ProvideClientDetails" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="1444.07,224.0294,1448.07,215.0294,1444.07,219.0294,1440.07,215.0294,1444.07,224.0294" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="177" x="1445.07" y="168.6045">Provide details to Adminstrator</text></g><!--MD5=[7242954f3378c5418d03afaacddbc2df]
+link ProvideClientDetails to Admin--><g id="link_ProvideClientDetails_Admin"><path d="M1444.07,280.3194 C1444.07,301.2594 1444.07,330.6294 1444.07,354.9894 " fill="none" id="ProvideClientDetails-to-Admin" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="1444.07,360.1094,1448.07,351.1094,1444.07,355.1094,1440.07,351.1094,1444.07,360.1094" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="48" x="1445.07" y="326.6045">Used by</text></g><!--MD5=[c0ed83010ec0db87f8e51acae9532679]
+link Admin to AddCamera--><g id="link_Admin_AddCamera"><path d="M1402.45,435.4894 C1389.95,446.3794 1376.53,458.8094 1365.07,471.1094 C1332.4,506.1794 1299.73,551.5894 1281.29,578.4094 " fill="none" id="Admin-to-AddCamera" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="1278.46,582.5494,1286.8466,577.3855,1281.286,578.4246,1280.2469,572.864,1278.46,582.5494" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="50" x="1373.57" y="485.6045">Add/Edit</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="43" x="1377.07" y="501.9561">camera</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="69" x="1366.07" y="518.3076">master data</text></g><!--MD5=[d7e8444901a3cc2ad1e6c3ddce7f71b7]
+link Admin to AddClient--><g id="link_Admin_AddClient"><path d="M1444.07,441.4994 C1444.07,483.6394 1444.07,548.3894 1444.07,580.9494 " fill="none" id="Admin-to-AddClient" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="1444.07,586.2594,1448.07,577.2594,1444.07,581.2594,1440.07,577.2594,1444.07,586.2594" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="50" x="1447.07" y="494.1045">Add/Edit</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="58" x="1445.07" y="510.4561">new client</text></g><!--MD5=[a7c5680916c5fdee9a99e724ac447b8d]
+link Admin to AddCameraFeed--><g id="link_Admin_AddCameraFeed"><path d="M1485.67,406.6394 C1588.66,420.0594 1850.53,460.5594 1897.07,530.1094 C1924.88,571.6594 1928.93,604.0694 1897.07,642.6094 C1829.63,724.2094 1515.3,751.3294 1357.27,759.8894 " fill="none" id="Admin-to-AddCameraFeed" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="1352.18,760.1594,1361.3841,763.6642,1357.1726,759.8876,1360.9492,755.676,1352.18,760.1594" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="50" x="1928.57" y="599.6045">Add/Edit</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="71" x="1920.07" y="615.9561">Feed details</text></g><!--MD5=[4d406131ab7573ac93ea8780ebb0a088]
+link Admin to AddFrameZone--><g id="link_Admin_AddFrameZone"><path d="M1402.34,402.8694 C1200.24,409.3994 329.76,442.4894 251.07,530.1094 C6,802.9894 821.9,898.5394 1066.11,920.6794 " fill="none" id="Admin-to-AddFrameZone" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="1071.42,921.1494,1062.8228,916.3443,1066.4409,920.6928,1062.0924,924.3109,1071.42,921.1494" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="23" x="262.57" y="687.1045">Add</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="68" x="242.07" y="703.4561">Feed Zones</text></g><!--MD5=[6ad5879adc23218db655dfd571a7b1af]
+link Admin to ViewAnalyticsData--><g id="link_Admin_ViewAnalyticsData"><path d="M1485.72,424.6894 C1553.82,462.4294 1688.44,537.0294 1758.81,576.0294 " fill="none" id="Admin-to-ViewAnalyticsData" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="1763.35,578.5394,1757.4252,570.672,1758.9792,576.1112,1753.54,577.6652,1763.35,578.5394" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="84" x="1657.07" y="494.1045">View analytics</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="25" x="1688.57" y="510.4561">data</text></g><!--MD5=[de91d9b874a9c550b08225e220c245a8]
+link AddClient to AddCameraFeed--><g id="link_AddClient_AddCameraFeed"><path d="M1436.28,617.6994 C1424.19,639.2694 1399.15,679.9894 1369.07,706.6094 C1354.81,719.2394 1337.27,730.2294 1320.74,739.0994 " fill="none" id="AddClient-to-AddCameraFeed" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="1316.1,741.5494,1325.9275,740.9013,1320.5255,739.2224,1322.2044,733.8204,1316.1,741.5494" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="77" x="1400.07" y="687.1045">Provide client</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="38" x="1421.57" y="703.4561">details</text></g><!--MD5=[1210f186d4133ae09f84bdc2cabaef2e]
+link AddCamera to AddCameraFeed--><g id="link_AddCamera_AddCameraFeed"><path d="M1266.07,621.8394 C1266.07,648.6794 1266.07,698.4794 1266.07,731.3294 " fill="none" id="AddCamera-to-AddCameraFeed" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="1266.07,736.4494,1270.07,727.4494,1266.07,731.4494,1262.07,727.4494,1266.07,736.4494" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="89" x="1267.07" y="687.1045">Provide camera</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="69" x="1279.07" y="703.4561">Master data</text></g><!--MD5=[65bdfaae83bb60e509079afe6984bd9c]
+link AddCameraFeed to AddFrameZone--><g id="link_AddCameraFeed_AddFrameZone"><path d="M1218.42,788.3794 C1203.35,797.3794 1187.63,808.8894 1176.07,822.6094 C1158.59,843.3594 1147.4,872.2194 1140.83,894.1894 " fill="none" id="AddCameraFeed-to-AddFrameZone" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="1139.41,899.0494,1145.77,891.5294,1140.81,894.2494,1138.09,889.2894,1139.41,899.0494" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="75" x="1177.07" y="837.1045">Provide Feed</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="38" x="1197.57" y="853.4561">details</text></g><!--MD5=[84260ba03748fedef65b1a2fe30ddda0]
+link Schedular to ProcessFeed--><g id="link_Schedular_ProcessFeed"><path d="M332.21,630.3994 C337.43,634.5894 342.85,638.7894 348.07,642.6094 C390.37,673.5294 402.01,679.8794 447.07,706.6094 C704.28,859.1794 1020.84,1023.7894 1152.77,1091.3994 " fill="none" id="Schedular-to-ProcessFeed" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="1157.39,1093.7594,1151.2069,1086.0933,1152.9409,1091.4778,1147.5564,1093.2118,1157.39,1093.7594" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="63" x="713.07" y="837.1045">Run as per</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="85" x="704.07" y="853.4561">Feed schedule</text></g><!--MD5=[4b4a288990485ee25a7f498dbe552c69]
+link Schedular to AddCameraFeed--><g id="link_Schedular_AddCameraFeed"><path d="M332.31,633.5494 C337.31,637.0694 342.63,640.2494 348.07,642.6094 C495.77,706.7694 974.55,744.6194 1175.73,758.0394 " fill="none" id="Schedular-to-AddCameraFeed" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="1181.01,758.3894,1172.2925,753.8062,1176.0208,758.0606,1171.7664,761.7889,1181.01,758.3894" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="105" x="630.07" y="695.1045">use feed schedule</text></g><!--MD5=[40657e766a54299eedd1662da39abb7c]
+link AddCameraFeed to ProcessFeed--><g id="link_AddCameraFeed_ProcessFeed"><path d="M1269.49,792.9294 C1274.72,841.7094 1282.08,946.6394 1261.07,1031.6094 C1256.94,1048.3494 1249.33,1065.5294 1241.48,1080.4294 " fill="none" id="AddCameraFeed-to-ProcessFeed" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="1239.04,1084.9694,1246.8159,1078.9249,1241.4011,1080.562,1239.7641,1075.1472,1239.04,1084.9694" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="70" x="1276.07" y="924.6045">Provide feed</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="45" x="1290.57" y="940.9561">location</text></g><!--MD5=[e7e46a84ff7f268a747fa31442763022]
+link AddFrameZone to ProcessFeed--><g id="link_AddFrameZone_ProcessFeed"><path d="M1144.3,954.8194 C1157.78,986.8594 1180.56,1041.0394 1196.63,1079.2494 " fill="none" id="AddFrameZone-to-ProcessFeed" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="1198.75,1084.2994,1198.944,1074.4524,1196.8097,1079.6912,1191.5709,1077.5569,1198.75,1084.2994" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="74" x="1177.07" y="1012.1045">Provide zone</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="38" x="1197.07" y="1028.4561">details</text></g><!--MD5=[9cd03215182fc8bdc4ef8ad26330ad19]
+link ProcessFeed to DataStore--><g id="link_ProcessFeed_DataStore"><path d="M1300.71,1125.3094 C1444.99,1128.3694 1743.42,1146.4694 1975.07,1238.6094 C2014.34,1254.2294 2053.74,1282.0594 2081.04,1303.7494 " fill="none" id="ProcessFeed-to-DataStore" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="2084.98,1306.8994,2080.4276,1298.1658,2081.0673,1303.7864,2075.4467,1304.4261,2084.98,1306.8994" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="62" x="1937.07" y="1219.1045">Store Data</text></g><!--MD5=[da05b65f38431a98c3052bca486bb680]
+link ProcessFeed to PersonDetection--><g id="link_ProcessFeed_PersonDetection"><path d="M1134.99,1138.3694 C1053.63,1154.0994 925.75,1185.1894 826.07,1238.6094 C794.99,1255.2694 762.86,1278.2694 737.96,1297.5894 " fill="none" id="ProcessFeed-to-PersonDetection" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="733.72,1300.8994,743.2728,1298.5026,737.6575,1297.8178,738.3423,1292.2026,733.72,1300.8994" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="50" x="917.07" y="1219.1045">performs</text></g><!--MD5=[c3705a62e0ed9d9c22cc22b70e52df89]
+link ProcessFeed to FaceDetection--><g id="link_ProcessFeed_FaceDetection"><path d="M1140.13,1143.6594 C1104.87,1154.9394 1063.72,1172.0194 1032.07,1196.6094 C999.23,1222.1294 972.52,1261.4194 955.16,1291.5694 " fill="none" id="ProcessFeed-to-FaceDetection" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="952.67,1295.9494,960.6123,1290.1254,955.1538,1291.6099,953.6692,1286.1513,952.67,1295.9494" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="50" x="1033.07" y="1219.1045">performs</text></g><!--MD5=[998d837c4cdbca84e6cee3ec3ba4462f]
+link ProcessFeed to PersonDwellTime--><g id="link_ProcessFeed_PersonDwellTime"><path d="M1165.95,1157.5894 C1140.18,1177.5994 1110.95,1205.6994 1096.07,1238.6094 C1086.91,1258.8794 1101.18,1420.6394 1088.07,1438.6094 C1065.21,1469.9694 1041.82,1453.5094 1006.07,1468.6094 C991.61,1474.7194 976.28,1481.7494 961.87,1488.6194 " fill="none" id="ProcessFeed-to-PersonDwellTime" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="957.01,1490.9394,966.8548,1490.656,961.5187,1488.778,963.3967,1483.442,957.01,1490.9394" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="50" x="1097.07" y="1341.1045">performs</text></g><!--MD5=[88c2c9bf757c49b5d4ee4850541b2869]
+link FaceDetection to PersonDwellTime--><g id="link_FaceDetection_PersonDwellTime"><path d="M912.62,1375.2794 C906.33,1389.1694 900.23,1405.2194 897.07,1420.6094 C893.44,1438.3294 892.93,1458.1994 893.6,1475.5294 " fill="none" id="FaceDetection-to-PersonDwellTime" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="893.84,1480.8194,897.3987,1471.6359,893.5974,1475.8253,889.4081,1472.024,893.84,1480.8194" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="71" x="898.07" y="1435.1045">provides-info</text></g><!--MD5=[a1517598c67e13ca1d0615feb97c149e]
+link ProcessFeed to PersonZoneCount--><g id="link_ProcessFeed_PersonZoneCount"><path d="M1207.11,1164.4794 C1192.9,1234.7394 1163.11,1381.9794 1146.64,1463.4094 " fill="none" id="ProcessFeed-to-PersonZoneCount" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="1145.58,1468.6794,1151.2989,1460.661,1146.5798,1463.7804,1143.4604,1459.0613,1145.58,1468.6794" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="50" x="1192.07" y="1341.1045">performs</text></g><!--MD5=[02ab8fec2c3b8265fe85ad24848ddceb]
+link FaceDetection to PersonZoneCount--><g id="link_FaceDetection_PersonZoneCount"><path d="M958.64,1374.8494 C973.22,1395.0894 992.63,1419.6094 1013.07,1438.6094 C1027.81,1452.2994 1045.04,1465.3394 1061.82,1476.8194 " fill="none" id="FaceDetection-to-PersonZoneCount" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="1066.08,1479.7094,1060.8632,1471.3556,1061.9374,1476.9096,1056.3835,1477.9838,1066.08,1479.7094" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="71" x="1014.07" y="1435.1045">provides-info</text></g><!--MD5=[83f5138ca3876855bbfb65de76a78370]
+link ProcessFeed to PeopleCounter--><g id="link_ProcessFeed_PeopleCounter"><path d="M1287.12,1145.9394 C1346.46,1164.9494 1431.39,1196.4794 1498.07,1238.6094 C1522.42,1253.9894 1546.27,1275.3994 1564.97,1294.1094 " fill="none" id="ProcessFeed-to-PeopleCounter" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="1568.64,1297.8094,1565.1602,1288.5957,1565.126,1294.2525,1559.4692,1294.2182,1568.64,1297.8094" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="28" x="1485.07" y="1219.1045">uses</text></g><!--MD5=[ac04db6265a7be87175ee2b050b8d865]
+link ProcessFeed to AverageDwellTime--><g id="link_ProcessFeed_AverageDwellTime"><path d="M1298.15,1134.2794 C1398.42,1147.5694 1570.43,1177.5994 1706.07,1238.6094 C1737.69,1252.8294 1769.46,1274.9394 1794.23,1294.3594 " fill="none" id="ProcessFeed-to-AverageDwellTime" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="1798.46,1297.6994,1793.8726,1288.9841,1794.5349,1294.6021,1788.9169,1295.2644,1798.46,1297.6994" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="28" x="1682.07" y="1219.1045">uses</text></g><!--MD5=[409eff2bd69e25a1be1705620052854b]
+link ProcessFeed to CountViewingAngle--><g id="link_ProcessFeed_CountViewingAngle"><path d="M1246.31,1162.0794 C1274.94,1195.9694 1317.58,1246.4394 1349.36,1284.0494 " fill="none" id="ProcessFeed-to-CountViewingAngle" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="1352.79,1288.1094,1350.0285,1278.6556,1349.5596,1284.293,1343.9223,1283.8242,1352.79,1288.1094" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="28" x="1304.07" y="1219.1045">uses</text></g><!--MD5=[78ff7b7d2c5b0091068c6c9ef1e490ab]
+link PersonDetection to AgeIdentification--><g id="link_PersonDetection_AgeIdentification"><path d="M654.07,1370.7894 C614.47,1405.4794 553.81,1458.6294 516.39,1491.4094 " fill="none" id="PersonDetection-to-AgeIdentification" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="512.4,1494.9194,521.8135,1492.0234,516.17,1491.6349,516.5584,1485.9914,512.4,1494.9194" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="53" x="595.07" y="1435.1045">results-in</text></g><!--MD5=[77af571d035d16a0f02384ce7b301cf6]
+link PersonDetection to GenderDetection--><g id="link_PersonDetection_GenderDetection"><path d="M693.07,1376.5394 C693.07,1410.0094 693.07,1457.1894 693.07,1488.3194 " fill="none" id="PersonDetection-to-GenderDetection" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="693.07,1493.5494,697.07,1484.5494,693.07,1488.5494,689.07,1484.5494,693.07,1493.5494" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="53" x="694.07" y="1435.1045">results-in</text></g><!--MD5=[fce612b1332b1ec28f3633c7a5e5241f]
+link ViewAnalyticsData to DataStore--><g id="link_ViewAnalyticsData_DataStore"><path d="M1848.23,624.7494 C1861.25,630.8294 1875.62,637.2394 1889.07,642.6094 C2045.43,705.0694 2248.07,595.2394 2248.07,763.6094 C2248.07,763.6094 2248.07,763.6094 2248.07,1125.1094 C2248.07,1173.0994 2248.48,1188.7094 2225.07,1230.6094 C2207.49,1262.0794 2177.33,1289.9394 2153.34,1308.8794 " fill="none" id="ViewAnalyticsData-to-DataStore" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="2149.24,1312.0794,2158.7981,1309.7041,2153.1845,1309.0067,2153.8819,1303.393,2149.24,1312.0794" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="77" x="2249.07" y="924.6045">Get analytics</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="25" x="2277.07" y="940.9561">data</text></g><!--MD5=[deef260210fec4e590cc6aeb9bb3591c]
+link Analyst to CreateDashboard--><g id="link_Analyst_CreateDashboard"><path d="M2113.06,967.7894 C2112.65,977.5394 2112.28,987.9494 2112.07,997.6094 C2111.75,1012.7194 2111.66,1016.4994 2112.07,1031.6094 C2112.49,1046.7694 2113.29,1063.3194 2114.13,1078.1194 " fill="none" id="Analyst-to-CreateDashboard" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="2114.44,1083.4994,2117.8922,1074.2754,2114.1397,1078.5084,2109.9067,1074.7559,2114.44,1083.4994" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="104" x="2113.07" y="1012.1045">Create Dashboard</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="54" x="2140.07" y="1028.4561">from data</text></g><!--MD5=[8089656924063a5bb9ddaa421fba9ed8]
+link CreateDashboard to DataStore--><g id="link_CreateDashboard_DataStore"><path d="M2117.07,1165.0094 C2117.07,1200.5394 2117.07,1252.4794 2117.07,1289.5094 " fill="none" id="CreateDashboard-to-DataStore" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="2117.07,1294.8594,2121.07,1285.8594,2117.07,1289.8594,2113.07,1285.8594,2117.07,1294.8594" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="94" x="2118.07" y="1211.1045">Export analytics</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="25" x="2154.57" y="1227.4561">data</text></g><!--MD5=[ea73c58f54300fbe4e2b63c8edba18dc]
+@startuml Yeti_Use_Case_Diagram
+title "Yeti - Use case diagram"
+
+skinparam actorStyle awesome
+
+'***** Actors *******
+actor Client
+actor :Administrator: as Admin
+actor Schedular
+actor DataStore
+actor Analyst
+
+'****** Use-Cases ******
+package Offline_Process {
+    usecase (Provide Client \nDetails) as ProvideClientDetails
+}
+
+package Analytics_Service {
+    usecase (Add Client) as AddClient
+    usecase (Add Camera Details) as AddCamera
+    usecase (Add Camera \nFeed information) as AddCameraFeed
+    usecase (Add Zones \nfrom Frame) as AddFrameZone
+    usecase (Process Feed & \nStore Analytics \nData) as ProcessFeed
+
+    package Individual_Analytics {
+        usecase (Detect Person \nentering or \nexisting a zone) as PersonDetection
+        usecase (Identify age range \nof the Person) as AgeIdentification
+        usecase FaceDetection as "Identify a person
+            and tag for future
+            reference"
+        usecase GenderDetection as "Identify Gender
+            of the person"
+        usecase PersonDwellTime as "Record dwell time 
+            of a person in 
+            a specified zone"
+        usecase PersonZoneCount as "Identify person who 
+            has visited in and 
+            out of a zone multiple 
+            times in given duration"
+    }
+
+    package Zone_Analytics {
+        usecase PeopleCounter as "Count number of 
+            people in and 
+            out of a zone"
+    
+    
+        usecase AverageDwellTime as "Calculate average dwell 
+            time of people in 
+            a particular zone"
+        usecase CountViewingAngle as "Count how many \npeople looked \nat a particular \nspot in a zone"
+    }
+
+
+    
+    usecase (View Feed \nAnalytics Data) as ViewAnalyticsData
+}
+
+package To_External {
+    usecase (Create Feed \nAnalytics Data \nDashboard) as CreateDashboard
+}
+
+'****** Actor - Use case relations *********
+Client - -> ProvideClientDetails : Provide details to Adminstrator
+ProvideClientDetails - -> Admin : Used by
+
+Admin - -> AddCamera : Add/Edit \ncamera \nmaster data
+Admin - -> AddClient : Add/Edit \nnew client
+Admin - -> AddCameraFeed : Add/Edit \nFeed details
+Admin - -> AddFrameZone : Add \nFeed Zones
+Admin - -> ViewAnalyticsData : View analytics \ndata
+
+AddClient - -> AddCameraFeed : Provide client \ndetails
+AddCamera - -> AddCameraFeed : Provide camera \nMaster data
+AddCameraFeed - -> AddFrameZone : Provide Feed \ndetails
+
+Schedular - -> ProcessFeed : Run as per \nFeed schedule
+Schedular - -> AddCameraFeed : use feed schedule
+AddCameraFeed - -> ProcessFeed : Provide feed \nlocation
+AddFrameZone - -> ProcessFeed : Provide zone \ndetails
+
+ProcessFeed - -> DataStore : Store Data
+ProcessFeed - -> PersonDetection : performs
+ProcessFeed - -> FaceDetection : performs
+ProcessFeed - -> PersonDwellTime : performs
+FaceDetection - -> PersonDwellTime : provides-info
+ProcessFeed - -> PersonZoneCount : performs
+FaceDetection - -> PersonZoneCount : provides-info
+
+ProcessFeed - -> PeopleCounter : uses
+ProcessFeed - -> AverageDwellTime : uses
+ProcessFeed - -> CountViewingAngle : uses
+
+PersonDetection - -> AgeIdentification : results-in
+PersonDetection - -> GenderDetection : results-in
+
+ViewAnalyticsData - -> DataStore : Get analytics \ndata
+
+Analyst - -> CreateDashboard : Create Dashboard \nfrom data
+CreateDashboard - -> DataStore : Export analytics \ndata
+@enduml
+
+@startuml Yeti_Use_Case_Diagram
+title "Yeti - Use case diagram"
+
+skinparam actorStyle awesome
+
+actor Client
+actor :Administrator: as Admin
+actor Schedular
+actor DataStore
+actor Analyst
+
+package Offline_Process {
+    usecase (Provide Client \nDetails) as ProvideClientDetails
+}
+
+package Analytics_Service {
+    usecase (Add Client) as AddClient
+    usecase (Add Camera Details) as AddCamera
+    usecase (Add Camera \nFeed information) as AddCameraFeed
+    usecase (Add Zones \nfrom Frame) as AddFrameZone
+    usecase (Process Feed & \nStore Analytics \nData) as ProcessFeed
+
+    package Individual_Analytics {
+        usecase (Detect Person \nentering or \nexisting a zone) as PersonDetection
+        usecase (Identify age range \nof the Person) as AgeIdentification
+        usecase FaceDetection as "Identify a person
+            and tag for future
+            reference"
+        usecase GenderDetection as "Identify Gender
+            of the person"
+        usecase PersonDwellTime as "Record dwell time 
+            of a person in 
+            a specified zone"
+        usecase PersonZoneCount as "Identify person who 
+            has visited in and 
+            out of a zone multiple 
+            times in given duration"
+    }
+
+    package Zone_Analytics {
+        usecase PeopleCounter as "Count number of 
+            people in and 
+            out of a zone"
+    
+    
+        usecase AverageDwellTime as "Calculate average dwell 
+            time of people in 
+            a particular zone"
+        usecase CountViewingAngle as "Count how many \npeople looked \nat a particular \nspot in a zone"
+    }
+
+
+    
+    usecase (View Feed \nAnalytics Data) as ViewAnalyticsData
+}
+
+package To_External {
+    usecase (Create Feed \nAnalytics Data \nDashboard) as CreateDashboard
+}
+
+Client - -> ProvideClientDetails : Provide details to Adminstrator
+ProvideClientDetails - -> Admin : Used by
+
+Admin - -> AddCamera : Add/Edit \ncamera \nmaster data
+Admin - -> AddClient : Add/Edit \nnew client
+Admin - -> AddCameraFeed : Add/Edit \nFeed details
+Admin - -> AddFrameZone : Add \nFeed Zones
+Admin - -> ViewAnalyticsData : View analytics \ndata
+
+AddClient - -> AddCameraFeed : Provide client \ndetails
+AddCamera - -> AddCameraFeed : Provide camera \nMaster data
+AddCameraFeed - -> AddFrameZone : Provide Feed \ndetails
+
+Schedular - -> ProcessFeed : Run as per \nFeed schedule
+Schedular - -> AddCameraFeed : use feed schedule
+AddCameraFeed - -> ProcessFeed : Provide feed \nlocation
+AddFrameZone - -> ProcessFeed : Provide zone \ndetails
+
+ProcessFeed - -> DataStore : Store Data
+ProcessFeed - -> PersonDetection : performs
+ProcessFeed - -> FaceDetection : performs
+ProcessFeed - -> PersonDwellTime : performs
+FaceDetection - -> PersonDwellTime : provides-info
+ProcessFeed - -> PersonZoneCount : performs
+FaceDetection - -> PersonZoneCount : provides-info
+
+ProcessFeed - -> PeopleCounter : uses
+ProcessFeed - -> AverageDwellTime : uses
+ProcessFeed - -> CountViewingAngle : uses
+
+PersonDetection - -> AgeIdentification : results-in
+PersonDetection - -> GenderDetection : results-in
+
+ViewAnalyticsData - -> DataStore : Get analytics \ndata
+
+Analyst - -> CreateDashboard : Create Dashboard \nfrom data
+CreateDashboard - -> DataStore : Export analytics \ndata
+@enduml
+
+PlantUML version 1.2022.7(Mon Aug 22 22:31:30 IST 2022)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: Cp1252
+Language: en
+Country: US
+--></g></svg>

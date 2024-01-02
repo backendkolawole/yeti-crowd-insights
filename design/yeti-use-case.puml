@@ -1,0 +1,101 @@
+@startuml Yeti_Use_Case_Diagram
+title "Yeti - Use case diagram"
+
+skinparam actorStyle awesome
+
+'***** Actors *******
+actor Client
+actor :Administrator: as Admin
+actor Schedular
+actor DataStore
+actor Analyst
+
+'****** Use-Cases ******
+package Offline_Process {
+    usecase (Provide Client \nDetails) as ProvideClientDetails
+}
+
+package Analytics_Service {
+    usecase (Add Client) as AddClient
+    usecase (Add Camera Details) as AddCamera
+    usecase (Add Camera \nFeed information) as AddCameraFeed
+    usecase (Add Zones \nfrom Frame) as AddFrameZone
+    usecase (Process Feed & \nStore Analytics \nData) as ProcessFeed
+
+    package Individual_Analytics {
+        usecase (Detect Person \nentering or \nexisting a zone) as PersonDetection
+        usecase (Identify age range \nof the Person) as AgeIdentification
+        usecase FaceDetection as "Identify a person
+            and tag for future
+            reference"
+        usecase GenderDetection as "Identify Gender
+            of the person"
+        usecase PersonDwellTime as "Record dwell time 
+            of a person in 
+            a specified zone"
+        usecase PersonZoneCount as "Identify person who 
+            has visited in and 
+            out of a zone multiple 
+            times in given duration"
+    }
+
+    package Zone_Analytics {
+        usecase PeopleCounter as "Count number of 
+            people in and 
+            out of a zone"
+    
+    
+        usecase AverageDwellTime as "Calculate average dwell 
+            time of people in 
+            a particular zone"
+        usecase CountViewingAngle as "Count how many \npeople looked \nat a particular \nspot in a zone"
+    }
+
+
+    
+    usecase (View Feed \nAnalytics Data) as ViewAnalyticsData
+}
+
+package To_External {
+    usecase (Create Feed \nAnalytics Data \nDashboard) as CreateDashboard
+}
+
+'****** Actor - Use case relations *********
+Client --> ProvideClientDetails : Provide details to Adminstrator
+ProvideClientDetails --> Admin : Used by
+
+Admin --> AddCamera : Add/Edit \ncamera \nmaster data
+Admin --> AddClient : Add/Edit \nnew client
+Admin --> AddCameraFeed : Add/Edit \nFeed details
+Admin --> AddFrameZone : Add \nFeed Zones
+Admin --> ViewAnalyticsData : View analytics \ndata
+
+AddClient --> AddCameraFeed : Provide client \ndetails
+AddCamera --> AddCameraFeed : Provide camera \nMaster data
+AddCameraFeed --> AddFrameZone : Provide Feed \ndetails
+
+Schedular --> ProcessFeed : Run as per \nFeed schedule
+Schedular --> AddCameraFeed : use feed schedule
+AddCameraFeed --> ProcessFeed : Provide feed \nlocation
+AddFrameZone --> ProcessFeed : Provide zone \ndetails
+
+ProcessFeed --> DataStore : Store Data
+ProcessFeed --> PersonDetection : performs
+ProcessFeed --> FaceDetection : performs
+ProcessFeed --> PersonDwellTime : performs
+FaceDetection --> PersonDwellTime : provides-info
+ProcessFeed --> PersonZoneCount : performs
+FaceDetection --> PersonZoneCount : provides-info
+
+ProcessFeed --> PeopleCounter : uses
+ProcessFeed --> AverageDwellTime : uses
+ProcessFeed --> CountViewingAngle : uses
+
+PersonDetection --> AgeIdentification : results-in
+PersonDetection --> GenderDetection : results-in
+
+ViewAnalyticsData --> DataStore : Get analytics \ndata
+
+Analyst --> CreateDashboard : Create Dashboard \nfrom data
+CreateDashboard --> DataStore : Export analytics \ndata
+@enduml
