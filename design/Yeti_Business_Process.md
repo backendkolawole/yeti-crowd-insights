@@ -62,3 +62,5 @@ System_Boundary(yetiSystem,"Yeti System") {
 
 ```
 
+![Alt text](./out/yeti-use-case/Yeti_Use_Case_Diagram.svg)
+<img src="./out/yeti-use-case/Yeti_Use_Case_Diagram.svg">
