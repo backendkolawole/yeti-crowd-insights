@@ -3,5 +3,7 @@
     "plantuml.exportIncludeFolderHeirarchy": false,
     "plantuml.exportFormat": "svg",
     "plantuml.diagramsRoot": "docs/diagrams/src",
-    "plantuml.exportOutDir": "docs/diagrams/out"
+    "plantuml.exportOutDir": "docs/diagrams/out",
+    "explorer.confirmDelete": false,
+    "plantuml.exportSubFolder": false
 }
