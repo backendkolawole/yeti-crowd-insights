@@ -1,5 +1,7 @@
 {
     "plantuml.commandArgs": [],
-    "plantuml.diagramsRoot": "design",
-    "plantuml.exportOutDir": "design/out"
+    "plantuml.exportIncludeFolderHeirarchy": false,
+    "plantuml.exportFormat": "svg",
+    "plantuml.diagramsRoot": "docs/diagrams/src",
+    "plantuml.exportOutDir": "docs/diagrams/out"
 }
