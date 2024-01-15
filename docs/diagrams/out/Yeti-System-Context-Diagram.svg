@@ -1,0 +1,1075 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="802px" preserveAspectRatio="none" style="width:614px;height:802px;background:#EEEBDC;" version="1.1" viewBox="0 0 614 802" width="614px" zoomAndPan="magnify"><defs/><g><!--MD5=[4349fc992d48551e4092bcf041ce4521]
+cluster dataSources--><g id="cluster_dataSources"><polygon fill="none" points="9.5,7,9.5,7.2102,19.5625,6.5857,29.625,7.1933,39.6875,7.3997,49.75,6.2866,59.8125,6.9223,69.875,6.5735,79.9375,6.6165,90,6.9318,100.0625,6.3086,110.125,7.5536,120.1875,6.3697,130.25,6.8022,140.3125,7.4319,150.375,6.9142,160.4375,7.0682,170.5,6.9681,180.5625,7.1785,190.625,7.2391,200.6875,7.5857,210.75,7.6711,220.8125,7.6793,230.875,7.2546,240.9375,7.4636,251,7.7022,261.0625,6.2788,271.125,7.6785,281.1875,6.7035,291.25,7.5338,301.3125,6.505,311.375,6.9315,321.4375,7.7416,331.5,7,331.4938,6.985,331.867,7.1789,332.2503,7.3972,332.6138,7.5675,332.9137,7.5846,333.2678,7.7322,333.3562,7.7689,333.2379,8.0128,333.6482,8.4756,333.8759,8.8628,333.9905,9.2032,334,9.5,334.613,9.5,333.5169,19.3667,333.3478,29.2333,333.3786,39.1,333.9411,48.9667,333.8035,58.8333,334.6814,68.7,333.8253,78.5667,333.6569,88.4333,334.2283,98.3,333.3332,108.1667,333.4809,118.0333,334.649,127.9,334.4357,137.7667,334.7345,147.6333,334,157.5,333.9009,157.459,333.9519,157.8943,333.8889,158.2824,333.4152,158.5004,333.3847,158.902,333.2678,159.2678,333.2838,159.3066,332.9974,159.6149,332.5601,159.5594,332.2661,159.8496,331.7829,159.683,331.5,160,331.5,159.3227,321.4375,160.5036,311.375,159.2831,301.3125,160.509,291.25,160.2066,281.1875,159.7321,271.125,159.6462,261.0625,160.4588,251,159.7007,240.9375,160.5919,230.875,159.4473,220.8125,160.6174,210.75,160.4843,200.6875,160.245,190.625,160.0472,180.5625,160.7266,170.5,160.6136,160.4375,160.1693,150.375,160.2682,140.3125,159.8697,130.25,160.7165,120.1875,160.1549,110.125,160.1726,100.0625,159.3916,90,159.5948,79.9375,160.5307,69.875,160.4298,59.8125,159.9571,49.75,159.6778,39.6875,159.7811,29.625,159.3138,19.5625,160.4147,9.5,160,9.5943,160.2278,9.2136,160.0157,8.8815,159.9211,8.4219,159.5186,8.0969,159.4411,7.7322,159.2678,7.6129,159.2183,7.6733,158.9504,7.5153,158.5921,7.463,158.2776,7.0757,157.8243,7,157.5,6.8656,157.5,7.4435,147.6333,7.5673,137.7667,6.4875,127.9,6.8061,118.0333,7.1493,108.1667,6.3892,98.3,7.3534,88.4333,7.258,78.5667,6.8992,68.7,7.1422,58.8333,7.7287,48.9667,6.6871,39.1,7.315,29.2333,7.2856,19.3667,7,9.5,7.0357,9.5148,7.1898,9.1644,7.3278,8.8074,7.2471,8.3597,7.4624,8.0347,7.7322,7.7322,7.6734,7.5901,8.0939,7.6054,8.4506,7.4665,8.8135,7.3427,9.1093,7.0568,9.5,7" style="stroke:#444444;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><text fill="#444444" font-family="Comic Sans MS" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="89" x="126" y="46.6328">Institutions</text><text fill="#444444" font-family="Comic Sans MS" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="53" x="144" y="64.5215">[System]</text></g><!--MD5=[d5c3c31c76cf281797da36bb448bd209]
+cluster yetiSystem--><g id="cluster_yetiSystem"><polygon fill="none" points="13.5,227,13.5,227.2102,23.5,226.5857,33.5,227.1933,43.5,227.3997,53.5,226.2866,63.5,226.9223,73.5,226.5735,83.5,226.6165,93.5,226.9318,103.5,226.3086,113.5,227.5536,123.5,226.3697,133.5,226.8022,143.5,227.4319,153.5,226.9142,163.5,227.0682,173.5,226.9681,183.5,227.1785,193.5,227.2391,203.5,227.5857,213.5,227.6711,223.5,227.6793,233.5,227.2546,243.5,227.4636,253.5,227.7022,263.5,226.2788,273.5,227.6785,283.5,226.7035,293.5,227.5338,303.5,226.505,313.5,226.9315,323.5,227.7416,333.5,226.9513,343.5,227.1053,353.5,227.3386,363.5,227.4162,373.5,226.9961,383.5,227.2872,393.5,226.4276,403.5,227.2844,413.5,227.5482,423.5,227.4445,433.5,227.613,443.5,226.5169,453.5,226.3478,463.5,226.3786,473.5,226.9411,483.5,226.8035,493.5,227.6814,503.5,226.8253,513.5,226.6569,523.5,227.2283,533.5,226.3332,543.5,226.4809,553.5,227.649,563.5,227.4357,573.5,227.7345,583.5,226.6782,593.5,227.3192,603.5,227,603.5753,227.1818,603.7933,227.001,604.1949,227.2634,604.5767,227.4781,604.9974,227.7865,605.2678,227.7322,605.2665,227.7317,605.5567,228.1448,605.3901,228.3687,605.4985,228.7065,606.0086,229.2107,606,229.5,605.2831,229.5,606.509,239.34,606.2066,249.18,605.7321,259.02,605.6462,268.86,606.4588,278.7,605.7007,288.54,606.5919,298.38,605.4473,308.22,606.6174,318.06,606.4843,327.9,606.245,337.74,606.0472,347.58,606.7266,357.42,606.6136,367.26,606.1693,377.1,606.2682,386.94,605.8697,396.78,606.7165,406.62,606.1549,416.46,606.1726,426.3,605.3916,436.14,605.5948,445.98,606.5307,455.82,606.4298,465.66,606,475.5,605.9868,475.4945,605.7543,475.8125,605.6397,476.1792,605.3493,476.4731,605.5419,476.9671,605.2678,477.2678,605.3621,477.4955,604.9814,477.5763,604.6493,477.7747,604.1897,477.665,603.8647,477.8804,603.5,478,603.5,477.6124,593.5,478.284,583.5,478.2468,573.5,478.5524,563.5,477.7703,553.5,477.8656,543.5,478.4435,533.5,478.5673,523.5,477.4875,513.5,477.8061,503.5,478.1493,493.5,477.3892,483.5,478.3534,473.5,478.258,463.5,477.8992,453.5,478.1422,443.5,478.7287,433.5,477.6871,423.5,478.315,413.5,478.2856,403.5,478.1158,393.5,478.1409,383.5,478.1135,373.5,477.3758,363.5,477.5992,353.5,477.5385,343.5,478.0638,333.5,478.0881,323.5,478.1617,313.5,477.709,303.5,477.9325,293.5,477.8798,283.5,478.5769,273.5,478.4266,263.5,477.5145,253.5,477.9271,243.5,477.4228,233.5,478.2884,223.5,478.6085,213.5,478.5446,203.5,477.5644,193.5,478.464,183.5,477.2572,173.5,478.2002,163.5,477.7007,153.5,478.0967,143.5,478.2403,133.5,478.4721,123.5,477.2801,113.5,478.4755,103.5,478.1782,93.5,478.3553,83.5,478.7478,73.5,478.0055,63.5,478.1753,53.5,478.2134,43.5,478.1972,33.5,477.9992,23.5,478.7107,13.5,478,13.4222,477.8122,13.2186,478.0276,12.7133,477.5149,12.3704,477.3943,12.0909,477.4265,11.7322,477.2678,11.7409,477.2714,11.434,476.8513,11.5667,476.6134,11.3264,476.221,11.3702,475.9462,11,475.5,11.6671,475.5,10.5517,465.66,10.6021,455.82,10.8708,445.98,11.3555,436.14,11.403,426.3,11.3012,416.46,10.658,406.62,11.6364,396.78,11.6338,386.94,10.9527,377.1,10.7609,367.26,10.5986,357.42,10.7854,347.58,11.1374,337.74,10.9316,327.9,10.5822,318.06,11.4874,308.22,10.5411,298.38,11.5024,288.54,11.4272,278.7,11.3719,268.86,11.6925,259.02,10.7541,249.18,10.6994,239.34,11,229.5,11.1598,229.5662,10.9626,229.0703,11.2208,228.763,11.4749,228.4541,11.6069,228.0945,11.7322,227.7322,11.6865,227.6218,12.0803,227.5726,12.5343,227.6686,12.8756,227.4926,13.0704,226.9628,13.5,227" style="stroke:#444444;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><text fill="#444444" font-family="Comic Sans MS" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="95" x="261" y="266.6328">Yeti System</text><text fill="#444444" font-family="Comic Sans MS" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="53" x="282" y="284.5215">[System]</text></g><!--MD5=[eec7da048644c602bb0120b99c44a611]
+cluster exDisplay--><g id="cluster_exDisplay"><polygon fill="none" points="366.5,545,366.5,545.2102,376.2917,544.5857,386.0833,545.1933,395.875,545.3997,405.6667,544.2866,415.4583,544.9223,425.25,544.5735,435.0417,544.6165,444.8333,544.9318,454.625,544.3086,464.4167,545.5536,474.2083,544.3697,484,544.8022,493.7917,545.4319,503.5833,544.9142,513.375,545.0682,523.1667,544.9681,532.9583,545.1785,542.75,545.2391,552.5417,545.5857,562.3333,545.6711,572.125,545.6793,581.9167,545.2546,591.7083,545.4636,601.5,545,601.5896,545.2163,601.7616,544.9244,602.2937,545.5018,602.5228,545.348,602.9823,545.7502,603.2678,545.7322,603.1153,545.6691,603.3931,546.077,603.789,546.5339,603.6921,546.7867,603.886,547.1599,604,547.5,604.3386,547.5,604.4162,557.3261,603.9961,567.1522,604.2872,576.9783,603.4276,586.8043,604.2844,596.6304,604.5482,606.4565,604.4445,616.2826,604.613,626.1087,603.5169,635.9348,603.3478,645.7609,603.3786,655.587,603.9411,665.413,603.8035,675.2391,604.6814,685.0652,603.8253,694.8913,603.6569,704.7174,604.2283,714.5435,603.3332,724.3696,603.4809,734.1957,604.649,744.0217,604.4357,753.8478,604.7345,763.6739,604,773.5,603.9009,773.459,603.9519,773.8943,603.8889,774.2824,603.4152,774.5004,603.3847,774.902,603.2678,775.2678,603.2838,775.3066,602.9974,775.6149,602.5601,775.5594,602.2661,775.8496,601.7829,775.683,601.5,776,601.5,775.3227,591.7083,776.5036,581.9167,775.2831,572.125,776.509,562.3333,776.2066,552.5417,775.7321,542.75,775.6462,532.9583,776.4588,523.1667,775.7007,513.375,776.5919,503.5833,775.4473,493.7917,776.6174,484,776.4843,474.2083,776.245,464.4167,776.0472,454.625,776.7266,444.8333,776.6136,435.0417,776.1693,425.25,776.2682,415.4583,775.8697,405.6667,776.7165,395.875,776.1549,386.0833,776.1726,376.2917,775.3916,366.5,776,366.4483,775.8752,366.2141,776.017,365.8477,775.8395,365.4339,775.5474,365.0447,775.315,364.7322,775.2678,364.6648,775.2398,364.3745,774.8267,364.5671,774.6136,364.5206,774.3014,364.3086,773.9207,364,773.5,364.6949,773.5,363.8633,763.6739,364.0872,753.8478,363.6124,744.0217,364.284,734.1957,364.2468,724.3696,364.5524,714.5435,363.7703,704.7174,363.8656,694.8913,364.4435,685.0652,364.5673,675.2391,363.4875,665.413,363.8061,655.587,364.1493,645.7609,363.3892,635.9348,364.3534,626.1087,364.258,616.2826,363.8992,606.4565,364.1422,596.6304,364.7287,586.8043,363.6871,576.9783,364.315,567.1522,364.2856,557.3261,364,547.5,364.0357,547.5148,364.1898,547.1644,364.3278,546.8074,364.2471,546.3597,364.4624,546.0347,364.7322,545.7322,364.6734,545.5901,365.0939,545.6054,365.4506,545.4665,365.8135,545.3427,366.1093,545.0568,366.5,545" style="stroke:#444444;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><text fill="#444444" font-family="Comic Sans MS" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="162" x="403" y="584.6328">External Dashboards</text><text fill="#444444" font-family="Comic Sans MS" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="53" x="457.5" y="602.5215">[System]</text></g><!--MD5=[e84a988d0133c2ef09b109505f1e68c0]
+entity shop--><g id="elem_shop"><polygon fill="#999999" points="25.5,85,25.5,85.2102,35.1154,84.5857,44.7308,85.1933,54.3462,85.3997,63.9615,84.2866,73.5769,84.9223,83.1923,84.5735,92.8077,84.6165,102.4231,84.9318,112.0385,84.3086,121.6538,85.5536,131.2692,84.3697,140.8846,84.8022,150.5,85,150.5551,85.133,150.8426,85.12,151.2158,85.3139,151.5566,85.4295,151.937,85.6408,152.2678,85.7322,152.3414,85.7627,152.5946,86.1605,152.7673,86.5249,152.9163,86.8795,152.932,87.1789,153,87.5,153.4636,87.5,153.7022,98.3039,152.2788,109.1078,153.6785,119.9117,152.7035,130.7156,153,141.5195,153.1644,141.5876,152.7011,141.8099,152.686,142.2179,152.789,142.6748,152.3992,142.9275,152.2678,143.2873,152.2812,143.3197,151.9574,143.538,151.6138,143.7084,151.2066,143.7254,150.8902,143.9615,150.5,144.0195,150.5,143.4471,140.8846,144.3039,131.2692,144.5677,121.6538,144.4641,112.0385,144.6326,102.4231,143.5365,92.8077,143.3673,83.1923,143.3981,73.5769,143.9607,63.9615,143.823,54.3462,144.7009,44.7308,143.8449,35.1154,143.6765,25.5,144.0195,25.5291,144.0898,25.0614,143.6677,24.7267,143.5668,24.5221,143.78,24.1414,143.5679,23.7322,143.2873,23.9584,143.381,23.4867,142.8927,23.5376,142.6209,23.4747,142.302,23.001,141.8128,23,141.5195,22.9041,141.5195,23.126,130.7156,23.6518,119.9117,22.9958,109.1078,23.4626,98.3039,23,87.5,22.8295,87.4294,22.9379,87.0601,23.448,86.8571,23.2186,86.3479,23.7425,86.1507,23.7322,85.7322,23.7586,85.7959,24.0516,85.5033,24.3942,85.3304,24.8514,85.4342,25.1083,85.0543,25.5,85" style="stroke:#8A8A8A;stroke-width:0.5;"/><text fill="#FFFFFF" font-family="Comic Sans MS" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="110" x="33" y="108.2246">«external_system»</text><text fill="#FFFFFF" font-family="Comic Sans MS" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="88" x="44" y="129.3555">Retail Shop</text></g><!--MD5=[341d28afd9cb4b1471ff11bc8fd921e0]
+entity mall--><g id="elem_mall"><polygon fill="#999999" points="190.5,85,190.5,85.2102,200.1154,84.5857,209.7308,85.1933,219.3462,85.3997,228.9615,84.2866,238.5769,84.9223,248.1923,84.5735,257.8077,84.6165,267.4231,84.9318,277.0385,84.3086,286.6538,85.5536,296.2692,84.3697,305.8846,84.8022,315.5,85,315.5551,85.133,315.8426,85.12,316.2158,85.3139,316.5566,85.4295,316.937,85.6408,317.2678,85.7322,317.3414,85.7627,317.5946,86.1605,317.7673,86.5249,317.9163,86.8795,317.932,87.1789,318,87.5,318.4636,87.5,318.7022,98.3039,317.2788,109.1078,318.6785,119.9117,317.7035,130.7156,318,141.5195,318.1644,141.5876,317.7011,141.8099,317.686,142.2179,317.789,142.6748,317.3992,142.9275,317.2678,143.2873,317.2812,143.3197,316.9574,143.538,316.6138,143.7084,316.2066,143.7254,315.8902,143.9615,315.5,144.0195,315.5,143.4471,305.8846,144.3039,296.2692,144.5677,286.6538,144.4641,277.0385,144.6326,267.4231,143.5365,257.8077,143.3673,248.1923,143.3981,238.5769,143.9607,228.9615,143.823,219.3462,144.7009,209.7308,143.8449,200.1154,143.6765,190.5,144.0195,190.5291,144.0898,190.0614,143.6677,189.7267,143.5668,189.5221,143.78,189.1414,143.5679,188.7322,143.2873,188.9584,143.381,188.4867,142.8927,188.5376,142.6209,188.4747,142.302,188.001,141.8128,188,141.5195,187.9041,141.5195,188.126,130.7156,188.6518,119.9117,187.9958,109.1078,188.4626,98.3039,188,87.5,187.8295,87.4294,187.9379,87.0601,188.448,86.8571,188.2186,86.3479,188.7425,86.1507,188.7322,85.7322,188.7586,85.7959,189.0516,85.5033,189.3942,85.3304,189.8514,85.4342,190.1083,85.0543,190.5,85" style="stroke:#8A8A8A;stroke-width:0.5;"/><text fill="#FFFFFF" font-family="Comic Sans MS" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="110" x="198" y="108.2246">«external_system»</text><text fill="#FFFFFF" font-family="Comic Sans MS" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="31" x="237.5" y="129.3555">Mall</text></g><!--MD5=[39f55ea92248e353d3c55c5f08d46d90]
+entity dataIngestSystem--><g id="elem_dataIngestSystem"><polygon fill="#1168BD" points="30,305,30,305.2102,40,304.5857,50,305.1933,60,305.3997,70,304.2866,80,304.9223,90,304.5735,100,304.6165,110,304.9318,120,304.3086,130,305.5536,140,304.3697,150,304.8022,160,305.4319,170,304.9142,180,305.0682,190,304.9681,200,305.1785,210,305.2391,220,305.5857,230,305.6711,240,305,240.0866,305.2092,240.386,305.2249,240.7662,305.4357,241.1502,305.6556,241.3222,305.3637,241.7678,305.7322,241.9767,305.8188,241.8229,306.048,242.2251,306.5074,242.0547,306.7297,242.3325,307.1377,242.5,307.5,243.2416,307.5,242.4513,317.6046,242.6053,327.7091,242.8386,337.8137,242.9162,347.9182,242.4961,358.0228,242.7872,368.1273,241.9276,378.2319,242.7844,388.3365,243.0482,398.441,242.9445,408.5456,243.113,418.6501,242.0169,428.7547,241.8478,438.8592,241.8786,448.9638,242.5,459.0684,242.4819,459.0608,242.293,459.3968,242.417,459.8624,242.0069,460.1067,241.8086,460.4388,241.7678,460.8361,241.7969,460.9064,241.3292,460.7772,240.9944,460.9691,240.7899,461.4753,240.4091,461.5561,240,461.5684,240,462.3028,230,461.2466,220,461.8876,210,462.1588,200,461.096,190,461.4725,180,461.6943,170,462.2201,160,461.5642,150,462.0309,140,461.0146,130,460.8911,120,462.072,110,460.8514,100,462.0773,90,461.775,80,461.3004,70,461.2146,60,462.0271,50,461.269,40,462.1602,30,461.5684,29.9295,461.3981,29.7252,461.6121,29.3547,461.4246,28.9706,461.2045,28.5918,460.9971,28.2322,460.8361,28.456,460.9288,28.2747,460.5608,27.9915,460.1506,27.8755,459.8097,27.6063,459.4053,27.5,459.0684,28.2165,459.0684,27.6549,448.9638,27.6726,438.8592,26.8916,428.7547,27.0948,418.6501,28.0307,408.5456,27.9298,398.441,27.4571,388.3365,27.1778,378.2319,27.2811,368.1273,26.8138,358.0228,27.9147,347.9182,28.2396,337.8137,28.0264,327.7091,28.1949,317.6046,27.5,307.5,27.4579,307.4826,27.6733,307.1576,27.6735,306.7435,28.0268,306.4756,28.1618,306.1173,28.2322,305.7322,28.3027,305.9023,28.5565,305.5151,28.9222,305.3979,29.3495,305.4295,29.7188,305.3212,30,305" style="stroke:#3C7FC0;stroke-width:0.5;"/><text fill="#FFFFFF" font-family="Comic Sans MS" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="54" x="108" y="328.2246">«system»</text><text fill="#FFFFFF" font-family="Comic Sans MS" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="180" x="45" y="349.3555">Data Ingestion System</text><text fill="#FFFFFF" font-family="Comic Sans MS" font-size="14" lengthAdjust="spacing" textLength="4" x="133" y="369.4482"> </text><text fill="#FFFFFF" font-family="Comic Sans MS" font-size="14" lengthAdjust="spacing" textLength="181" x="42.5" y="388.958">Sytem which captures video</text><text fill="#FFFFFF" font-family="Comic Sans MS" font-size="14" lengthAdjust="spacing" textLength="191" x="37.5" y="408.4678">feed from shops and malls. It</text><text fill="#FFFFFF" font-family="Comic Sans MS" font-size="14" lengthAdjust="spacing" textLength="190" x="38" y="427.9775">converts it into raw analytics</text><text fill="#FFFFFF" font-family="Comic Sans MS" font-size="14" lengthAdjust="spacing" textLength="32" x="119" y="447.4873">data.</text></g><!--MD5=[c591e3d2f82d3c9420437835199b30d5]
+entity analyticsSystem--><g id="elem_analyticsSystem"><polygon fill="#1168BD" points="380.5,315,380.5,315.2102,390.3571,314.5857,400.2143,315.1933,410.0714,315.3997,419.9286,314.2866,429.7857,314.9223,439.6429,314.5735,449.5,314.6165,459.3571,314.9318,469.2143,314.3086,479.0714,315.5536,488.9286,314.3697,498.7857,314.8022,508.6429,315.4319,518.5,314.9142,528.3571,315.0682,538.2143,314.9681,548.0714,315.1785,557.9286,315.2391,567.7857,315.5857,577.6429,315.6711,587.5,315,587.5866,315.2092,587.886,315.2249,588.2662,315.4357,588.6502,315.6556,588.8222,315.3637,589.2678,315.7322,589.4767,315.8188,589.3229,316.048,589.7251,316.5074,589.5547,316.7297,589.8325,317.1377,590,317.5,590.7416,317.5,589.9513,327.6584,590.1053,337.8167,590.3386,347.9751,590.4162,358.1334,589.9961,368.2918,590.2872,378.4501,589.4276,388.6085,590.2844,398.7668,590.5482,408.9252,590.4445,419.0835,590.613,429.2419,589.5169,439.4002,590,449.5586,589.7992,449.4754,589.6622,449.8329,589.689,450.2582,589.5001,450.5942,589.6241,451.0597,589.2678,451.3264,589.2455,451.2726,588.8705,451.3672,588.5898,451.6896,588.122,451.5603,587.7873,451.7523,587.5,452.0586,587.5,452.7075,577.6429,452.4943,567.7857,452.7931,557.9286,451.7368,548.0714,452.3778,538.2143,452.649,528.3571,451.5862,518.5,451.9627,508.6429,452.1846,498.7857,452.7104,488.9286,452.0544,479.0714,452.5212,469.2143,451.5048,459.3571,451.3813,449.5,452.5622,439.6429,451.3417,429.7857,452.5676,419.9286,452.2652,410.0714,451.7907,400.2143,451.7048,390.3571,452.5174,380.5,452.0586,380.4618,451.9664,380.2219,452.0944,379.7224,451.5955,379.5181,451.8094,379.1476,451.622,378.7322,451.3264,378.8077,451.3576,378.6003,450.9788,378.6631,450.7119,378.4819,450.344,378.1986,449.9337,378,449.5586,378.2682,449.5586,377.8697,439.4002,378.7165,429.2419,378.1549,419.0835,378.1726,408.9252,377.3916,398.7668,377.5948,388.6085,378.5307,378.4501,378.4298,368.2918,377.9571,358.1334,377.6778,347.9751,377.7811,337.8167,377.3138,327.6584,378,317.5,378.1277,317.5529,378.3742,317.2408,378.455,316.86,378.6534,316.528,378.5437,316.0683,378.7322,315.7322,378.7434,315.7591,379.0363,315.4664,379.4756,315.5268,379.8244,315.3689,380.2169,315.3166,380.5,315" style="stroke:#3C7FC0;stroke-width:0.5;"/><text fill="#FFFFFF" font-family="Comic Sans MS" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="54" x="457" y="338.2246">«system»</text><text fill="#FFFFFF" font-family="Comic Sans MS" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="190" x="389" y="359.3555">Simple Analytics System</text><text fill="#FFFFFF" font-family="Comic Sans MS" font-size="14" lengthAdjust="spacing" textLength="4" x="482" y="379.4482"> </text><text fill="#FFFFFF" font-family="Comic Sans MS" font-size="14" lengthAdjust="spacing" textLength="173" x="395.5" y="398.958">Uses raw analytics, applies</text><text fill="#FFFFFF" font-family="Comic Sans MS" font-size="14" lengthAdjust="spacing" textLength="188" x="388" y="418.4678">some basic rules to generate</text><text fill="#FFFFFF" font-family="Comic Sans MS" font-size="14" lengthAdjust="spacing" textLength="98" x="435" y="437.9775">simple insights.</text></g><!--MD5=[b136b9fa9069d907fbf66da640b0b6c9]
+entity extDashboard--><g id="elem_extDashboard"><polygon fill="#999999" points="383,623,383,623.2102,393.1,622.5857,403.2,623.1933,413.3,623.3997,423.4,622.2866,433.5,622.9223,443.6,622.5735,453.7,622.6165,463.8,622.9318,473.9,622.3086,484,623.5536,494.1,622.3697,504.2,622.8022,514.3,623.4319,524.4,622.9142,534.5,623.0682,544.6,622.9681,554.7,623.1785,564.8,623.2391,574.9,623.5857,585,623,585.0856,623.2067,585.4402,623.3556,585.7396,623.3713,586.1198,623.5821,586.5038,623.802,586.7678,623.7322,586.5457,623.6402,587.1232,624.1723,586.9693,624.4015,587.3715,624.861,587.2011,625.0833,587.5,625.5,587.4315,625.5,588.2416,635.6584,587.4513,645.8167,587.6053,655.9751,587.8386,666.1334,587.9162,676.2918,587.4961,686.4501,587.7872,696.6085,586.9276,706.7668,587.7844,716.9252,588.0482,727.0835,587.9445,737.2419,588.113,747.4002,587.5,757.5586,587.3512,757.497,587.1527,757.829,587.0157,758.1864,587.0425,758.6117,586.8537,758.9477,586.7678,759.3264,586.8547,759.5362,586.3919,759.419,586.0169,759.5136,585.7362,759.836,585.2685,759.7068,585,760.0586,585,759.5395,574.9,760.7075,564.8,760.4943,554.7,760.7931,544.6,759.7368,534.5,760.3778,524.4,760.649,514.3,759.5862,504.2,759.9627,494.1,760.1846,484,760.7104,473.9,760.0544,463.8,760.5212,453.7,759.5048,443.6,759.3813,433.5,760.5622,423.4,759.3417,413.3,760.5676,403.2,760.2652,393.1,759.7907,383,760.0586,382.9549,759.9496,382.705,760.0534,382.2547,759.6735,382.0148,759.8015,381.5153,759.3026,381.2322,759.3264,381.4224,759.4051,381.2349,759.0346,381.0148,758.6505,380.8074,758.2717,380.8702,758.0048,380.5,757.5586,381.1136,757.5586,380.6693,747.4002,380.7682,737.2419,380.3697,727.0835,381.2165,716.9252,380.6549,706.7668,380.6726,696.6085,379.8916,686.4501,380.0948,676.2918,381.0307,666.1334,380.9298,655.9751,380.4571,645.8167,380.1778,635.6584,380.5,625.5,380.4326,625.4721,380.4351,625.0589,380.9206,624.8458,381.1671,624.5337,381.2479,624.1529,381.2322,623.7322,381.3209,623.9462,381.5683,623.5437,381.9505,623.4662,382.2435,623.1735,382.6827,623.2339,383,623" style="stroke:#8A8A8A;stroke-width:0.5;"/><text fill="#FFFFFF" font-family="Comic Sans MS" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="110" x="429" y="646.2246">«external_system»</text><text fill="#FFFFFF" font-family="Comic Sans MS" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="138" x="415" y="667.3555">Google Dashboard</text><text fill="#FFFFFF" font-family="Comic Sans MS" font-size="14" lengthAdjust="spacing" textLength="4" x="482" y="687.4482"> </text><text fill="#FFFFFF" font-family="Comic Sans MS" font-size="14" lengthAdjust="spacing" textLength="157" x="403.5" y="706.958">Gets simple insights and</text><text fill="#FFFFFF" font-family="Comic Sans MS" font-size="14" lengthAdjust="spacing" textLength="183" x="390.5" y="726.4678">creates a dashboard for the</text><text fill="#FFFFFF" font-family="Comic Sans MS" font-size="14" lengthAdjust="spacing" textLength="47" x="460.5" y="745.9775">clients.</text></g><!--MD5=[028aefb1ce9817e9f0a8d7bfca86de39]
+link mall to dataIngestSystem--><g id="link_mall_dataIngestSystem"><path d="M240.37,144.07 L240.6263,144.1833 L235.8747,152.8761 L232.6257,162.233 L228.8874,171.3736 L223.54,179.8032 L220.3252,189.1752 L215.9099,198.0166 L211.9723,207.0692 L208.3669,216.2686 L203.6168,224.9621 L201.1452,234.6625 L195.7113,243.0539 L192.2488,252.3164 L189.0268,261.6851 L184.4054,270.4355 L180.6032,279.548 L176.491,288.5234 L172.54,297.57 " fill="none" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="169.28,304.93,169.3301,304.979,170.3763,303.612,171.7161,302.5321,172.9603,301.3588,173.8901,299.8779,175.255,298.8227,175.2446,298.799,174.0998,298.2081,173.0078,297.7366,171.9525,297.3482,170.7708,296.6736,169.766,296.3998,169.9503,296.4103,169.4591,298.0939,169.5058,299.8081,169.6182,301.5261,169.3487,303.2223,169.28,304.93" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="Comic Sans MS" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="103" x="225" y="190.2246">Sends Video Feed</text><text fill="#666666" font-family="Comic Sans MS" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="40" x="256.5" y="206.9473">[RSTP]</text></g><!--MD5=[af2356df368262a35db012ddb3ae8b47]
+link shop to dataIngestSystem--><g id="link_shop_dataIngestSystem"><path d="M91.05,144.42 L91.1428,144.4309 L91.2253,147.4546 L91.8516,150.542 L92.3009,153.6087 L92.1677,156.6071 L92.8408,159.7 L92.8065,159.6957 L93.0763,163.0323 L93.5189,166.3907 L94.0815,169.7642 L94.2303,173.0855 L94.9588,176.48 L95.2025,176.5136 L95.1615,179.9207 L95.8321,183.426 L96.5896,186.9433 L96.8419,190.3908 L97.3598,193.875 L97.3898,193.8796 L97.8738,197.2978 L98.4943,200.7371 L99.049,204.1662 L99.7292,207.6147 L100,211 L100.2939,211.0505 L101.0314,215.3193 L101.5793,219.5554 L102.4047,223.8392 L103.2431,228.1253 L103.6694,232.3405 L103.3542,232.2823 L104.768,236.7404 L105.144,241.0069 L106.3091,245.419 L106.6615,249.6812 L107.68,254.0663 L107.6501,254.0604 L108.8447,258.4493 L109.341,262.7022 L110.2493,267.0353 L111.1922,271.3751 L111.8856,275.6664 L112.0669,275.7032 L112.7348,279.8588 L113.7125,284.0772 L114.1889,288.194 L115.413,292.4624 L116.14,296.63 " fill="none" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="117.8,304.61,117.8692,304.6207,117.9251,302.9002,118.3868,301.2425,118.7163,299.5644,118.6112,297.8189,119.1078,296.1667,119.1025,296.1413,117.904,296.2719,116.732,296.5303,115.5786,296.8776,114.3614,296.9187,113.2335,297.3887,113.3895,297.4873,113.9693,298.7207,115.0044,300.242,116.0951,301.7984,116.8625,303.1505,117.8,304.61" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="Comic Sans MS" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="103" x="101" y="190.2246">Sends Video Feed</text><text fill="#666666" font-family="Comic Sans MS" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="40" x="132.5" y="206.9473">[RSTP]</text></g><!--MD5=[460b12f93594555ef9264735ba152cf9]
+link dataIngestSystem to analyticsSystem--><g id="link_dataIngestSystem_analyticsSystem"><path d="M242.56,383.5 L242.56,383.7802 L252.3538,382.9476 L262.1477,383.7577 L271.9415,384.0329 L281.7354,382.5488 L291.5292,383.3964 L301.3231,382.9313 L311.1169,382.9887 L320.9108,383.4091 L330.7046,382.5782 L340.4985,384.2382 L350.2923,382.6596 L360.0862,383.2363 L369.88,383.5 " fill="none" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="377.99,383.5,378.0146,383.5656,376.3415,382.7707,374.8126,382.3603,373.2368,381.8247,371.5065,380.8773,369.99,380.5,369.9641,380.5,369.8478,381.7,369.8622,382.9,369.9673,384.1,369.7595,385.3,369.99,386.5,370.0548,386.6728,371.5162,385.7033,373.1669,385.2383,374.8406,384.8348,376.38,384.0732,377.99,383.5" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="Comic Sans MS" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="99" x="260.75" y="359.7246">Provide raw data</text><text fill="#666666" font-family="Comic Sans MS" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="78" x="271.25" y="376.4473">[SQL/JSON]</text></g><!--MD5=[b40473522085e6a1110fd4299e0d8c96]
+link analyticsSystem to extDashboard--><g id="link_analyticsSystem_extDashboard"><path d="M484,452.03 L484.2802,452.03 L483.4476,462.1962 L484.2577,472.3625 L484.5329,482.5288 L483.0488,492.695 L483.8964,502.8613 L483.4313,513.0275 L483.4887,523.1938 L483.9091,533.36 L483.0782,543.5263 L484.7382,553.6925 L483.1596,563.8588 L483.7363,574.025 L484.5759,584.1913 L483.8856,594.3575 L484.091,604.5238 L484,614.69 " fill="none" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="484,622.88,484.0656,622.9046,484.4707,621.2315,485.2603,619.7026,485.9247,618.1268,486.1773,616.3965,487,614.88,487,614.8541,485.8,614.7378,484.6,614.7522,483.4,614.8573,482.2,614.6495,481,614.88,481.1728,614.9448,481.4033,616.4062,482.1383,618.0569,482.9348,619.7306,483.3732,621.27,484,622.88" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="Comic Sans MS" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="121" x="485" y="508.2246">Provides insight data</text><text fill="#666666" font-family="Comic Sans MS" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="41" x="525" y="524.9473">[HTTP]</text></g><polygon fill="#EEEBDC" points="175.5,781,175.5,781.2102,185.46,780.5857,195.42,781.1933,205.38,781.3997,215.34,780.2866,225.3,780.9223,235.26,780.5735,245.22,780.6165,255.18,780.9318,265.14,780.3086,275.1,781.5536,285.06,780.3697,295.02,780.8022,304.98,781.4319,314.94,780.9142,324.9,781.0682,334.86,780.9681,344.82,781.1785,354.78,781.2391,364.74,781.5857,374.7,781.6711,384.66,781.6793,394.62,781.2546,404.58,781.4636,414.54,781.7022,424.5,781,424.2596,781,424.7262,783.7871,424.4012,786.5742,424.6779,789.3613,424.335,792.1484,424.5,794.9355,424.5,794.867,414.54,795.6772,404.58,794.8868,394.62,795.0408,384.66,795.2742,374.7,795.3518,364.74,794.9316,354.78,795.2228,344.82,794.3631,334.86,795.2199,324.9,795.4837,314.94,795.3801,304.98,795.5486,295.02,794.4525,285.06,794.2834,275.1,794.3141,265.14,794.8767,255.18,794.739,245.22,795.617,235.26,794.7609,225.3,794.5925,215.34,795.1638,205.38,794.2687,195.42,794.4164,185.46,795.5845,175.5,794.9355,175.6452,794.9355,175.7448,792.1484,175.3927,789.3613,175.6064,786.5742,175.6968,783.7871,175.5,781" style="stroke:none;stroke-width:1.0;"/><text fill="#FF0000" font-family="Comic Sans MS" font-size="10" lengthAdjust="spacing" textLength="43" x="175.5" y="792.0205">Warning:</text><text fill="#888888" font-family="Comic Sans MS" font-size="10" lengthAdjust="spacing" textLength="203" x="221.5" y="792.0205">Created for discussion, needs to be validated</text><!--MD5=[9cb39edbbf52f046dffc57d332811cbb]
+@startuml Yeti-System-Context-Diagram
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+
+
+LAYOUT_AS_SKETCH()
+'LAYOUT_WITH_LEGEND()
+
+System_Boundary(dataSources, "Institutions"){
+    System_Ext(shop,"Retail Shop")
+    System_Ext(mall, "Mall")
+}
+
+System_Boundary(yetiSystem, "Yeti System") {
+    System(dataIngestSystem, "Data Ingestion System", "Sytem which captures video feed from shops and malls. It converts it into raw analytics data.")
+    System(analyticsSystem, "Simple Analytics System", "Uses raw analytics, applies some basic rules to generate simple insights.")
+}
+
+System_Boundary(exDisplay, "External Dashboards") {
+    System_Ext(extDashboard, "Google Dashboard", "Gets simple insights and creates a dashboard for the clients.")
+}
+
+Rel_D(mall, dataIngestSystem, "Sends Video Feed", "RSTP")
+Rel_D(shop, dataIngestSystem, "Sends Video Feed", "RSTP")
+
+Rel_R(dataIngestSystem, analyticsSystem, "Provide raw data", "SQL/JSON")
+
+Rel_D(analyticsSystem, extDashboard, "Provides insight data", "HTTP")
+
+@enduml
+
+@startuml Yeti-System-Context-Diagram
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+skinparam defaultTextAlignment center
+
+skinparam wrapWidth 200
+skinparam maxMessageSize 150
+
+skinparam LegendFontColor #FFFFFF
+skinparam LegendBackgroundColor transparent
+skinparam LegendBorderColor transparent
+
+skinparam rectangle<<legendArea>> {
+    backgroundcolor transparent
+    bordercolor transparent
+}
+
+skinparam rectangle {
+    StereotypeFontSize 12
+}
+
+skinparam database {
+    StereotypeFontSize 12
+}
+
+skinparam queue {
+    StereotypeFontSize 12
+}
+
+skinparam participant {
+    StereotypeFontSize 12
+}
+
+skinparam arrow {
+    Color #666666
+    FontColor #666666
+    FontSize 12
+}
+
+skinparam person {
+    StereotypeFontSize 12
+}
+
+skinparam actor {
+    StereotypeFontSize 12
+    style awesome
+}
+
+skinparam rectangle<<boundary>> {
+    StereotypeFontSize 6
+    StereotypeFontColor transparent
+    BorderStyle dashed
+}
+
+skinparam package {
+    StereotypeFontSize 6
+    StereotypeFontColor transparent
+    FontStyle plain
+    BackgroundColor transparent
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+skinparam rectangle<<boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+    BorderStyle dashed
+}
+skinparam database<<boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+    BorderStyle dashed
+}
+skinparam queue<<boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+    BorderStyle dashed
+}
+skinparam person<<boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+    BorderStyle dashed
+}
+skinparam actor<<boundary>> {
+    FontColor transparent
+    BackgroundColor transparent
+    BorderColor #444444
+    BorderStyle dashed
+}
+skinparam participant<<boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+    BorderStyle dashed
+}
+skinparam sequencebox<<boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+    BorderStyle dashed
+}
+skinparam package<<boundary>>StereotypeFontColor transparent
+skinparam rectangle<<boundary>>StereotypeFontColor transparent
+
+    
+skinparam rectangle<<enterprise_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+    BorderStyle dashed
+}
+skinparam database<<enterprise_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+    BorderStyle dashed
+}
+skinparam queue<<enterprise_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+    BorderStyle dashed
+}
+skinparam person<<enterprise_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+    BorderStyle dashed
+}
+skinparam actor<<enterprise_boundary>> {
+    FontColor transparent
+    BackgroundColor transparent
+    BorderColor #444444
+    BorderStyle dashed
+}
+skinparam participant<<enterprise_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+    BorderStyle dashed
+}
+skinparam sequencebox<<enterprise_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+    BorderStyle dashed
+}
+skinparam package<<enterprise_boundary>>StereotypeFontColor transparent
+skinparam rectangle<<enterprise_boundary>>StereotypeFontColor transparent
+
+
+    
+skinparam rectangle<<system_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+    BorderStyle dashed
+}
+skinparam database<<system_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+    BorderStyle dashed
+}
+skinparam queue<<system_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+    BorderStyle dashed
+}
+skinparam person<<system_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+    BorderStyle dashed
+}
+skinparam actor<<system_boundary>> {
+    FontColor transparent
+    BackgroundColor transparent
+    BorderColor #444444
+    BorderStyle dashed
+}
+skinparam participant<<system_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+    BorderStyle dashed
+}
+skinparam sequencebox<<system_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+    BorderStyle dashed
+}
+skinparam package<<system_boundary>>StereotypeFontColor transparent
+skinparam rectangle<<system_boundary>>StereotypeFontColor transparent
+
+
+    
+skinparam rectangle<<container_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+    BorderStyle dashed
+}
+skinparam database<<container_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+    BorderStyle dashed
+}
+skinparam queue<<container_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+    BorderStyle dashed
+}
+skinparam person<<container_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+    BorderStyle dashed
+}
+skinparam actor<<container_boundary>> {
+    FontColor transparent
+    BackgroundColor transparent
+    BorderColor #444444
+    BorderStyle dashed
+}
+skinparam participant<<container_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+    BorderStyle dashed
+}
+skinparam sequencebox<<container_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+    BorderStyle dashed
+}
+skinparam package<<container_boundary>>StereotypeFontColor transparent
+skinparam rectangle<<container_boundary>>StereotypeFontColor transparent
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+skinparam rectangle<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+skinparam database<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+skinparam queue<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+skinparam person<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+skinparam actor<<person>> {
+    StereotypeFontColor #08427B
+    FontColor #08427B
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+skinparam participant<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+skinparam sequencebox<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+
+
+skinparam rectangle<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+skinparam database<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+skinparam queue<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+skinparam person<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+skinparam actor<<external_person>> {
+    StereotypeFontColor #686868
+    FontColor #686868
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+skinparam participant<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+skinparam sequencebox<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+
+
+skinparam rectangle<<system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+skinparam database<<system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+skinparam queue<<system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+skinparam person<<system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+skinparam actor<<system>> {
+    StereotypeFontColor #1168BD
+    FontColor #1168BD
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+skinparam participant<<system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+skinparam sequencebox<<system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+
+
+skinparam rectangle<<external_system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+skinparam database<<external_system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+skinparam queue<<external_system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+skinparam person<<external_system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+skinparam actor<<external_system>> {
+    StereotypeFontColor #999999
+    FontColor #999999
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+skinparam participant<<external_system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+skinparam sequencebox<<external_system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+
+
+    
+skinparam rectangle<<system_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+    BorderStyle dashed
+}
+skinparam database<<system_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+    BorderStyle dashed
+}
+skinparam queue<<system_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+    BorderStyle dashed
+}
+skinparam person<<system_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+    BorderStyle dashed
+}
+skinparam actor<<system_boundary>> {
+    FontColor transparent
+    BackgroundColor transparent
+    BorderColor #444444
+    BorderStyle dashed
+}
+skinparam participant<<system_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+    BorderStyle dashed
+}
+skinparam sequencebox<<system_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+    BorderStyle dashed
+}
+skinparam package<<system_boundary>>StereotypeFontColor transparent
+skinparam rectangle<<system_boundary>>StereotypeFontColor transparent
+
+
+    
+skinparam rectangle<<enterprise_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+    BorderStyle dashed
+}
+skinparam database<<enterprise_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+    BorderStyle dashed
+}
+skinparam queue<<enterprise_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+    BorderStyle dashed
+}
+skinparam person<<enterprise_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+    BorderStyle dashed
+}
+skinparam actor<<enterprise_boundary>> {
+    FontColor transparent
+    BackgroundColor transparent
+    BorderColor #444444
+    BorderStyle dashed
+}
+skinparam participant<<enterprise_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+    BorderStyle dashed
+}
+skinparam sequencebox<<enterprise_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+    BorderStyle dashed
+}
+skinparam package<<enterprise_boundary>>StereotypeFontColor transparent
+skinparam rectangle<<enterprise_boundary>>StereotypeFontColor transparent
+
+
+
+
+
+
+sprite $person [48x48/16] {
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+0000000000000000000049BCCA7200000000000000000000
+0000000000000000006EFFFFFFFFB3000000000000000000
+00000000000000001CFFFFFFFFFFFF700000000000000000
+0000000000000001EFFFFFFFFFFFFFF80000000000000000
+000000000000000CFFFFFFFFFFFFFFFF6000000000000000
+000000000000007FFFFFFFFFFFFFFFFFF100000000000000
+00000000000001FFFFFFFFFFFFFFFFFFF900000000000000
+00000000000006FFFFFFFFFFFFFFFFFFFF00000000000000
+0000000000000BFFFFFFFFFFFFFFFFFFFF40000000000000
+0000000000000EFFFFFFFFFFFFFFFFFFFF70000000000000
+0000000000000FFFFFFFFFFFFFFFFFFFFF80000000000000
+0000000000000FFFFFFFFFFFFFFFFFFFFF80000000000000
+0000000000000DFFFFFFFFFFFFFFFFFFFF60000000000000
+0000000000000AFFFFFFFFFFFFFFFFFFFF40000000000000
+00000000000006FFFFFFFFFFFFFFFFFFFE00000000000000
+00000000000000EFFFFFFFFFFFFFFFFFF800000000000000
+000000000000007FFFFFFFFFFFFFFFFFF100000000000000
+000000000000000BFFFFFFFFFFFFFFFF5000000000000000
+0000000000000001DFFFFFFFFFFFFFF70000000000000000
+00000000000000000BFFFFFFFFFFFF500000000000000000
+0000000000000000005DFFFFFFFFA1000000000000000000
+0000000000000000000037ABB96100000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000025788300000000005886410000000000000
+000000000007DFFFFFFD9643347BFFFFFFFB400000000000
+0000000004EFFFFFFFFFFFFFFFFFFFFFFFFFFB1000000000
+000000007FFFFFFFFFFFFFFFFFFFFFFFFFFFFFD200000000
+00000006FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE10000000
+0000003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB0000000
+000000BFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5000000
+000003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD000000
+000009FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF200000
+00000DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF600000
+00000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF800000
+00001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFA00000
+00001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB00000
+00001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB00000
+00001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB00000
+00001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFA00000
+00000EFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF700000
+000006FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE100000
+0000008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD3000000
+000000014555555555555555555555555555555300000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+}
+
+sprite $person2 [48x48/16] {
+0000000000000000000049BCCA7200000000000000000000
+0000000000000000006EFFFFFFFFB3000000000000000000
+00000000000000001CFFFFFFFFFFFF700000000000000000
+0000000000000001EFFFFFFFFFFFFFF80000000000000000
+000000000000000CFFFFFFFFFFFFFFFF6000000000000000
+000000000000007FFFFFFFFFFFFFFFFFF100000000000000
+00000000000001FFFFFFFFFFFFFFFFFFF900000000000000
+00000000000006FFFFFFFFFFFFFFFFFFFF00000000000000
+0000000000000BFFFFFFFFFFFFFFFFFFFF40000000000000
+0000000000000EFFFFFFFFFFFFFFFFFFFF70000000000000
+0000000000000FFFFFFFFFFFFFFFFFFFFF80000000000000
+0000000000000FFFFFFFFFFFFFFFFFFFFF80000000000000
+0000000000000DFFFFFFFFFFFFFFFFFFFF60000000000000
+0000000000000AFFFFFFFFFFFFFFFFFFFF40000000000000
+00000000000006FFFFFFFFFFFFFFFFFFFE00000000000000
+00000000000000EFFFFFFFFFFFFFFFFFF800000000000000
+000000000000007FFFFFFFFFFFFFFFFFF100000000000000
+000000000000000BFFFFFFFFFFFFFFFF5000000000000000
+0000000000000001DFFFFFFFFFFFFFF70000000000000000
+00000000000000000BFFFFFFFFFFFF500000000000000000
+0000000000000000005DFFFFFFFFA1000000000000000000
+0000000000000000000037ABB96100000000000000000000
+000000000002578888300000000005888864100000000000
+0000000007DFFFFFFFFD9643347BFFFFFFFFFB4000000000
+00000004EFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB10000000
+0000007FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD2000000
+000006FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE100000
+00003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB00000
+0000BFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF50000
+0003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD0000
+0009FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF2000
+000DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF6000
+000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB000
+001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB000
+001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB000
+001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFA000
+000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+000DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF6000
+0009FFFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFFF2000
+0003FFFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFFD0000
+0000BFFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFF50000
+00003FFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFB00000
+000006FFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFE100000
+0000007FFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFD2000000
+00000004EFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFB10000000
+0000000007DF8FFFFFFFFFFFFFFFFFFFFFF8FB4000000000
+000000000002578888888888888888888864100000000000
+}
+
+sprite $robot [48x48/16] {
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000005BFFFFFFFFFFFFFFFFFFFFFE9100000000000
+0000000000AFFFFFFFFFFFFFFFFFFFFFFFFFE30000000000
+0000000007FFFFFFFFFFFFFFFFFFFFFFFFFFFE1000000000
+000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000000000
+000000004FFFFFFFFFFFFFFFFFFFFFFFFFFFFFC000000000
+000000005FFFFFFFFFFFFFFFFFFFFFFFFFFFFFD000000000
+000000005FFFFFFFFFFFFFFFFFFFFFFFFFFFFFE000000000
+000000005FFFFFFFFFFFFFFFFFFFFFFFFFFFFFE000000000
+000699405FFFFFFC427FFFFFFFFFC427FFFFFFE009982000
+008FFF705FFFFFE10006FFFFFFFE00007FFFFFE00FFFF100
+00CFFF705FFFFFA00001FFFFFFF900002FFFFFE00FFFF500
+00DFFF705FFFFFB00002FFFFFFFA00003FFFFFE00FFFF500
+00DFFF705FFFFFF4000AFFFFFFFF3000BFFFFFE00FFFF500
+00DFFF705FFFFFFFA8DFFFFFFFFFFA8DFFFFFFE00FFFF500
+00DFFF705FFFFFFFFFFFFFFFFFFFFFFFFFFFFFE00FFFF500
+00DFFF705FFFFFFFFFFFFFFFFFFFFFFFFFFFFFE00FFFF500
+00DFFF705FFFFFFFFFFFFFFFFFFFFFFFFFFFFFE00FFFF500
+00DFFF705FFFFFFFFFFFFFFFFFFFFFFFFFFFFFE00FFFF500
+00DFFF705FFFFFFFFFFFFFFFFFFFFFFFFFFFFFE00FFFF500
+00CFFF705FFFFFF87777777777777777CFFFFFE00FFFF500
+008FFF705FFFFFF100000000000000009FFFFFE00FFFF100
+000699405FFFFFF76666666666666666CFFFFFE009982000
+000000005FFFFFFFFFFFFFFFFFFFFFFFFFFFFFE000000000
+000000005FFFFFFFFFFFFFFFFFFFFFFFFFFFFFE000000000
+000000004FFFFFFFFFFFFFFFFFFFFFFFFFFFFFC000000000
+000000000EFFFFFFFFFFFFFFFFFFFFFFFFFFFF7000000000
+0000000005FFFFFFFFFFFFFFFFFFFFFFFFFFFD0000000000
+00000000004CFFFFFFFFFFFFFFFFFFFFFFFF910000000000
+000000000000011111111111111111111110000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+}
+
+sprite $robot2 [48x48/16] {
+000000000000000088888888888888880000000000000000
+000000000000000AFFFFFFFFFFFFFFFFA000000000000000
+00000000000000CFFFFFFFFFFFFFFFFFFC00000000000000
+00000000000004EFFFFFFFFFFFFFFFFFFE40000000000000
+0000000000000AFFFFFFFFFFFFFFFFFFFFA0000000000000
+00000000000008FFFFFFFFFFFFFFFFFFFF80000000000000
+00000000000008FFFFFFFFFFFFFFFFFFFF80000000000000
+00000000000008FFFFFFFFFFFFFFFFFFFF80000000000000
+00000000000888FFFFFFFFFFFFFFFFFFFF88800000000000
+00000000008FF8FFFFFFFFFFFFFFFFFFFF8FF80000000000
+00000000008FF8FFFFFFFFFFFFFFFFFFFF8FF80000000000
+00000000008FF8FFFFFFFFFFFFFFFFFFFF8FF80000000000
+00000000008FF8FFFFFFFFFFFFFFFFFFFF8FF80000000000
+00000000008FF8FFFFFFFFFFFFFFFFFFFF8FF80000000000
+00000000008FF8FFFFFFFFFFFFFFFFFFFF8FF80000000000
+00000000000888FFFFFFFFFFFFFFFFFFFF88800000000000
+00000000000008FFFFFFFFFFFFFFFFFFFF80000000000000
+00000000000008FFFFFFFFFFFFFFFFFFFF80000000000000
+00000000000008FFFFFFFFFFFFFFFFFFFF80000000000000
+00000000000008FFFFFFFFFFFFFFFFFFFF80000000000000
+00000000000008FFFFFFFFFFFFFFFFFFFF80000000000000
+00000000000004CFFFFFFFFFFFFFFFFFFC40000000000000
+000000488888848CFFFFFFFFFFFFFFFFC848888884000000
+00000CFFFFFFFFC888888888888888888CFFFFFFFFC00000
+00008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF80000
+0000CFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC0000
+0008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+0008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+0008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+0008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+0008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+0008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+0008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+0008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+0008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+0008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+0008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+0008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+0008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+0008FFFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFFF8000
+0008FFFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFFF8000
+0008FFFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFFF8000
+0008FFFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFFF8000
+0000CFFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFFC0000
+00008FFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFF80000
+00000CFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFC00000
+000000488887578888888888888888888864688884000000
+000000000000000000000000000000000000000000000000
+}
+
+
+
+
+
+skinparam rectangle<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+skinparam database<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+skinparam queue<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+skinparam person<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+skinparam actor<<person>> {
+    StereotypeFontColor #08427B
+    FontColor #08427B
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+skinparam participant<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+skinparam sequencebox<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+
+
+
+skinparam rectangle<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+skinparam database<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+skinparam queue<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+skinparam person<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+skinparam actor<<external_person>> {
+    StereotypeFontColor #686868
+    FontColor #686868
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+skinparam participant<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+skinparam sequencebox<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  skinparam handwritten true
+  skinparam backgroundColor #EEEBDC
+  skinparam defaultFontName Comic Sans MS
+  footer <font color=red>Warning:</font> Created for discussion, needs to be validated
+
+  rectangle "== Institutions\n<size:12>[System]</size>" <<system_boundary>><<boundary>> as dataSources {
+      rectangle "== Retail Shop" <<external_system>> as shop
+      rectangle "== Mall" <<external_system>> as mall
+}
+
+  rectangle "== Yeti System\n<size:12>[System]</size>" <<system_boundary>><<boundary>> as yetiSystem  {
+      rectangle "== Data Ingestion System\n\nSytem which captures video feed from shops and malls. It converts it into raw analytics data." <<system>> as dataIngestSystem
+      rectangle "== Simple Analytics System\n\nUses raw analytics, applies some basic rules to generate simple insights." <<system>> as analyticsSystem
+}
+
+  rectangle "== External Dashboards\n<size:12>[System]</size>" <<system_boundary>><<boundary>> as exDisplay  {
+      rectangle "== Google Dashboard\n\nGets simple insights and creates a dashboard for the clients." <<external_system>> as extDashboard
+}
+
+mall -DOWN->> dataIngestSystem : **Sends Video Feed**\n//<size:12>[RSTP]</size>//
+shop -DOWN->> dataIngestSystem : **Sends Video Feed**\n//<size:12>[RSTP]</size>//
+
+dataIngestSystem -RIGHT->> analyticsSystem : **Provide raw data**\n//<size:12>[SQL/JSON]</size>//
+
+analyticsSystem -DOWN->> extDashboard : **Provides insight data**\n//<size:12>[HTTP]</size>//
+
+@enduml
+
+PlantUML version 1.2022.7(Mon Aug 22 22:31:30 IST 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: Cp1252
+Language: en
+Country: IN
+--></g></svg>

@@ -1,0 +1,28 @@
+@startuml Yeti-System-Context-Diagram
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+
+
+LAYOUT_AS_SKETCH()
+'LAYOUT_WITH_LEGEND()
+
+System_Boundary(dataSources, "Institutions"){
+    System_Ext(shop,"Retail Shop")
+    System_Ext(mall, "Mall")
+}
+
+System_Boundary(yetiSystem, "Yeti System") {
+    System(dataIngestSystem, "Data Ingestion System", "Sytem which captures video feed from shops and malls. It converts it into raw analytics data.")
+    System(analyticsSystem, "Simple Analytics System", "Uses raw analytics, applies some basic rules to generate simple insights.")
+}
+
+System_Boundary(exDisplay, "External Dashboards") {
+    System_Ext(extDashboard, "Google Dashboard", "Gets simple insights and creates a dashboard for the clients.")
+}
+
+Rel_D(mall, dataIngestSystem, "Sends Video Feed", "RSTP")
+Rel_D(shop, dataIngestSystem, "Sends Video Feed", "RSTP")
+
+Rel_R(dataIngestSystem, analyticsSystem, "Provide raw data", "SQL/JSON")
+
+Rel_D(analyticsSystem, extDashboard, "Provides insight data", "HTTP")
+@enduml

@@ -1,5 +1,6 @@
 # Table of Contents 
 1. [Business Process Flow](#business-process-flow)
+2. [System Context Diagram](#system-context-diagram)
 2. [System Container Diagram](#system-container-diagram)
 
 
@@ -37,6 +38,10 @@ sources ---> extraction
 
 ``` 
 
+# System Context Diagram <a name="system-context-diagram"></a>
+
+![Alt text](./diagrams/out/Yeti-System-Context-Diagram.svg)
+<img src="./diagrams/out/Yeti-System-Context-Diagram.svg">
 
 # System Container Diagram <a name="system-container-diagram"></a>
 Following are the independent deployable units or containers which are required to create a fully functional system.
@@ -62,5 +67,3 @@ System_Boundary(yetiSystem,"Yeti System") {
 
 ```
 
-![Alt text](./out/yeti-use-case/Yeti_Use_Case_Diagram.svg)
-<img src="./out/yeti-use-case/Yeti_Use_Case_Diagram.svg">
