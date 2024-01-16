@@ -49,5 +49,11 @@ This diagram depicts the major systems both external and internal Yeti system.
 # System Container Diagram <a name="system-container-diagram"></a>
 Following are the independent deployable units or containers which are required to create a fully functional system.
 
-<img src="./diagrams/out/Yeti-System-Container-Diagram.svg">
+<img src="./diagrams/out/Yeti-System-Container-Diagram.svg"> 
+
+
+# System Component Diagram <a name="system-component-diagram"></a>
+Following diagram depicts different modules which will encapsulate different business logic in the Yeti system.
+
+<img src="./diagrams/out/Yeti-System-Component-Diagram.svg">
 

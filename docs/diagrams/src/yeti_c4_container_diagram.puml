@@ -1,0 +1,63 @@
+@startuml Yeti-System-Container-Diagram
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+'!define DEVICONS https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/devicons
+'!define FONTAWESOME https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/font-awesome-5
+
+
+LAYOUT_AS_SKETCH()
+
+AddElementTag("UnDeveloped",$fontColor="Black", $bgColor="Orange", $borderColor="Orange")
+AddElementTag("Developed",$fontColor="White", $bgColor="DarkGreen", $borderColor="DarkGreen")
+AddElementTag("ToBeUpdated",$fontColor="Black", $bgColor="Aqua", $borderColor="Aqua")
+AddElementTag("UnDecided",$fontColor="Black", $bgColor="Red", $borderColor="Red")
+
+' ****************************** External systems **************************************************
+
+System_Boundary(dataSources, "Institutions"){
+    Container_Boundary(shop,"Retail Shop"){
+        Container_Ext(shopCamera1, "Shop Camera 1", "Hardware", "Provides consistant video feed of a location in the shop")
+        Container_Ext(videoConfigShop, "Camera Configuration Sofware", "Proprietry software", "Provide inteface to configure video cameras")
+    }
+
+    Container_Boundary(mall, "Mall"){
+        Container_Ext(mallCamera1, "Mall Camera 1", "Hardware", "Provides consistant video feed of a location in the mall")
+        Container_Ext(videoConfigMall, "Camera Configuration Sofware", "Proprietry software", "Provide inteface to configure video cameras")
+        
+    }
+    Rel_L(videoConfigShop, shopCamera1, "Configure")
+    Rel_R(videoConfigMall, mallCamera1, "Configure")
+}
+
+' ************************************************ YETI CORE SYSTEM ***************************************
+
+System_Boundary(yetiSystem, "Yeti System") {
+    Container_Boundary(dataIngestSystem, "Data Ingestion sub-System"){
+        Container(feedParser, "Feed Parser", "python/YoloV8", "Parse video feed using Yolo8 & Supervision. Pefrom object detection, tracing and counting", $tags="UnDeveloped")
+        ContainerDb(analyticsStore, "Analytics Store", "PostGreSQL", "Store parsed data from a camera.", $tags="UnDeveloped")
+
+        Rel_L(feedParser, analyticsStore, "Save", "ODBC")
+    }
+
+    Container_Boundary(analyticsSystem, "Simple Analytics sub-System"){
+        Container(rawDataAnalyser, "Raw data analyser", "python", "Apply some rules to basic object detection, tracking and counter data, to generate Basic Insights", $tags="UnDeveloped")
+    }
+
+    Rel_R(rawDataAnalyser, analyticsStore, "Save","ODBC" )
+}
+
+' ******************************************* Dashboard **********************************************
+
+System_Boundary(exDisplay, "External Dashboards") {
+    Container_Boundary(google, "Google Dashboard"){
+        Container(googleDashboard, "Google view", "???", "Show data from analytics store on Dashboards in google.", $tags="UnDecided")
+    }
+}
+
+' ********************************************* Relations **************************************************
+Rel_D(shopCamera1, feedParser, "Provide video feed", "RTSP")
+Rel_D(mallCamera1, feedParser, "Provide video feed", "RTSP")
+
+Rel_D(analyticsStore, googleDashboard, "Pull", "unknown")
+
+@enduml
