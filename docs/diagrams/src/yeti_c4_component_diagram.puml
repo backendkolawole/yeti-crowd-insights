@@ -1,0 +1,91 @@
+@startuml Yeti-System-Component-Diagram
+
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+'!define DEVICONS https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/devicons
+'!define FONTAWESOME https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/font-awesome-5
+
+LAYOUT_AS_SKETCH()
+
+
+AddElementTag("UnDeveloped",$fontColor="Black", $bgColor="Orange", $borderColor="Orange")
+AddElementTag("Developed",$fontColor="White", $bgColor="DarkGreen", $borderColor="DarkGreen")
+AddElementTag("ToBeUpdated",$fontColor="Black", $bgColor="Aqua", $borderColor="Aqua")
+AddElementTag("UnDecided",$fontColor="Black", $bgColor="Red", $borderColor="Red")
+
+AddRelTag("UnDevelopedRel",$textColor="Orange", $lineColor="Orange")
+AddRelTag("DevelopedRel",$textColor="DarkGreen", $lineColor="DarkGreen")
+AddRelTag("ToBeUpdatedRel",$textColor="Aqua", $lineColor="Aqua")
+AddRelTag("UnDecidedRel",$textColor="Red", $lineColor="Red")
+
+AddRelTag("Offline", $textColor="DarkBlue", $lineColor="DarkBlue", $lineStyle=DashedLine())
+
+
+' ****************************** External systems **************************************************
+
+System_Boundary(dataSources, "Institutions"){
+    Container_Boundary(shop,"Retail Shop"){
+        Container_Ext(shopCamera1, "Shop Camera 1", "Hardware", "Provides consistant video feed of a location in the shop")
+        Container_Ext(videoConfigShop, "Camera Configuration Sofware", "Proprietry software", "Provide inteface to configure video cameras")
+    }
+
+    Container_Boundary(mall, "Mall"){
+        Container_Ext(mallCamera1, "Mall Camera 1", "Hardware", "Provides consistant video feed of a location in the mall")
+        Container_Ext(videoConfigMall, "Camera Configuration Sofware", "Proprietry software", "Provide inteface to configure video cameras")
+        
+    }
+    Rel(videoConfigShop, shopCamera1, "Configure")
+    Rel(videoConfigMall, mallCamera1, "Configure")
+}
+
+' ************************************************ YETI CORE SYSTEM ***************************************
+
+System_Boundary(yetiSystem, "Yeti System") {
+    Container_Boundary(dataIngestSystem, "Data Ingestion sub-System"){
+        Boundary(feedParser, "Feed Parser Components", "python/yolo8") {
+            Component(configFile, "Feed Configuration File", "txt", "Lists the location of camera and their settings as CSV values", $tags="UnDeveloped")
+            Component(configReader, "Configuration file reader", "python", "Read the list of cameras settings from the configuration file", $tags="UnDeveloped")
+            Component(videoLoader, "Load video feed", "python", "Start the video feed", $tags="UnDeveloped")
+            Component(frameProcessor, "Process video frame", "Extract frame from the feed, configure polygone and ready frame for processing", $tags="UnDeveloped")
+            Component(objectDetection, "Object Detection (Person)", "python/yolo8", "Detect person object from other objects", $tags="UnDeveloped")
+            Component(trackObject, "Track Object (Person)", "python/yolo8/supervision", "Track each person object with an id", $tags="UnDeveloped")
+            Component(countObjects, "People Counter", "python/yolo8/Supervision", "Count pepole inside a polygon in a time period", $tags="UnDeveloped")
+            Component(saveRawData, "Save Raw data", "python/db adapter??", "Save the raw data in data store", $tags="UnDecided")
+        }
+
+        Boundary(analyticsStore, "Analytics Store Components", "DataStore") {
+            ComponentDb(analyticsDb, "Analytics Database", "Database", "Store analytics data per frame per camera with time stamp", $tags="UnDecided")
+        }
+
+        Rel_R(configFile, configReader, "Provide config", "???", $tags="UnDecidedRel")
+        Rel_D(configReader, videoLoader, "Use config", "python", $tags="UnDevelopedRel")
+        Rel_D(videoLoader, frameProcessor, "Provide feed", "python", $tags="UnDevelopedRel")
+        Rel_D(frameProcessor, objectDetection, "Provide frame", "python/Yolo8", $tags="UnDevelopedRel")
+        Rel_D(frameProcessor, trackObject, "Provide frame", "python/Yolo8", $tags="UnDevelopedRel")
+        Rel_D(frameProcessor, countObjects, "Provide frame", "python/Yolo8", $tags="UnDevelopedRel")
+        Rel_D(objectDetection, saveRawData, "Save", "python", $tags="UnDevelopedRel")
+        Rel_D(trackObject, saveRawData, "Save", "python", $tags="UnDevelopedRel")
+        Rel_D(countObjects, saveRawData, "Save", "python", $tags="UnDevelopedRel")
+        Rel_D(saveRawData, analyticsDb, "Save", "???", $tags="UnDecidedRel")
+
+    }
+
+    Container_Boundary(analyticsSystem, "Simple Analytics sub-System"){
+        Boundary(rawDataAnalyser, "Raw data analyser Components", "python") {
+
+        }
+    }
+
+}
+
+
+' ************************************************ Relations between systems ***************************************
+Rel_D(mall, configFile,"Setup config", "manual", $tags=Offline)
+Rel_D(shop, configFile,"Setup config", "manual", $tags=Offline)
+Rel_D(mallCamera1, videoLoader, "Provide feed", "RSTP", $tags="UnDevelopedRel")
+Rel_D(shopCamera1, videoLoader, "Provide feed", "RSTP", $tags="UnDevelopedRel")
+
+
+SHOW_LEGEND()
+
+@enduml

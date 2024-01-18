@@ -3,6 +3,7 @@
 
 
 LAYOUT_AS_SKETCH()
+
 'LAYOUT_WITH_LEGEND()
 
 System_Boundary(dataSources, "Institutions"){
@@ -25,4 +26,5 @@ Rel_D(shop, dataIngestSystem, "Sends Video Feed", "RSTP")
 Rel_R(dataIngestSystem, analyticsSystem, "Provide raw data", "SQL/JSON")
 
 Rel_D(analyticsSystem, extDashboard, "Provides insight data", "HTTP")
+
 @enduml
