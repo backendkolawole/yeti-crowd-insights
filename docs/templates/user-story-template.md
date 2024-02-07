@@ -8,6 +8,11 @@ As a ..., I want to ..., so I can ...
 
 *Ideally, this is in the issue title, but if not, you can put it here. If so, delete this section.*
 
+# Pre-requisites 
+*either mention another issue/workitem/user-story or state in bullet points.*
+- [ ] 1st pre-requisite
+- [ ] 2nd pre-requisite
+
 # Acceptance criteria
 
 - [ ] This is something that can be verified to show that this user story is satisfied.
