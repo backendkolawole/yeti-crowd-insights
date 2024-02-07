@@ -1,4 +1,7 @@
-
+| name | about | refer |
+| :--: | :--: | :--: |
+| Epic template | This template provides a basic structure for epics. | [User-Story Template](https://github.com/mdn/sprints/tree/master/.github/ISSUE_TEMPLATE) |
+---
 
 # Epic 
 Epic/Feature Summary 
