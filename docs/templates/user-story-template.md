@@ -9,7 +9,8 @@ As a ..., I want to ..., so I can ...
 *Ideally, this is in the issue title, but if not, you can put it here. If so, delete this section.*
 
 # Pre-requisites 
-*either mention another issue/workitem/user-story or state in bullet points.*
+
+Following tasks have completed before taking up this User-story. (*either mention another issue/workitem/user-story or state in bullet points.*)
 - [ ] 1st pre-requisite
 - [ ] 2nd pre-requisite
 
