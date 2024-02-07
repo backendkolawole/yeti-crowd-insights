@@ -10,7 +10,7 @@ As a ..., I want to ..., so I can ...
 
 # Pre-requisites 
 
-Following tasks have completed before taking up this User-story. (*either mention another issue/workitem/user-story or state in bullet points.*)
+Following tasks have completed before taking up this User-story. (*either mention another issue/work-item/user-story or state in bullet points.*)
 - [ ] 1st pre-requisite
 - [ ] 2nd pre-requisite
 
