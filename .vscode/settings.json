@@ -5,5 +5,13 @@
     "plantuml.diagramsRoot": "docs/diagrams/src",
     "plantuml.exportOutDir": "docs/diagrams/out",
     "explorer.confirmDelete": false,
-    "plantuml.exportSubFolder": false
+    "plantuml.exportSubFolder": false,
+    "spellright.language": [
+        "en"
+    ],
+    "spellright.documentTypes": [
+        "markdown",
+        "latex",
+        "plaintext"
+    ]
 }
