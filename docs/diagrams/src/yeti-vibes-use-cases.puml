@@ -1,0 +1,69 @@
+@startuml yeti_vibes_use_case_diagram
+title "Yeti-Vibes Use Cases"
+
+' Layout settings
+skinparam actorStyle awesome
+skinparam handwritten true
+left to right direction
+
+' Actor definitions
+actor :Event Organizer: as Client <<Person>>
+actor :Payment Provider: as PaymentProvider <<Application>>
+
+' Client interaction use cases
+rectangle Client_Interactions {
+    usecase OpensAccount as "Client open's \nan Account \nwith Yeti-Vibes"
+    usecase ClientLogin as "Cleint log's in \nto their account"
+    usecase ValidateSubscription as "Client's subscription \nis validated"
+    usecase ConfigureCamera as "Client provides \ncamera configurations"
+    usecase ConfigureFrame as "Client configure's \nzone on a frame \nfrom the feed"
+    usecase CreateEvent as "Client creates \nan event"
+    usecase MakePayment as "Client makes \npayment for \nthe subscription"
+    usecase ViewReactions as "Client can view \nthe reaction data"
+    usecase DownloadReactions as "Client can download \nreactions offline"
+    usecase ViewInsights as "Client can view \nInsights from \nthe gathered reaction"
+    usecase OffBoardClient as "Client decides to leave \nand is off-boared"
+    usecase RefundPayment as "Client's remaining \namout is calculated"
+    usecase StartEvent as "Start reaction \ngathering for \nthe event"
+}
+
+
+' System process use cases
+rectangle System_Interactions {
+    usecase LoadConfiguration as "System loads \nfeed configuration"
+    usecase ProcessFeed as "System start's to \nprocess the \nfeed in real-time" 
+    usecase IdentifyPerson as "System detects \nand identifies the \nperson in the Zone"
+    usecase CaptureReaction as "System captures \nthe reaction of \nthe person"
+    usecase ValidateReaction as "System validates \nthe reaction \nof the person"
+    usecase SaveReaction as "System saves \nthe reaction"
+    usecase HandlePayment as "Payment is handled \nat the backed"
+}
+
+' Client interactions
+Client --> OpensAccount : Does
+Client --> ClientLogin : Does
+ClientLogin --> ValidateSubscription : Uses
+Client --> ConfigureCamera : Does
+Client --> ConfigureFrame : Does
+Client --> CreateEvent : Does
+Client --> MakePayment : Does
+MakePayment --> HandlePayment : Uses
+Client --> StartEvent : Does
+Client --> ViewReactions : Does
+Client --> DownloadReactions : Does
+Client --> ViewInsights : Does
+Client --> OffBoardClient : Does
+OffBoardClient --> RefundPayment : Triggers
+RefundPayment --> HandlePayment : Uses
+
+
+' System interactions
+StartEvent --> LoadConfiguration : Triggers
+StartEvent --> ProcessFeed : Triggers
+ProcessFeed --> IdentifyPerson : Triggers
+ProcessFeed --> CaptureReaction : Triggers
+CaptureReaction --> ValidateReaction : Runs
+CaptureReaction --> SaveReaction : Runs after validation
+HandlePayment --> PaymentProvider : use
+
+@enduml
