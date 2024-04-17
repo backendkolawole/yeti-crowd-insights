@@ -8,24 +8,26 @@ left to right direction
 
 ' Actor definitions
 actor :Event Organizer: as Client <<Person>>
+actor :User Interface: as UI <<UI Application>>
 actor :Payment Provider: as PaymentProvider <<External Service>>
 
 ' Client interaction use cases
 'rectangle Client_Interactions {
-    usecase OpenAccount as "Open an Account" <<use-interaction>>
-    usecase Login as "Login to Account" <<use-interaction>>
-    usecase ValidateSubscription as "Validate Subscription" <<use-interaction>>
-    usecase ConfigureCamera as "Provide camera \nfeed details" <<use-interaction>>
-    usecase ConfigureFrame as "Configure Zones on Frame" <<use-interaction>>
-    usecase CreateEvent as "Create an event" <<use-interaction>>
-    usecase ChooseSubscription as "Choose Subscription Model" <<use-interaction>>
-    usecase MakePayment as "Make Payment for the subscription" <<use-interaction>>
-    usecase ViewReactions as "View reaction data" <<use-interaction>>
-    usecase DownloadReactions as "Download reactions offline" <<use-interaction>>
-    usecase ViewInsights as "View Insights" <<use-interaction>>
-    usecase CloseAccount as "Close the account" <<use-interaction>>
-    usecase RefundPayment as "Refund the payment" <<use-interaction>>
-    usecase StartEvent as "Start gathering reactions \nfrom the event" <<use-interaction>>
+    usecase OpenAccount as "Open an Account" <<user-interaction>>
+    usecase Login as "Login to Account" <<user-interaction>>
+    usecase ValidateSubscription as "Validate Subscription" <<user-interaction>>
+    usecase ConfigureCamera as "Provide camera \nfeed details" <<user-interaction>>
+    usecase ConfigureFrame as "Configure Zones on Frame" <<user-interaction>>
+    usecase CreateEvent as "Create an event" <<user-interaction>>
+    usecase ShowSubscriptions as "Show Subscription Models" <<user-interaction>>
+    usecase MakePayment as "Make Payment for the subscription" <<user-interaction>>
+    usecase FetchReactions as "Fetch Reactions" <<service-endpoint>>
+    usecase ShowReactions as "Show reaction data" <<user-interaction>>
+    usecase DownloadReactions as "Download reactions offline" <<user-interaction>>
+    usecase ShowInsights as "Show Insights" <<user-interaction>>
+    usecase CloseAccount as "Close the account" <<user-interaction>>
+    usecase RefundPayment as "Refund the payment" <<user-interaction>>
+    usecase StartEvent as "Start the event" <<user-interaction>>
 '}
 
 
@@ -36,28 +38,31 @@ actor :Payment Provider: as PaymentProvider <<External Service>>
     usecase IdentifyPerson as "Detect and identify the person" <<system-process>>
     usecase CaptureReaction as "Capture the reaction " <<system-process>>
     usecase ValidateReaction as "Validate the reaction" <<system-process>>
-    usecase SaveReaction as "Saves the reaction" <<system-process>>
+    usecase SaveReaction as "Save the reaction" <<system-process>>
     usecase GenerateInsights as "Generate insights \non reactions" <<system-process>>
     usecase HandlePayment as "Handle the payment" <<system-process>>
 '}
 
 ' Client interactions
-Client --> OpenAccount : Does
-Client --> Login : Does
+Client --> UI : Uses
+UI --> OpenAccount : Does
+UI --> Login : Does
 Login --> ValidateSubscription : Uses
-Client --> ConfigureCamera : Does
-Client --> ConfigureFrame : Does
-Client --> CreateEvent : Does
-Client --> ChooseSubscription : Does
-Client --> MakePayment : Does
-MakePayment --> ChooseSubscription : Uses
+UI --> ConfigureCamera : Does
+UI --> ConfigureFrame : Does
+UI --> CreateEvent : Does
+UI --> ShowSubscriptions : Does
+UI --> MakePayment : Does
+MakePayment --> ShowSubscriptions : Uses
 MakePayment --> HandlePayment : Calls
-Client --> StartEvent : Does
-Client --> ViewReactions : Does
-Client --> DownloadReactions : Does
-Client --> ViewInsights : Does
-ViewInsights --> GenerateInsights : Calls
-Client --> CloseAccount : Does
+UI --> StartEvent : Does
+UI --> ShowReactions : Does
+UI --> DownloadReactions : Does
+ShowReactions --> FetchReactions : Calls
+DownloadReactions --> FetchReactions : Calls
+UI --> ShowInsights : Does
+ShowInsights --> GenerateInsights : Calls
+UI --> CloseAccount : Does
 CloseAccount --> RefundPayment : Triggers
 RefundPayment --> HandlePayment : Calls
 
