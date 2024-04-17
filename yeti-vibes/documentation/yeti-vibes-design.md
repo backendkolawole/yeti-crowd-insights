@@ -24,4 +24,5 @@ An event is an activity organized by the client for a specific duration. Event c
 RTSP stands for Real-Time Streaming protocol. RTSP is commonly used for streaming media, such as video or audio streams, and is best for media that needs to be broadcasted in real-time.
 
 ## Use-Cases
-
+### Diagram
+<img src="../../docs/diagrams/out/yeti_vibes_use_case_diagram.svg">
