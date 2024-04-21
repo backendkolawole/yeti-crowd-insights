@@ -5,43 +5,48 @@ title "Yeti-Vibes Use Cases"
 skinparam actorStyle awesome
 skinparam handwritten true
 left to right direction
+skinparam usecase {
+    BackgroundColor<<ui-and-service>> SkyBlue
+    BackgroundColor<<business-logic>> LightGreen
+}
+
 
 ' Actor definitions
-actor :Event Organizer: as Client <<Person>>
-actor :User Interface: as UI <<UI Application>>
-actor :Payment Provider: as PaymentProvider <<External Service>>
+actor :Event Organizer: as Client << Human >>
+actor :User Interface: as UI <<Application>>
+actor :Payment Provider: as PaymentProvider <<Application>>
 
-' Client interaction use cases
-'rectangle Client_Interactions {
-    usecase OpenAccount as "Open an Account" <<user-interaction>>
-    usecase Login as "Login to Account" <<user-interaction>>
-    usecase ValidateSubscription as "Validate Subscription" <<user-interaction>>
-    usecase ConfigureCamera as "Provide camera \nfeed details" <<user-interaction>>
-    usecase ConfigureFrame as "Configure Zones on Frame" <<user-interaction>>
-    usecase CreateEvent as "Create an event" <<user-interaction>>
-    usecase ShowSubscriptions as "Show Subscription Models" <<user-interaction>>
-    usecase MakePayment as "Make Payment for the subscription" <<user-interaction>>
-    usecase FetchReactions as "Fetch Reactions" <<service-endpoint>>
-    usecase ShowReactions as "Show reaction data" <<user-interaction>>
-    usecase DownloadReactions as "Download reactions offline" <<user-interaction>>
-    usecase ShowInsights as "Show Insights" <<user-interaction>>
-    usecase CloseAccount as "Close the account" <<user-interaction>>
-    usecase RefundPayment as "Refund the payment" <<user-interaction>>
-    usecase StartEvent as "Start the event" <<user-interaction>>
-'}
+' Client application or service interaction use cases
+
+    usecase OpenAccount as "Open an Account" <<ui-and-service>>
+    usecase Login as "Login to Account" <<ui-and-service>>
+    usecase ValidateSubscription as "Validate Subscription" <<business-logic>>
+    usecase ConfigureCamera as "Provide camera \nfeed details" <<ui-and-service>>
+    usecase ShowVideoFeed as "Show video feed" <<ui-and-service>>
+    usecase ConfigureFrame as "Configure Zones on Frame" <<ui-and-service>>
+    usecase CreateEvent as "Create an event" <<ui-and-service>>
+    usecase ShowSubscriptions as "Show Subscription Models" <<ui-and-service>>
+    usecase MakePayment as "Make Payment for the subscription" <<ui-and-service>>
+    usecase ShowReactions as "Show reaction data" <<ui-and-service>>
+    usecase DownloadReactions as "Download reactions offline" <<ui-and-service>>
+    usecase ShowInsights as "Show Insights" <<ui-and-service>>
+    usecase CloseAccount as "Close the account" <<ui-and-service>>
+    usecase RefundPayment as "Refund the payment" <<ui-and-service>>
+    usecase StartEvent as "Start the event" <<ui-and-service>>
+
 
 
 ' System process use cases
-'rectangle System_Interactions {
-    usecase LoadConfiguration as "Load feed configuration" <<system-process>>
-    usecase ProcessFeed as "Process the \nfeed  real-time" <<system-process>>
-    usecase IdentifyPerson as "Detect and identify the person" <<system-process>>
-    usecase CaptureReaction as "Capture the reaction " <<system-process>>
-    usecase ValidateReaction as "Validate the reaction" <<system-process>>
-    usecase SaveReaction as "Save the reaction" <<system-process>>
-    usecase GenerateInsights as "Generate insights \non reactions" <<system-process>>
-    usecase HandlePayment as "Handle the payment" <<system-process>>
-'}
+    usecase LoadConfiguration as "Load feed configuration" <<business-logic>>
+    usecase RunFeed as "Run video feed" <<business-logic>>
+    usecase ProcessFeed as "Process the \nfeed  real-time" <<business-logic>>
+    usecase IdentifyPerson as "Detect and identify the person" <<business-logic>>
+    usecase CaptureReaction as "Capture the reaction " <<business-logic>>
+    usecase ValidateReaction as "Validate the reaction" <<business-logic>>
+    usecase SaveReaction as "Save the reaction" <<business-logic>>
+    usecase GenerateInsights as "Generate insights \non reactions" <<business-logic>>
+    usecase HandlePayment as "Handle the payment" <<business-logic>>
+
 
 ' Client interactions
 Client --> UI : Uses
@@ -49,7 +54,10 @@ UI --> OpenAccount : Does
 UI --> Login : Does
 Login --> ValidateSubscription : Uses
 UI --> ConfigureCamera : Does
+UI --> ShowVideoFeed : Does
+ShowVideoFeed --> RunFeed : Calls
 UI --> ConfigureFrame : Does
+ConfigureFrame --> RunFeed : Calls
 UI --> CreateEvent : Does
 UI --> ShowSubscriptions : Does
 UI --> MakePayment : Does
@@ -58,8 +66,7 @@ MakePayment --> HandlePayment : Calls
 UI --> StartEvent : Does
 UI --> ShowReactions : Does
 UI --> DownloadReactions : Does
-ShowReactions --> FetchReactions : Calls
-DownloadReactions --> FetchReactions : Calls
+DownloadReactions --> ShowReactions : Uses
 UI --> ShowInsights : Does
 ShowInsights --> GenerateInsights : Calls
 UI --> CloseAccount : Does
@@ -70,6 +77,7 @@ RefundPayment --> HandlePayment : Calls
 ' System interactions
 StartEvent --> LoadConfiguration : Triggers
 StartEvent --> ProcessFeed : Triggers
+ProcessFeed --> RunFeed: Triggers
 ProcessFeed --> IdentifyPerson : Triggers
 ProcessFeed --> CaptureReaction : Triggers
 CaptureReaction --> ValidateReaction : Runs
