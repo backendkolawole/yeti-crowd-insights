@@ -18,34 +18,34 @@ actor :Payment Provider: as PaymentProvider <<Application>>
 
 ' Client application or service interaction use cases
 
-    usecase OpenAccount as "Open an Account" <<ui-and-service>>
-    usecase Login as "Login to Account" <<ui-and-service>>
-    usecase ValidateSubscription as "Validate Subscription" <<business-logic>>
-    usecase ConfigureCamera as "Provide camera \nfeed details" <<ui-and-service>>
-    usecase ShowVideoFeed as "Show video feed" <<ui-and-service>>
-    usecase ConfigureFrame as "Configure Zones on Frame" <<ui-and-service>>
-    usecase CreateEvent as "Create an event" <<ui-and-service>>
-    usecase ShowSubscriptions as "Show Subscription Models" <<ui-and-service>>
-    usecase MakePayment as "Make Payment for the subscription" <<ui-and-service>>
-    usecase ShowReactions as "Show reaction data" <<ui-and-service>>
-    usecase DownloadReactions as "Download reactions offline" <<ui-and-service>>
-    usecase ShowInsights as "Show Insights" <<ui-and-service>>
-    usecase CloseAccount as "Close the account" <<ui-and-service>>
-    usecase RefundPayment as "Refund the payment" <<ui-and-service>>
-    usecase StartEvent as "Start the event" <<ui-and-service>>
+    usecase OpenAccount as "010 - Open an Account" <<ui-and-service>>
+    usecase Login as "020 - Login to Account" <<ui-and-service>>
+    usecase ValidateSubscription as "030 - Validate Subscription" <<business-logic>>
+    usecase ConfigureCamera as "040 - Provide camera \nfeed details" <<ui-and-service>>
+    usecase ShowVideoFeed as "050 - Show video feed" <<ui-and-service>>
+    usecase ConfigureFrame as "060 - Configure Zones on Frame" <<ui-and-service>>
+    usecase CreateEvent as "070 - Create an event" <<ui-and-service>>
+    usecase ShowSubscriptions as "080 - Show Subscription Models" <<ui-and-service>>
+    usecase MakePayment as "090 - Make Payment for the subscription" <<ui-and-service>>
+    usecase ShowReactions as "100 - Show reaction data" <<ui-and-service>>
+    usecase DownloadReactions as "110 - Download reactions offline" <<ui-and-service>>
+    usecase ShowInsights as "120 - Show Insights" <<ui-and-service>>
+    usecase CloseAccount as "130 - Close the account" <<ui-and-service>>
+    usecase RefundPayment as "140 - Refund the payment" <<ui-and-service>>
+    usecase StartEvent as "150 - Start the event" <<ui-and-service>>
 
 
 
 ' System process use cases
-    usecase LoadConfiguration as "Load feed configuration" <<business-logic>>
-    usecase RunFeed as "Run video feed" <<business-logic>>
-    usecase ProcessFeed as "Process the \nfeed  real-time" <<business-logic>>
-    usecase IdentifyPerson as "Detect and identify the person" <<business-logic>>
-    usecase CaptureReaction as "Capture the reaction " <<business-logic>>
-    usecase ValidateReaction as "Validate the reaction" <<business-logic>>
-    usecase SaveReaction as "Save the reaction" <<business-logic>>
-    usecase GenerateInsights as "Generate insights \non reactions" <<business-logic>>
-    usecase HandlePayment as "Handle the payment" <<business-logic>>
+    usecase LoadConfiguration as "160 - Load feed configuration" <<business-logic>>
+    usecase RunFeed as "170 - Run video feed" <<business-logic>>
+    usecase ProcessFeed as "180 - Process the \nfeed  real-time" <<business-logic>>
+    usecase IdentifyPerson as "190 - Detect and identify the person" <<business-logic>>
+    usecase CaptureReaction as "200 - Capture the reaction " <<business-logic>>
+    usecase ValidateReaction as "210 - Validate the reaction" <<business-logic>>
+    usecase SaveReaction as "220 - Save the reaction" <<business-logic>>
+    usecase GenerateInsights as "230 - Generate insights \non reactions" <<business-logic>>
+    usecase HandlePayment as "240 - Handle the payment" <<business-logic>>
 
 
 ' Client interactions
