@@ -1,0 +1,13 @@
+{
+    "feed_config" : [
+        {
+            "EventId": 1,
+            "FeedId": 1,
+            "FeedName": "examplename",
+            "RTSPLink": "https://www.json.org/json-en.html",
+            "FeedPolygon": [],
+            "isActive": "false"
+        }
+    ]
+}
+

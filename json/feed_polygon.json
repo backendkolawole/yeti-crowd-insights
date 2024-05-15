@@ -1,0 +1,11 @@
+{
+    "feed_polygon" : [
+        {
+            "FeedId": 1,
+            "PolygonId": 1,
+            "PolygonName": "example name",
+            "Polygon": [[0,1]],
+            "PolygonColor": []
+        }
+    ]
+}
