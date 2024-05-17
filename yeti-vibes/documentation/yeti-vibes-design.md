@@ -35,4 +35,7 @@ RTSP stands for Real-Time Streaming protocol. RTSP is commonly used for streamin
 <img src="../../docs/diagrams/out/yeti_vibes_use_case_diagram.svg">
 
 ### Documentation
+- [Use-Case: 145 - Show List of events](use-cases/145-Show_List_of_events.md)
+- [Use-Case: 150 - Start the event](use-cases/150-Start_the_event.md)
 - [Use-Case: 160 - Load Feed Configuration](use-cases/160-Load_Feed_Configuration.md)
+- [Use-Case: 180 - Process the feed in real-time](use-cases/180-Process_the_feed_real-time.md)
