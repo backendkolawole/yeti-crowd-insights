@@ -37,7 +37,7 @@ This use-case start the event selected by the client or it just starts all the e
 - It should have the following properties:
     - a function property `run_the_event` which accepts an `Event` object as parameter.
 - `run_the_event` should call the `load_feeds` method of `Event` object to, load the feeds.
-- Iteratively initialize `FeedProcessor` class and call its method `process_the_feed` for each feed of the event.
+- Iteratively initialize `FeedProcessor` class and call its method `process_the_feed` for each feed of the event. Refer use-case [180 - Process the feed in real-time](180-Process_the_feed_real-time.md)
 
 
 ### Reference

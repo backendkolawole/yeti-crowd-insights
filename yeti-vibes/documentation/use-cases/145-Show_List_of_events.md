@@ -28,9 +28,9 @@ Shows a list of events for a client on a UI
 
 ## Implementation Details
 
-## Data Source for Events
+### Data Source for Events
 
-### Json file (POC implementation)
+#### Json file (POC implementation)
 
 - Define a json file `event_config.json`
 - it should have the following fields
@@ -45,16 +45,15 @@ Shows a list of events for a client on a UI
 - isActive flag as boolean.
 
 
-## Class Description
+### Class Description
 
-### `EventLoader` Class
+#### `EventLoader` Class
 
 - This class loads Events for a given client Id.
 - It has a method `load_events` which takes a client Id as parameter.
-  - it also takes the file path of the `event_config.json`.
 - The method returns an array of objects of `Event` type for that client id.
 
-### `Event` Class
+#### `Event` Class
 
 - this class holds the details of an event of the client
 - This class has following properties:
@@ -66,4 +65,5 @@ Shows a list of events for a client on a UI
   - EndDate as DateTime
   - IsActive as boolean. (this flag decides if the event should be run or not)
   - Array of `Feed` objects
-- Initialize class `FeedHandler`, use its function `load_feeds` and fill the `Feed` objects, defined in use case [Use-Case: 160 - Load Feed Configuration](160-Load_Feed_Configuration.md), to load feeds for this event.
+- Create a function `get_feeds` which uses `self.EvenId` as parameter.
+    - this functions initializes class `FeedHandler`, use its function `load_feeds` and fill the `Feed` objects, defined in use case [Use-Case: 160 - Load Feed Configuration](160-Load_Feed_Configuration.md), to load feeds for this event.
