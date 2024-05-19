@@ -4,6 +4,18 @@ feed_path = '../json/feed_config.json'
 polygon_path = '../json/feed_polygon.json'
 event_path = '../json/event_config.json'
 
+
+class StartEvent:
+    def __init__(self):
+        pass
+
+    def run_the_event(self, event_object):
+        feed = event_object.get_feeds(feed_path=feed_path, event_id=event_id)
+
+        feed_processor = FeedProcessor()
+        feed_processor.process_the_feed(feed_object=feed)
+        
+
 class FeedProcessor:
     def __init__(self):
         self.processed_feed = []
