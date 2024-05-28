@@ -67,3 +67,4 @@ Shows a list of events for a client on a UI
   - Array of `Feed` objects
 - Create a function `get_feeds` which uses `self.EvenId` as parameter.
     - this function loads the feeds from the data source and fills the `Feed` objects, defined in use case [Use-Case: 160 - Load Feed Configuration](160-Load_Feed_Configuration.md), to load feeds for this event.
+    - load for each `Feed` object initialized also call its `load_polygon` method to load there poygons.
