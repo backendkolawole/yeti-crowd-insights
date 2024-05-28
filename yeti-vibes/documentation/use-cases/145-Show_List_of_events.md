@@ -66,4 +66,4 @@ Shows a list of events for a client on a UI
   - IsActive as boolean. (this flag decides if the event should be run or not)
   - Array of `Feed` objects
 - Create a function `get_feeds` which uses `self.EvenId` as parameter.
-    - this functions initializes class `FeedHandler`, use its function `load_feeds` and fill the `Feed` objects, defined in use case [Use-Case: 160 - Load Feed Configuration](160-Load_Feed_Configuration.md), to load feeds for this event.
+    - this function loads the feeds from the data source and fills the `Feed` objects, defined in use case [Use-Case: 160 - Load Feed Configuration](160-Load_Feed_Configuration.md), to load feeds for this event.
