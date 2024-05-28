@@ -60,11 +60,6 @@ The Feed configuration is loaded from the configuration file and returned to the
 - Define a function in the class called `load_polygons`.
     - it should take `self.FeedId` as parameter and return and array of `FeedPolygon` objects
 
-#### `FeedHandler` class
-- Define a Class `FeedHandler`
-- Define a function to `load_feeds` which should take an EventId as parameter.
-    - for each `Feed` object call its `load_polygons` function to fill this object's `FeedPolygon` array.
-- It should return all the feeds of that event as an array of `Feed` objects.
 
 ### Reference
 - [An Ultralytics Example at GitHub using CV2](https://github.com/RizwanMunawar/ultralytics/blob/main/examples/YOLOv8-Region-Counter/yolov8_region_counter.py)
