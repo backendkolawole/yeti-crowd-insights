@@ -6,33 +6,34 @@ skinparam actorStyle awesome
 skinparam handwritten true
 left to right direction
 skinparam usecase {
-    BackgroundColor<<ui-and-service>> SkyBlue
+    BackgroundColor<<user-interaction>> SkyBlue
     BackgroundColor<<business-logic>> LightGreen
+    BackgroundColor<<service-end-point>> Yellow
 }
 
 
 ' Actor definitions
 actor :Event Organizer: as Client << Human >>
-actor :User Interface: as UI <<Application>>
 actor :Payment Provider: as PaymentProvider <<Application>>
 
 ' Client application or service interaction use cases
 
-    usecase OpenAccount as "010 - Open an Account" <<ui-and-service>>
-    usecase Login as "020 - Login to Account" <<ui-and-service>>
+    usecase OpenAccount as "010 - Open an Account" <<user-interaction>>
+    usecase Login as "020 - Login to Account" <<user-interaction>>
     usecase ValidateSubscription as "030 - Validate Subscription" <<business-logic>>
-    usecase ConfigureCamera as "040 - Provide camera \nfeed details" <<ui-and-service>>
-    usecase ShowVideoFeed as "050 - Show video feed" <<ui-and-service>>
-    usecase ConfigureFrame as "060 - Configure Zones on Frame" <<ui-and-service>>
-    usecase CreateEvent as "070 - Create an event" <<ui-and-service>>
-    usecase ShowSubscriptions as "080 - Show Subscription Models" <<ui-and-service>>
-    usecase MakePayment as "090 - Make Payment for the subscription" <<ui-and-service>>
-    usecase ShowReactions as "100 - Show reaction data" <<ui-and-service>>
-    usecase DownloadReactions as "110 - Download reactions offline" <<ui-and-service>>
-    usecase ShowInsights as "120 - Show Insights" <<ui-and-service>>
-    usecase CloseAccount as "130 - Close the account" <<ui-and-service>>
-    usecase RefundPayment as "140 - Refund the payment" <<ui-and-service>>
-    usecase StartEvent as "150 - Start the event" <<ui-and-service>>
+    usecase ConfigureCamera as "040 - Provide camera \nfeed details" <<user-interaction>>
+    usecase ShowVideoFeed as "050 - Show video feed" <<user-interaction>>
+    usecase ConfigureFrame as "060 - Configure Zones on Frame" <<user-interaction>>
+    usecase CreateEvent as "070 - Create an event" <<user-interaction>>
+    usecase ShowSubscriptions as "080 - Show Subscription Models" <<user-interaction>>
+    usecase MakePayment as "090 - Make Payment for the subscription" <<user-interaction>>
+    usecase ShowReactions as "100 - Show reaction data" <<user-interaction>>
+    usecase DownloadReactions as "110 - Download reactions offline" <<user-interaction>>
+    usecase ShowInsights as "120 - Show Insights" <<user-interaction>>
+    usecase CloseAccount as "130 - Close the account" <<user-interaction>>
+    usecase RefundPayment as "140 - Refund the payment" <<user-interaction>>
+    usecase ShowEvents as "145 - Show list of events" <<user-interaction>>
+    usecase StartEvent as "150 - Start the event" <<user-interaction>>
 
 
 
@@ -49,27 +50,27 @@ actor :Payment Provider: as PaymentProvider <<Application>>
 
 
 ' Client interactions
-Client --> UI : Uses
-UI --> OpenAccount : Does
-UI --> Login : Does
+Client --> OpenAccount : Does
+Client --> Login : Does
 Login --> ValidateSubscription : Uses
-UI --> ConfigureCamera : Does
-UI --> ShowVideoFeed : Does
+Client --> ConfigureCamera : Does
+Client --> ShowVideoFeed : Does
 ShowVideoFeed --> RunFeed : Calls
-UI --> ConfigureFrame : Does
+Client --> ConfigureFrame : Does
 ConfigureFrame --> RunFeed : Calls
-UI --> CreateEvent : Does
-UI --> ShowSubscriptions : Does
-UI --> MakePayment : Does
+Client --> CreateEvent : Does
+Client --> ShowSubscriptions : Does
+Client --> MakePayment : Does
 MakePayment --> ShowSubscriptions : Uses
 MakePayment --> HandlePayment : Calls
-UI --> StartEvent : Does
-UI --> ShowReactions : Does
-UI --> DownloadReactions : Does
+Client --> ShowEvents : Uses
+Client --> StartEvent : Does
+Client --> ShowReactions : Does
+Client --> DownloadReactions : Does
 DownloadReactions --> ShowReactions : Uses
-UI --> ShowInsights : Does
+Client --> ShowInsights : Does
 ShowInsights --> GenerateInsights : Calls
-UI --> CloseAccount : Does
+Client --> CloseAccount : Does
 CloseAccount --> RefundPayment : Triggers
 RefundPayment --> HandlePayment : Calls
 

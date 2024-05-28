@@ -40,24 +40,31 @@ The Feed configuration is loaded from the configuration file and returned to the
 
 ## Implementation Details
 ### Class Description
-- Define a Class `LoadFeedConfiguration`
-- It should accept the `Event` object as argument.
-- Create a function `load_feed_configurations` to load all the Feed configurations for that event in the structure `FeedConfigurations`.
-- `FeedConfigurations` structure should have properties:
-    - `EventId` as integer
-    - `FeedId` as integer
-    - `FeedName` as string
-    - `RTSPLink` as URL
-    - an array of `FeedPolygon` structure
-    - `IsActive` as Boolean
-- Create a function `load_feed_polygons` and call it to load all the polygon configuration for the event.
-- all the polygons should be loaded in an array of `FeedPolygon` structure.
-- `FeedPolygon` should have the structure:
+#### `FeedPolygon` class
+- Define a `FeedPolygon` class
+- It should have the following properties:
     - `FeedId` as integer
     - `PolygonId` as integer
     - `PolygonName` as string
     - `Polygon` as list of vertices (can be provided to CV2 library)
     - `PolygonColor` as array of int, A BGR value'
+
+#### `Feed` class
+- Define a `Feed` class with the following properties:
+    - `EventId` as integer
+    - `FeedId` as integer
+    - `FeedName` as string
+    - `RTSPLink` as URL
+    - an array of `FeedPolygon` objects
+    - `IsActive` as Boolean
+- Define a function in the class called `load_polygons`.
+    - it should take `self.FeedId` as parameter and return and array of `FeedPolygon` objects
+
+#### `FeedHandler` class
+- Define a Class `FeedHandler`
+- Define a function to `load_feeds` which should take an EventId as parameter.
+    - for each `Feed` object call its `load_polygons` function to fill this object's `FeedPolygon` array.
+- It should return all the feeds of that event as an array of `Feed` objects.
 
 ### Reference
 - [An Ultralytics Example at GitHub using CV2](https://github.com/RizwanMunawar/ultralytics/blob/main/examples/YOLOv8-Region-Counter/yolov8_region_counter.py)
