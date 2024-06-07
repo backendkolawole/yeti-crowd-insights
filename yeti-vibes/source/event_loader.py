@@ -1,7 +1,6 @@
 import json
-from feed_handler import FeedHandler, FeedProcessor
+from feed_handler import FeedHandler
 
-#  use-case "145 - Show List of events"
 class Event:
     def __init__(self):
         self.feeds = []
@@ -12,7 +11,6 @@ class Event:
         return self.feeds
     
 
-#  use-case "145 - Show List of events"
 class EventLoader:
     def __init__(self):
         self.events = []
