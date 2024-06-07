@@ -1,6 +1,5 @@
 import json
-from app import polygon_path
-from utils import process_feed
+from common import polygon_path
 
 
 # Use-Case: 160 - Load Feed Configuration
@@ -45,9 +44,10 @@ class FeedHandler:
 class FeedProcessor:
     def __init__(self, feed):
         self.feed = feed
-    
-    def process(self):
-        process_feed(self.feed)
+        self.rtsp_link = self.feed['RTSPLink']
+
+    def process_feed(self):
+        print(f"feed: {self.feed} is currently being processed, \n here is the rtsp link: {self.rtsp_link}")
     
     
         
