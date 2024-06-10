@@ -7,7 +7,8 @@ class Event:
 
     def get_feeds(self, feed_path, event_id):
         feed = FeedHandler()
-        self.feeds = feed.load_feeds(feed_path, event_id)
+        feeds = feed.load_feeds(feed_path, event_id)
+        self.feeds = feeds
         return self.feeds
     
 
@@ -24,3 +25,7 @@ class EventLoader:
                 self.events.append(event)
 
         return self.events
+    
+    
+
+
