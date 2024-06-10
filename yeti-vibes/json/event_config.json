@@ -21,7 +21,7 @@
         },
         {
             "Client Id": 2,
-            "Event Id": 1,
+            "Event Id": 3,
             "Event name": "first event for client with id 2",
             "Event description": "description for event with id 1",
             "Start date/time": "",
@@ -30,7 +30,7 @@
         },
         {
             "Client Id": 2,
-            "Event Id": 2,
+            "Event Id": 4,
             "Event name": "second event for client with id 2",
             "Event description": "description for event with id 2",
             "Start date/time": "",
