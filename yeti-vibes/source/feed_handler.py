@@ -1,7 +1,7 @@
 import json
 from common import polygon_path
-from IPython.display import HTML, Video, IFrame
-import time
+from IPython.display import HTML
+import cv2
 
 # Use-Case: 160 - Load Feed Configuration
 class Feed:
@@ -47,19 +47,59 @@ class FeedProcessor:
     def __init__(self, feed):
         self.feed = feed
         
+    def verify_and_consume_rtsp(self, rtsp_link, username=None, password=None):
+        # Build the OpenCV video capture object
+        cap = cv2.VideoCapture(rtsp_link)
 
+        # Check if video capture object was created successfully
+        if not cap.isOpened():
+            print(f"Error opening RTSP stream: {rtsp_link}")
+            return False
+
+        # Optional: Add username and password for authentication (if needed)
+        if username and password:
+            ret, frame = cap.read()
+            while ret:
+                # Check for frame validity (indicates successful authentication)
+                if frame is None:
+                    print("Failed to retrieve frame. Authentication might be required.")
+                    cap.release()
+                    return False
+                ret, frame = cap.read()
+
+            # Close the stream after checking authentication (optional cleanup)
+            cap.release()
+            cv2.destroyAllWindows()
+            return False
+
+        # Stream is accessible, start consuming frames
+        while True:
+            ret, frame = cap.read()
+
+            # Check if frame is retrieved successfully
+            if not ret:
+                print("Error retrieving frame")
+                break
+
+            # Process the frame here (e.g., display, analyze)
+            cv2.imshow("Video Stream", frame)
+
+            # Exit loop if 'q' key is pressed
+            if cv2.waitKey(1) == ord('q'):
+                break
+
+        # Release resources
+        cap.release()
+        cv2.destroyAllWindows()
+
+        return True
+    
     def process_feed(self):
         rtsp_link = self.feed['RTSPLink']
         print(f"feed: {self.feed} is currently being processed, \n here is the rtsp link: {rtsp_link}")
-        # return HTML(f'<video width="640" height="360" controls><source src="{rtsp_link}" type="video/mp4">Your browser does not support the video tag.</video>')
-        video_html = f'''
-        <img src="{rtsp_link}" width="640" height="480" alt="Motion JPEG Video Stream">
-        '''
-
-
-        # Display the video stream
-        HTML(video_html)
-                
+        return self.verify_and_consume_rtsp(rtsp_link)
+    
+        
     
     
         
