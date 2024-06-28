@@ -1,59 +1,65 @@
 import json
 from common import polygon_path
-from IPython.display import HTML
 import cv2
 
 # Use-Case: 160 - Load Feed Configuration
-class Feed:
-    def __init__(self):
-        self.feed_polygons = []
 
-    def load_polygons(self, feed_id, polygon_path):
+
+class Feed:
+    def __init__(self, feed_id, polygon_path):
+        self.feed_polygons = []
+        self.feed_id = feed_id
+        self.polygon_path = polygon_path
+
+    def load_polygons(self):
         # logic to load the data on the basis of feed_id
 
         with open(polygon_path, 'r') as f:
             data = json.load(f)
 
         for polygon in data["feed_polygon"]:
-            if (polygon['FeedId'] == feed_id):
+            if (polygon['FeedId'] == self.feed_id):
                 self.feed_polygons.append(polygon)
-                
+
         return self.feed_polygons
-    
-    
+
+
 # Use-Case: 160 - Load Feed Configuration
 class FeedHandler:
-    def __init__(self):
+    def __init__(self, event_id, feed_path):
         self.feed = []
+        self.event_id = event_id
+        self.feed_path = feed_path
 
     # logic to load feeds and their polygons
-    def load_feeds(self, feed_path, event_id):
-        
-        with open(feed_path, 'r') as f:
+    def load_feeds(self):
+
+        with open(self.feed_path, 'r') as f:
             data = json.load(f)
-        
+
         for feed_item in data["feed_config"]:
-            if (feed_item["EventId"] == event_id):   
+            if (feed_item["EventId"] == self.event_id):
                 matching_feed = feed_item
-                feed_id = matching_feed["FeedId"]                
-                feed = Feed()
-                feed_polygons = feed.load_polygons(feed_id=feed_id, polygon_path=polygon_path)
+                feed_id = matching_feed["FeedId"]
+                feed = Feed(feed_id, polygon_path)
+                feed_polygons = feed.load_polygons()
                 matching_feed['Polygons'] = feed_polygons
                 self.feed.append(matching_feed)
         return self.feed
-        
+
 
 class FeedProcessor:
-    def __init__(self, feed):
-        self.feed = feed
-        
-    def verify_and_consume_rtsp(self, rtsp_link, username=None, password=None):
+    def __init__(self, feed_object):
+        self.feed = feed_object
+        self.rtsp_link = self.feed['RTSPLink']
+
+    def verify_and_consume_rtsp(self, username=None, password=None):
         # Build the OpenCV video capture object
-        cap = cv2.VideoCapture(rtsp_link)
+        cap = cv2.VideoCapture(self.rtsp_link)
 
         # Check if video capture object was created successfully
         if not cap.isOpened():
-            print(f"Error opening RTSP stream: {rtsp_link}")
+            print(f"Error opening RTSP stream: {self.rtsp_link}")
             return False
 
         # Optional: Add username and password for authentication (if needed)
@@ -93,15 +99,43 @@ class FeedProcessor:
         cv2.destroyAllWindows()
 
         return True
-    
-    def process_feed(self):
-        rtsp_link = self.feed['RTSPLink']
-        print(f"feed: {self.feed} is currently being processed, \n here is the rtsp link: {rtsp_link}")
-        return self.verify_and_consume_rtsp(rtsp_link)
-    
-        
-    
-    
-        
-        
 
+    def capture_and_display_frame(self):
+
+        # Open the video capture device (e.g., webcam)
+        cap = cv2.VideoCapture(self.rtsp_link)
+
+        # Check if the video capture was successful
+        if not cap.isOpened():
+            print("Failed to open video capture device.")
+            exit()
+
+        # Main loop
+        while True:
+            # Read a frame from the video stream
+            ret, frame = cap.read()
+
+            # Check if the frame was read successfully
+            if not ret:
+                print("Failed to read a frame from the video stream.")
+                break
+
+            # Display the frame
+            # print(ret, frame)
+            cv2.imshow("Video Frame", frame)
+
+            # Wait for the user to press 'q' to quit
+            if cv2.waitKey(1) & 0xFF == ord('q'):
+                break
+
+        # Release the video capture device and close all windows
+        cap.release()
+        cv2.destroyAllWindows()
+
+    def process_feed(self):
+
+        print(f"feed: {self.feed} is currently being processed, \n here is the rtsp link: {self.rtsp_link}")
+        return self.verify_and_consume_rtsp(self.rtsp_link)
+    
+    def my_method(self):
+        print(f"feed = {self.feed}, rtsp = {self.rtsp_link}")
