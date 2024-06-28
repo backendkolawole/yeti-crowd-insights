@@ -135,7 +135,11 @@ class FeedProcessor:
     def process_feed(self):
 
         print(f"feed: {self.feed} is currently being processed, \n here is the rtsp link: {self.rtsp_link}")
-        return self.verify_and_consume_rtsp(self.rtsp_link)
+        return self.verify_and_consume_rtsp(username=None, password=None)
+    
+    def get_frame(self):
+        print(f"feed: {self.feed} \n here is the rtsp link for the video stream.: {self.rtsp_link}")
+        return self.capture_and_display_frame()
     
     def my_method(self):
         print(f"feed = {self.feed}, rtsp = {self.rtsp_link}")

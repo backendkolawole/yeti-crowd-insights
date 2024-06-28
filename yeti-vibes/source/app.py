@@ -19,11 +19,14 @@ class StartEvent:
             print(dir(processor))
             return processor.process_feed()
 
-    def count_the_objects(self):
-        # processor = FeedProcessor(feed_object)
-
-        # return processor.process_feed()
-        pass
+    def display_a_frame(self):
+        event = Event(self.feed_path, self.event_id)
+        feeds = event.get_feeds()
+        
+        for feed_object in feeds:
+            processor = FeedProcessor(feed_object)
+            print(dir(processor))
+            return processor.get_frame()
 
 
 class ShowListOfEvents:
@@ -47,7 +50,8 @@ def main():
 
     for event_object in event_list:
         event_runner = StartEvent(event_object, feed_path)
-        return event_runner.run_the_event()
+        # return event_runner.run_the_event()
+        return event_runner.display_a_frame()
 
 
 # Call the main function
