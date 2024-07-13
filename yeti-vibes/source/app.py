@@ -9,21 +9,42 @@ class StartEvent:
         self.event_id = event_object["Event Id"]
         self.feed_path = feed_path
 
-    def run_the_event(self):
 
+    def display_a_frame(self):
+        event = Event(self.feed_path, self.event_id)
+        feeds = event.get_feeds()
+        
+        for feed_object in feeds:
+            processor = FeedProcessor(feed_object)
+            # print(type(processor))
+            return processor.get_frame()
+    
+    def detect_the_objects(self):
         event = Event(self.feed_path, self.event_id)
         feeds = event.get_feeds()
 
         for feed_object in feeds:
             processor = FeedProcessor(feed_object)
-            print(dir(processor))
-            return processor.process_feed()
+            # print(type(processor))
+            return processor.detect_objects()
+    
+    def count_in_region(self):
+        event = Event(self.feed_path, self.event_id)
+        feeds = event.get_feeds()
 
-    def count_the_objects(self):
-        # processor = FeedProcessor(feed_object)
+        for feed_object in feeds:
+            processor = FeedProcessor(feed_object)
+            # print(type(processor))
+            return processor.count_in_region()
+    
+    def count_in_polygon(self):
+        event = Event(self.feed_path, self.event_id)
+        feeds = event.get_feeds()
 
-        # return processor.process_feed()
-        pass
+        for feed_object in feeds:
+            processor = FeedProcessor(feed_object)
+            # print(type(processor))
+            return processor.count_in_polygon()
 
 
 class ShowListOfEvents:
@@ -42,12 +63,17 @@ class ShowListOfEvents:
 def main():
 
     events = ShowListOfEvents(event_path, client_id)
-
     event_list = events.show_list_of_events()
 
     for event_object in event_list:
         event_runner = StartEvent(event_object, feed_path)
-        return event_runner.run_the_event()
+        # return event_runner.display_a_frame()
+        # return event_runner.detect_the_objects()
+        # return event_runner.count_in_region()
+        return event_runner.count_in_polygon()
+
+
+
 
 
 # Call the main function

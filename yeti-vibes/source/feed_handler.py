@@ -1,6 +1,7 @@
-import json
 from common import polygon_path
-import cv2
+from utils import capture_and_display_frame, count_people_in_region, detect_and_track_objects
+import json
+from yolov8_region_counter import run 
 
 # Use-Case: 160 - Load Feed Configuration
 
@@ -53,89 +54,29 @@ class FeedProcessor:
         self.feed = feed_object
         self.rtsp_link = self.feed['RTSPLink']
 
-    def verify_and_consume_rtsp(self, username=None, password=None):
-        # Build the OpenCV video capture object
-        cap = cv2.VideoCapture(self.rtsp_link)
+    def get_frame(self):
+        print(f"feed: {self.feed} \n here is the rtsp link for the video stream.: {self.rtsp_link}")
+        return capture_and_display_frame(self.rtsp_link)
 
-        # Check if video capture object was created successfully
-        if not cap.isOpened():
-            print(f"Error opening RTSP stream: {self.rtsp_link}")
-            return False
-
-        # Optional: Add username and password for authentication (if needed)
-        if username and password:
-            ret, frame = cap.read()
-            while ret:
-                # Check for frame validity (indicates successful authentication)
-                if frame is None:
-                    print("Failed to retrieve frame. Authentication might be required.")
-                    cap.release()
-                    return False
-                ret, frame = cap.read()
-
-            # Close the stream after checking authentication (optional cleanup)
-            cap.release()
-            cv2.destroyAllWindows()
-            return False
-
-        # Stream is accessible, start consuming frames
-        while True:
-            ret, frame = cap.read()
-
-            # Check if frame is retrieved successfully
-            if not ret:
-                print("Error retrieving frame")
-                break
-
-            # Process the frame here (e.g., display, analyze)
-            cv2.imshow("Video Stream", frame)
-
-            # Exit loop if 'q' key is pressed
-            if cv2.waitKey(1) == ord('q'):
-                break
-
-        # Release resources
-        cap.release()
-        cv2.destroyAllWindows()
-
-        return True
-
-    def capture_and_display_frame(self):
-
-        # Open the video capture device (e.g., webcam)
-        cap = cv2.VideoCapture(self.rtsp_link)
-
-        # Check if the video capture was successful
-        if not cap.isOpened():
-            print("Failed to open video capture device.")
-            exit()
-
-        # Main loop
-        while True:
-            # Read a frame from the video stream
-            ret, frame = cap.read()
-
-            # Check if the frame was read successfully
-            if not ret:
-                print("Failed to read a frame from the video stream.")
-                break
-
-            # Display the frame
-            # print(ret, frame)
-            cv2.imshow("Video Frame", frame)
-
-            # Wait for the user to press 'q' to quit
-            if cv2.waitKey(1) & 0xFF == ord('q'):
-                break
-
-        # Release the video capture device and close all windows
-        cap.release()
-        cv2.destroyAllWindows()
-
-    def process_feed(self):
-
-        print(f"feed: {self.feed} is currently being processed, \n here is the rtsp link: {self.rtsp_link}")
-        return self.verify_and_consume_rtsp(self.rtsp_link)
+    def detect_objects(self):
+        print(f"feed: {self.feed} \n here is the rtsp link for the video stream.: {self.rtsp_link}")
+        return detect_and_track_objects(self.rtsp_link)
     
-    def my_method(self):
-        print(f"feed = {self.feed}, rtsp = {self.rtsp_link}")
+    def count_in_region(self):
+        print(f"feed: {self.feed} \n here is the rtsp link for the video stream.: {self.rtsp_link}")
+        return count_people_in_region(self.rtsp_link)
+    
+    def count_in_polygon(self):
+        print(f"feed: {self.feed} \n here is the rtsp link for the video stream.: {self.rtsp_link}")
+        # return count_people_in_polygon(self.rtsp_link)
+        return run(
+            weights="yolov8n.pt",
+            source='Shopping, People, Commerce, Mall, Many, Crowd, Walking   Free Stock video footage   YouTube.mp4',
+            device="cpu",
+            view_img=True,
+            classes=[0],
+            line_thickness=2,
+            track_thickness=2,
+            region_thickness=2,
+        )
+
