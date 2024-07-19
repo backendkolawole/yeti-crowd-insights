@@ -1,9 +1,14 @@
+# Ultralytics YOLO 🚀, AGPL-3.0 license
+
 import argparse
 from collections import defaultdict
 from pathlib import Path
+from datetime import datetime
+
 
 import cv2
 import numpy as np
+import psycopg2
 from shapely.geometry import Polygon
 from shapely.geometry.point import Point
 
@@ -23,16 +28,7 @@ counting_regions = [
         "dragging": False,
         "region_color": (255, 42, 4),  # BGR Value
         "text_color": (255, 255, 255),  # Region Text Color
-    },
-    # {
-    #     "name": "YOLOv8 Rectangle Region",
-    #     # Polygon points
-    #     "polygon": Polygon([(200, 250), (440, 250), (440, 550), (200, 550)]),
-    #     "counts": 0,
-    #     "dragging": False,
-    #     "region_color": (37, 255, 225),  # BGR Value
-    #     "text_color": (0, 0, 0),  # Region Text Color
-    # },
+    }
 ]
 
 
@@ -92,14 +88,14 @@ def mouse_callback(event, x, y, flags, param):
 
 
 def run(
-    weights="yolov8n.pt",
-    source=None,
-    device="cpu",
-    view_img=False,
-    classes=None,
-    line_thickness=2,
-    track_thickness=2,
-    region_thickness=2,
+    weights,
+    source,
+    device,
+    view_img,
+    classes,
+    line_thickness,
+    track_thickness,
+    region_thickness,
 ):
     """
     Run Region counting on a video using YOLOv8 and ByteTrack.
@@ -121,6 +117,10 @@ def run(
         region_thickness (int): Region thickness.
     """
     vid_frame_count = 0
+    current_count = 0
+
+    # Initialize a dictionary to track objects in regions
+    objects_in_region = {}
 
     # Check source path
     if not Path(source).exists():
@@ -135,6 +135,19 @@ def run(
 
     # Video setup
     videocapture = cv2.VideoCapture(source)
+    frame_width, frame_height = int(
+        videocapture.get(3)), int(videocapture.get(4))
+    fps, fourcc = int(videocapture.get(5)), cv2.VideoWriter_fourcc(*"mp4v")
+
+    # connect to a postgresql database server
+    conn = psycopg2.connect(database="people_in_regions",
+                            user="postgres",
+                            host='localhost',
+                            password="1Aa@36052546postgres",
+                            port=5432)
+
+    # Open a cursor to perform database operations
+    cur = conn.cursor()
 
     # Iterate over video frames
     while videocapture.isOpened():
@@ -172,6 +185,33 @@ def run(
                 for region in counting_regions:
                     if region["polygon"].contains(Point((bbox_center[0], bbox_center[1]))):
                         region["counts"] += 1
+
+                        # Check if the object is already in the region
+                        if track_id not in objects_in_region:
+                            objects_in_region[track_id] = True
+                            current_count += 1
+                            
+                            # Insert data 
+                            current_timestamp = datetime.now()
+                            sql = f"""INSERT INTO people_in_regions (feed_id, count_type, current_count, ts)
+                                VALUES (
+                                    '1', 'in', '{current_count}', '{current_timestamp}')
+                                """
+                            cur.execute(sql)
+                            print(f"Object {track_id} has entered the region, current count is: {current_count}")
+                    else:
+                        # Object has left the region
+                        if track_id in objects_in_region:
+                            
+                            current_count -= 1
+                            
+                            # Insert data
+                            sql = f"""INSERT INTO people_in_regions (feed_id, count_type, current_count, ts)
+                                VALUES ('1', 'out', '{current_count}', '{current_timestamp}')
+                                """
+                            cur.execute(sql)
+                            print(f"Object {track_id} has left the region, current_count is: {current_count}")
+                            del objects_in_region[track_id]
 
         # Draw regions (Polygons/Rectangles)
         for region in counting_regions:
@@ -216,6 +256,9 @@ def run(
         if cv2.waitKey(1) & 0xFF == ord("q"):
             break
 
-    del vid_frame_count
+    print(f" video frame count: {vid_frame_count}, current_count: {current_count}")
+    conn.commit()
+    cur.close()
+    conn.close()
     videocapture.release()
     cv2.destroyAllWindows()
