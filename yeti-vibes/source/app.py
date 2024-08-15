@@ -1,3 +1,4 @@
+from yolo8 import YOLO8
 from feed_handler import FeedProcessor
 from event_loader import EventLoader, Event
 from common import feed_path, event_path, client_id
@@ -58,6 +59,7 @@ class ShowListOfEvents:
         event = EventLoader(event_path, client_id)
         self.list_of_events = event.load_events()
         return self.list_of_events
+
 
 
 def main():
