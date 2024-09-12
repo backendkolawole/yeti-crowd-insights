@@ -140,7 +140,7 @@ def run(
     fps, fourcc = int(videocapture.get(5)), cv2.VideoWriter_fourcc(*"mp4v")
 
     # connect to a postgresql database server
-    conn = psycopg2.connect(database="people_in_regions",
+    conn = psycopg2.connect(database="yeti-crowd-insights",
                             user="postgres",
                             host='localhost',
                             password="1Aa@36052546postgres",

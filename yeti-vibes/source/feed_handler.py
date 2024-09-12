@@ -1,5 +1,5 @@
 from common import polygon_path
-from utils import capture_and_display_frame, count_people_in_region, detect_and_track_objects
+from feed_utils import capture_and_display_frame, count_people_in_region, detect_and_track_objects
 import json
 from yolov8_region_counter import run 
 
