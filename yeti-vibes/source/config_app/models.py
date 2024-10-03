@@ -1,22 +1,23 @@
 from django.db import models
 from django.contrib.postgres.fields import ArrayField
+from django.contrib.auth.models import User
 
 
 # Create your models here.
 
 
-class Client(models.Model):
-    client_id = models.AutoField(primary_key=True)
-    client_name = models.CharField(max_length=255)
-    email = models.EmailField(max_length=254)
+# class Client(models.Model):
+#     client_id = models.AutoField(primary_key=True)
+#     client_name = models.CharField(max_length=255)
+#     email = models.EmailField(max_length=254)
     
-    def __str__(self):
-        return self.client_name
+#     def __str__(self):
+#         return self.client_name
 
 
 class Event(models.Model):
     event_id = models.AutoField(primary_key=True)
-    customer = models.ForeignKey(Client, on_delete=models.CASCADE, related_name="client")
+    client = models.ForeignKey(User, on_delete=models.CASCADE)
     event_name = models.CharField(max_length=200)
     description = models.CharField(max_length=200)
     start_date = models.DateTimeField(auto_now_add=True)
@@ -29,7 +30,7 @@ class Event(models.Model):
     
 class Feed(models.Model):
     feed_id = models.AutoField(primary_key=True)
-    feed_event = models.ForeignKey(Event, on_delete=models.CASCADE, related_name="event")
+    event = models.ForeignKey(Event, on_delete=models.CASCADE)
     feed_name = models.CharField(max_length=200)
     rtsp_link = models.URLField(max_length=200)
     is_active = models.BooleanField(default=True)
@@ -40,11 +41,11 @@ class Feed(models.Model):
 
 class FeedPolygon(models.Model):
     polygon_id = models.AutoField(primary_key=True)
-    feed_id = models.ForeignKey(Feed, on_delete=models.CASCADE, related_name="feed")
+    feed = models.ForeignKey(Feed, on_delete=models.CASCADE)
     polygon_name = models.CharField(max_length=255)
 
     # Storing polygon as a list of tuples
-    polygon = ArrayField(
+    feed_polygons = ArrayField(
         ArrayField(models.IntegerField(), size=2),
         size=5
     )
