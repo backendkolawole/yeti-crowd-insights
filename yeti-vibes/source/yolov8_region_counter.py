@@ -96,6 +96,8 @@ def run(
     line_thickness,
     track_thickness,
     region_thickness,
+    event_id,
+    feed_id
 ):
     """
     Run Region counting on a video using YOLOv8 and ByteTrack.
@@ -191,13 +193,13 @@ def run(
                             objects_in_region[track_id] = True
                             current_count += 1
                             
-                            # Insert data 
-                            current_timestamp = datetime.now()
-                            sql = f"""INSERT INTO people_in_regions (feed_id, count_type, current_count, ts)
-                                VALUES (
-                                    '1', 'in', '{current_count}', '{current_timestamp}')
-                                """
-                            cur.execute(sql)
+                            # # Insert data 
+                            # current_timestamp = datetime.now()
+                            # sql = f"""INSERT INTO people_in_regions (feed_id, count_type, current_count, ts)
+                            #     VALUES (
+                            #         '1', 'in', '{current_count}', '{current_timestamp}')
+                            #     """
+                            # cur.execute(sql)
                             print(f"Object {track_id} has entered the region, current count is: {current_count}")
                     else:
                         # Object has left the region
@@ -205,11 +207,11 @@ def run(
                             
                             current_count -= 1
                             
-                            # Insert data
-                            sql = f"""INSERT INTO people_in_regions (feed_id, count_type, current_count, ts)
-                                VALUES ('1', 'out', '{current_count}', '{current_timestamp}')
-                                """
-                            cur.execute(sql)
+                            # # Insert data
+                            # sql = f"""INSERT INTO people_in_regions (feed_id, count_type, current_count, ts)
+                            #     VALUES ('1', 'out', '{current_count}', '{current_timestamp}')
+                            #     """
+                            # cur.execute(sql)
                             print(f"Object {track_id} has left the region, current_count is: {current_count}")
                             del objects_in_region[track_id]
 

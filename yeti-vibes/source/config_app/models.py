@@ -5,19 +5,9 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
-
-# class Client(models.Model):
-#     client_id = models.AutoField(primary_key=True)
-#     client_name = models.CharField(max_length=255)
-#     email = models.EmailField(max_length=254)
-    
-#     def __str__(self):
-#         return self.client_name
-
-
 class Event(models.Model):
     event_id = models.AutoField(primary_key=True)
-    client = models.ForeignKey(User, on_delete=models.CASCADE)
+    client = models.ForeignKey(User, on_delete=models.CASCADE, related_name="events")
     event_name = models.CharField(max_length=200)
     description = models.CharField(max_length=200)
     start_date = models.DateTimeField(auto_now_add=True)
@@ -41,7 +31,7 @@ class Feed(models.Model):
 
 class FeedPolygon(models.Model):
     polygon_id = models.AutoField(primary_key=True)
-    feed = models.ForeignKey(Feed, on_delete=models.CASCADE)
+    feeds = models.ManyToManyField(Feed, related_name="feed_polygons")
     polygon_name = models.CharField(max_length=255)
 
     # Storing polygon as a list of tuples
@@ -55,3 +45,9 @@ class FeedPolygon(models.Model):
 
     def __str__(self):
         return self.polygon_name
+    
+    
+class EventStatus(models.Model):
+    event_id = models.IntegerField()
+    event_status = models.CharField(max_length=5)
+    timestamp = models.DateTimeField(auto_now_add=True)

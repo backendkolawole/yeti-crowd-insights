@@ -13,10 +13,11 @@ class ClientUseCase:
     def get_client(self, client_id):
         return self.repository.get_client(client_id = client_id)
 
-
     def update_client(self, client_id, data):
         return self.repository.update_client(client_id=client_id, data=data)
 
     def delete_client(self, client_id):
         return self.repository.delete_client(client_id=client_id)
+    
+    
     

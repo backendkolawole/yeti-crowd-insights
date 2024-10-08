@@ -6,12 +6,18 @@ from config_app.use_cases.client_use_case import ClientUseCase
 from config_app.use_cases.event_use_case import EventUseCase
 from config_app.use_cases.feed_use_case import FeedUseCase
 from config_app.use_cases.feed_polygon_use_case import FeedPolygonUseCase
+from config_app.use_cases.start_event_use_case import StartEventUseCase
+from config_app.use_cases.event_status_use_case import EventStatusUseCase
 from config_app.repositories.client_repository import ClientRepository
 from config_app.repositories.event_repository import EventRepository
 from config_app.repositories.feed_repository import FeedRepository
 from config_app.repositories.feed_polygon_repository import FeedPolygonRepository
+from config_app.repositories.start_event_repository import StartEventRepository
+from config_app.repositories.event_status_repository import EventStatusRepository
 from django.contrib.auth.models import User
 from rest_framework.permissions import IsAuthenticated
+from rest_framework.response import Response
+from rest_framework import status
 
 
 
@@ -47,14 +53,9 @@ class ClientDetails(generics.RetrieveUpdateDestroyAPIView):
     
     def perform_update(self, serializer):
         client_id = self.kwargs['pk']
-
-
-        # return self.use_case.update_client(client_id=client_id, data = serializer.validated_data)
         return self.use_case.update_client(
             client_id=client_id, data=serializer.validated_data)
-        # print(f"Updated client: {client}, Type: {type(client)}")
-        # Serializing the updated client if needed
-        # return self.use_case.perform_update(client_id = client_id, data = serializer.validated_data)
+
     
         
     def perform_destroy(self, instance):
@@ -99,7 +100,28 @@ class EventDetail(generics.RetrieveUpdateDestroyAPIView):
         user = self.request.user
         event_id = self.kwargs['event_pk']
         return self.use_case.delete_event(client=user, event_id = event_id)
+
+
+class StartEventView(generics.ListAPIView):
+    use_case = StartEventUseCase(StartEventRepository())
+
+    def get(self, request, event_pk, feed_pk):
+        event_id = event_pk
+        feed_id = feed_pk
+
+        event_status_id = self.use_case.count_in_polygon(event_id, feed_id)
+        print("result:", event_status_id)
+
+        return Response({"event_status_id": event_status_id}, status=status.HTTP_200_OK)
     
+
+class EventStatusView(generics.ListAPIView):
+    use_case = EventStatusUseCase(EventStatusRepository())
+    
+    def get(self, request):
+
+        return self.use_case.get_all_event_statuses()
+
 
     
 class FeedList(generics.ListCreateAPIView):

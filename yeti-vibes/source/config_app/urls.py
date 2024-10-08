@@ -1,5 +1,5 @@
 from django.urls import path
-from config_app.interface_adapters.views import ClientDetails, ClientList, EventDetail, EventList, FeedDetail, FeedList, FeedPolygonList, FeedPolygonDetails
+from config_app.interface_adapters.views import ClientDetails, ClientList, EventDetail, EventList, FeedDetail, FeedList, FeedPolygonList, FeedPolygonDetails, StartEventView, EventStatusView
 
 urlpatterns = [
     path('', ClientList.as_view(), name='client-list'),
@@ -13,4 +13,7 @@ urlpatterns = [
          FeedPolygonList.as_view(), name='feed-polygon-list'),
     path('events/<int:event_pk>/feed/<int:feed_pk>/feed-polygon/<int:pk>/',
          FeedPolygonDetails.as_view(), name='feed-polygon-detail'),
+    path('events/<int:event_pk>/feed/<int:feed_pk>/start/', StartEventView.as_view(), name='start-event'),
+    path('events/status/',
+         EventStatusView.as_view(), name='event-status'),
 ]
