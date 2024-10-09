@@ -1,7 +1,6 @@
 from rest_framework import serializers
 from config_app.models import Feed, FeedPolygon, Event
-from django.contrib.auth.models import User
-
+from config_app.models import Client
 
 class FeedPolygonSerializer(serializers.ModelSerializer):
 
@@ -34,5 +33,5 @@ class ClientSerializer(serializers.ModelSerializer):
     event = EventSerializer(many=True, read_only=True)
 
     class Meta:
-        model = User
+        model = Client
         fields = ["id", "event", "username", "email"]

@@ -14,7 +14,7 @@ from config_app.repositories.feed_repository import FeedRepository
 from config_app.repositories.feed_polygon_repository import FeedPolygonRepository
 from config_app.repositories.start_event_repository import StartEventRepository
 from config_app.repositories.event_status_repository import EventStatusRepository
-from django.contrib.auth.models import User
+from config_app.models import Client
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework import status
@@ -25,7 +25,7 @@ from rest_framework import status
 class ClientList(generics.ListCreateAPIView):
     serializer_class = ClientSerializer
     
-    queryset = User.objects.all()
+    queryset = Client.objects.all()
     repository = ClientRepository()
     use_case = ClientUseCase(ClientRepository())
     
@@ -43,7 +43,7 @@ class ClientList(generics.ListCreateAPIView):
 class ClientDetails(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = ClientSerializer
     
-    queryset = User.objects.all()
+    queryset = Client.objects.all()
     use_case = ClientUseCase(ClientRepository())
     # permission_classes = [IsAdminUser]
     
@@ -53,6 +53,7 @@ class ClientDetails(generics.RetrieveUpdateDestroyAPIView):
     
     def perform_update(self, serializer):
         client_id = self.kwargs['pk']
+        serializer.save()
         return self.use_case.update_client(
             client_id=client_id, data=serializer.validated_data)
 

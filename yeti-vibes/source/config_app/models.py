@@ -5,9 +5,17 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
+from django.contrib.auth.models import AbstractUser
+
+
+class Client(AbstractUser):
+    email = models.EmailField(unique=True)
+    
+    
+    
 class Event(models.Model):
     event_id = models.AutoField(primary_key=True)
-    client = models.ForeignKey(User, on_delete=models.CASCADE, related_name="events")
+    client = models.ForeignKey(Client, on_delete=models.CASCADE, related_name="events")
     event_name = models.CharField(max_length=200)
     description = models.CharField(max_length=200)
     start_date = models.DateTimeField(auto_now_add=True)

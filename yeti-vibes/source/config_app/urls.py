@@ -17,3 +17,4 @@ urlpatterns = [
     path('events/status/',
          EventStatusView.as_view(), name='event-status'),
 ]
+

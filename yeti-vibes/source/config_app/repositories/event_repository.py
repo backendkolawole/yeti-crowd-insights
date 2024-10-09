@@ -11,13 +11,15 @@ class EventRepository:
         event.save()
         return Event(event_id=event.event_id, client = event.client, event_name = event.event_name, description=event.description, start_date = event.start_date, end_date = event.end_date, is_active = event.is_active)
     
-    def get_all_events(self, client):
+    # def get_all_events(self, client):
         
-        # events = EventModel.objects.filter(client=client)
+    #     events = EventModel.objects.filter(client=client)
+    #     print(events)
 
-        events = client.events.all()
+    #     # events = client.events.all()
         
-        return [Event(event_id=event.event_id, client = event.client, event_name = event.event_name, description=event.description, start_date = event.start_date, end_date = event.end_date, is_active = event.is_active) for event in events]
+    #     return [Event(event_id=event.event_id, client = event.client, event_name = event.event_name, description=event.description, start_date = event.start_date, end_date = event.end_date, is_active = event.is_active) for event in events]
+    
 
     def get_event(self, client, event_id):
         try:
