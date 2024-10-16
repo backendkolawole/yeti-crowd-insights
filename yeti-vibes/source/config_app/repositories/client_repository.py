@@ -30,7 +30,6 @@ class ClientRepository:
             client = ClientModel.objects.get(pk=client_id)
         except ClientModel.DoesNotExist:
             raise NotFound("User not found")
-        print(data)
         for key, value in data.items():
             setattr(client, key, value)
         client.save()
@@ -43,4 +42,12 @@ class ClientRepository:
             raise NotFound("User not found")
         client.delete()
         return {"success": True}
+    
+    def get_client_account(self, client):
+        try:
+            client = ClientModel.objects.get(client=client)
+        except ClientModel.DoesNotExist:
+            raise NotFound("Account not found")
+        
+        return Client(id=client.id, username=client.username, email=client.email)
     

@@ -35,7 +35,7 @@ class StartEventRepository:
             feed_id=feed_id
         )
         
-        event_status = EventStatusModel(event_id=event_id, event_status="start", timestamp=current_timestamp)
+        event_status = EventStatusModel(event_id=event_id, status="start", timestamp=current_timestamp)
         
         event_status.save()
         print(event_status)

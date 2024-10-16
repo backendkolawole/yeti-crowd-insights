@@ -19,5 +19,8 @@ class ClientUseCase:
     def delete_client(self, client_id):
         return self.repository.delete_client(client_id=client_id)
     
+    def get_client_account(self, client):
+        return self.repository.get_client_account(client=client)
+    
     
     

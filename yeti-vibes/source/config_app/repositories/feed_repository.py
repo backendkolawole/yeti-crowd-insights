@@ -18,14 +18,16 @@ class FeedRepository:
     
     
     def get_all_feed(self, client, event_id):
-        feed_event = Event.objects.get(
-            client=client, event_id=event_id)
-        if not feed_event:
+        try:
+            feed_event = Event.objects.get(
+                client=client, event_id=event_id)
+        except Event.DoesNotExist:
             raise NotFound("No Event Found")
         
         feeds = FeedModel.objects.filter(event = feed_event)
         
         return [Feed(feed_id = feed.feed_id, event = feed.event, feed_name = feed.feed_name, rtsp_link = feed.rtsp_link, is_active=feed.is_active) for feed in feeds]
+    
 
     def get_feed(self, client, event_id, feed_id):
         try:

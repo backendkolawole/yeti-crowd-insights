@@ -11,8 +11,5 @@ class EventStatusRepository:
         
         event_statuses = EventStatusModel.objects.all()
         
-        result = [EventStatus(event_id=event_status.event_id, status=event_status.status,
-                              timestamp=event_status.timestamp) for event_status in event_statuses]
-
-        return Response({"event_statuses": result})
+        return event_statuses
 

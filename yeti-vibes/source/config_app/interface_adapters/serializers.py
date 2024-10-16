@@ -1,6 +1,6 @@
 from rest_framework import serializers
-from config_app.models import Feed, FeedPolygon, Event
-from config_app.models import Client
+from config_app.models import Feed, FeedPolygon, Event, EventStatus, Client
+
 
 class FeedPolygonSerializer(serializers.ModelSerializer):
 
@@ -9,29 +9,42 @@ class FeedPolygonSerializer(serializers.ModelSerializer):
         fields = "__all__"
 
 
-class FeedSerializer(serializers.ModelSerializer):
-
-    polygons = FeedPolygonSerializer(many=True, read_only=True)
+class ClientSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = Feed
-        # fields = "__all__"
-        exclude = ['event']
+        model = Client
+        fields = ["id", "username", "email"]
+
+    def create(self, validated_data):
+        return Client.objects.create(**validated_data)
+
+    def update(self, instance, validated_data):
+        instance.email = validated_data.get('email', instance.email)
+        instance.username = validated_data.get('username', instance.username)
+        instance.save()
+        return instance
 
 
 class EventSerializer(serializers.ModelSerializer):
 
-    feed = FeedSerializer(many=True, read_only=True)
+    client = ClientSerializer(read_only=True)
 
     class Meta:
         model = Event
-        exclude = ['client']
+        fields = "__all__"
+        # exclude = ['client']
 
 
-class ClientSerializer(serializers.ModelSerializer):
-
-    event = EventSerializer(many=True, read_only=True)
+class FeedSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = Client
-        fields = ["id", "event", "username", "email"]
+        model = Feed
+        # fields = "__all__"
+        fields = ['feed_id', 'feed_name', 'rtsp_link', 'is_active']
+        # exclude = ['event']
+
+
+class EventStatusSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = EventStatus
+        fields = ['event_id', 'status', "timestamp"]  # Include all relevant fields

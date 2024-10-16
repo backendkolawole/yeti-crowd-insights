@@ -10,29 +10,29 @@ from django.contrib.auth.models import AbstractUser
 
 class Client(AbstractUser):
     email = models.EmailField(unique=True)
-    
-    
-    
+
+
 class Event(models.Model):
     event_id = models.AutoField(primary_key=True)
-    client = models.ForeignKey(Client, on_delete=models.CASCADE, related_name="events")
+    client = models.ForeignKey(
+        Client, on_delete=models.CASCADE, related_name="events")
     event_name = models.CharField(max_length=200)
     description = models.CharField(max_length=200)
     start_date = models.DateTimeField(auto_now_add=True)
     end_date = models.DateTimeField(auto_now_add=False)
-    is_active = models.BooleanField(default= True)
-    
+    is_active = models.BooleanField(default=True)
+
     def __str__(self):
         return self.event_name
-    
-    
+
+
 class Feed(models.Model):
     feed_id = models.AutoField(primary_key=True)
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
     feed_name = models.CharField(max_length=200)
     rtsp_link = models.URLField(max_length=200)
     is_active = models.BooleanField(default=True)
-    
+
     def __str__(self):
         return self.feed_name
 
@@ -53,9 +53,9 @@ class FeedPolygon(models.Model):
 
     def __str__(self):
         return self.polygon_name
-    
-    
+
+
 class EventStatus(models.Model):
     event_id = models.IntegerField()
-    event_status = models.CharField(max_length=5)
+    status = models.CharField(max_length=5)
     timestamp = models.DateTimeField(auto_now_add=True)
