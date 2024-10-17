@@ -1,19 +1,21 @@
 from rest_framework import generics
 from rest_framework.permissions import IsAdminUser
-from config_app.models import Feed, FeedPolygon, Event
-from config_app.interface_adapters.serializers import FeedSerializer, FeedPolygonSerializer, EventSerializer, ClientSerializer, EventStatusSerializer
+from config_app.models import Feed, FeedPolygon, Event, ZoneCount
+from config_app.interface_adapters.serializers import FeedSerializer, FeedPolygonSerializer, EventSerializer, ClientSerializer, EventStatusSerializer, ZoneCountSerializer
 from config_app.use_cases.client_use_case import ClientUseCase
 from config_app.use_cases.event_use_case import EventUseCase
 from config_app.use_cases.feed_use_case import FeedUseCase
 from config_app.use_cases.feed_polygon_use_case import FeedPolygonUseCase
 from config_app.use_cases.start_event_use_case import StartEventUseCase
 from config_app.use_cases.event_status_use_case import EventStatusUseCase
+from config_app.use_cases.zone_count_use_case import ZoneCountUseCase
 from config_app.repositories.client_repository import ClientRepository
 from config_app.repositories.event_repository import EventRepository
 from config_app.repositories.feed_repository import FeedRepository
 from config_app.repositories.feed_polygon_repository import FeedPolygonRepository
 from config_app.repositories.start_event_repository import StartEventRepository
 from config_app.repositories.event_status_repository import EventStatusRepository
+from config_app.repositories.zone_count_repository import ZoneCountRepository
 from config_app.models import Client, EventStatus
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
@@ -191,8 +193,7 @@ class FeedDetail(generics.RetrieveUpdateDestroyAPIView):
         event_id = self.kwargs.get('event_pk')
         client = self.request.user
         feed_id = self.kwargs['feed_pk']
-        # return self.use_case.update_feed(client=client, event_id=event_id, feed_id=feed_id, data=serializer.validated_data)
-        print(f"Use case type: {type(self.use_case)}")
+
         return self.use_case.update_feed(client=client, event_id=event_id, feed_id=feed_id, data=serializer.validated_data)
 
     def perform_destroy(self, instance):
@@ -239,6 +240,20 @@ class FeedPolygonDetails(generics.RetrieveUpdateDestroyAPIView):
         event_id = self.kwargs['event_pk']
         feed_id = self.kwargs['feed_pk']
         return self.use_case.delete_feed_polygon(polygon_id=instance.id, feed_id=feed_id, event_id=event_id)
+
+
+class ZoneCount(generics.ListAPIView):
+    queryset = ZoneCount.objects.all()
+    serializer_class = ZoneCountSerializer
+    use_case = ZoneCountUseCase(ZoneCountRepository())
+    permission_classes = [IsAdminUser, IsAuthenticated]
+
+    def get_queryset(self):
+        
+        zone_counts = self.use_case.get_all_zone_counts()  # This should return a queryset
+        pass
+
+
 
 
 # from django.contrib.auth.models import User

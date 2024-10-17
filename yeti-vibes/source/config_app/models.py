@@ -59,3 +59,15 @@ class EventStatus(models.Model):
     event_id = models.IntegerField()
     status = models.CharField(max_length=5)
     timestamp = models.DateTimeField(auto_now_add=True)
+    
+    
+class ZoneCount(models.Model):
+    event = models.ForeignKey(
+        Event, on_delete=models.CASCADE, related_name="zone_counts")
+    polygon = models.ForeignKey(
+        FeedPolygon, on_delete=models.CASCADE, related_name="zone_counts")
+    count = models.IntegerField()
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"ZoneCount(event_id={self.event.event_id}, polygon_id={self.polygon.polygon_id}, count={self.count})"

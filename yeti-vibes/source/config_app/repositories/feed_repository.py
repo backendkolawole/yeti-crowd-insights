@@ -39,7 +39,7 @@ class FeedRepository:
             feed = FeedModel.objects.get(event = feed_event, feed_id=feed_id)
         except FeedModel.DoesNotExist:
                 raise NotFound("No feed found")
-        return Feed(feed_id = feed.feed_id, event = feed.event, feed_name=feed.feed_name, rtsp_link=feed.rtsp_link, is_active=feed.is_active)
+        return feed
 
 
     def update_feed(self, client, event_id, feed_id, data):
@@ -57,7 +57,7 @@ class FeedRepository:
             setattr(feed, key, value)
         feed.save()
         
-        return Feed(feed_id=feed.feed_id, event=feed.event, feed_name=feed.feed_name, rtsp_link=feed.rtsp_link, is_active=feed.is_active)
+        return feed
 
     def delete_feed(self, client, event_id, feed_id):
         feed_event = Event.objects.get(client=client, event_id=event_id)
