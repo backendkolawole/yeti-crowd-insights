@@ -8,32 +8,37 @@ class FeedPolygonRepository:
 
     def create_feed_polygon(self, feed_id, event_id, data):
         try:
-            feed_event = Event.objects.get(event_id=event_id)
+            event = Event.objects.get(event_id=event_id)
         except Event.DoesNotExist:
             raise NotFound("No Event Found")
-        feed = Feed.objects.get(id=feed_id, event=feed_event)
-        feed_polygon = FeedPolygonModel(feed=feed, event=feed_event, **data)
+
+        feed = Feed.objects.get(feed_id=feed_id, event=event)
+
+        feed_polygon = FeedPolygonModel(**data)
         feed_polygon.save()
-        return FeedPolygon(polygon_id=feed_polygon.polygon_id, feed=feed_polygon.feed, polygon_name=feed_polygon.polygon_name, feed_polygons=feed_polygon.feed_polygons, polygon_color=feed_polygon.polygon_color)
+        feed_polygon.feeds.add(feed)
+
+        return feed_polygon
 
     def get_all_feed_polygons(self, feed_id, event_id):
         try:
-            feed_event = Event.objects.get(event_id=event_id)
+            event = Event.objects.get(event_id=event_id)
         except Event.DoesNotExist:
             raise NotFound("No Event Found")
-        feed = Feed.objects.get(feed_id=feed_id, event=feed_event)
+        feed = Feed.objects.get(feed_id=feed_id, event=event)
 
-        feed_polygons = FeedPolygonModel.objects.filter(feed=feed)
+        feed_polygons = FeedPolygonModel.objects.filter(feeds=feed)
 
-        return [
-            FeedPolygon(polygon_id=feed_polygon.polygon_id, feed_id=feed_polygon.feed_id, polygon_name=feed_polygon.polygon_name, feed_polygons=feed_polygon.feed_polygons, polygon_color=feed_polygon.polygon_color) for feed_polygon in feed_polygons]
+        # return [
+        #     FeedPolygon(polygon_id=feed_polygon.polygon_id, feed_id=feed_polygon.feed_id, polygon_name=feed_polygon.polygon_name, feed_polygons=feed_polygon.feed_polygons, polygon_color=feed_polygon.polygon_color) for feed_polygon in feed_polygons]
+        return feed_polygons
 
     def get_feed_polygon(self, polygon_id, feed_id, event_id):
         try:
-            feed_event = Event.objects.get(event_id=event_id)
+            event = Event.objects.get(event_id=event_id)
         except Event.DoesNotExist:
             raise NotFound("No Event Found")
-        feed = Feed.objects.get(feed_id=feed_id, event=feed_event)
+        feed = Feed.objects.get(feed_id=feed_id, event=event)
         try:
             feed_polygon = FeedPolygonModel.objects.get(
                 feed=feed, polygon_id=polygon_id)
@@ -43,16 +48,16 @@ class FeedPolygonRepository:
 
     def update_feed_polygon(self, polygon_id, feed_id, event_id, data):
         try:
-            feed_event = Event.objects.get(event_id=event_id)
+            event = Event.objects.get(event_id=event_id)
         except Event.DoesNotExist:
             raise NotFound("No Event Found")
-        feed = Feed.objects.get(id=feed_id, event=feed_event)
+        feed = Feed.objects.get(id=feed_id, event=event)
         try:
             feed_polygon = FeedPolygonModel.objects.get(
                 feed=feed, polygon_id=polygon_id)
         except FeedPolygonModel.DoesNotExist:
             raise NotFound("FeedPolygon matching query does not exist.")
-        
+
         for key, value in data.items():
             setattr(feed_polygon, key, value)
         feed_polygon.save()
@@ -60,16 +65,16 @@ class FeedPolygonRepository:
 
     def delete_feed_polygon(self, polygon_id, feed_id, event_id):
         try:
-            feed_event = Event.objects.get(event_id=event_id)
+            event = Event.objects.get(event_id=event_id)
         except Event.DoesNotExist:
             raise NotFound("No Event Found")
 
-        feed = Feed.objects.get(id=feed_id, event=feed_event)
+        feed = Feed.objects.get(id=feed_id, event=event)
         try:
             feed_polygon = FeedPolygonModel.objects.get(
                 feed=feed, polygon_id=polygon_id)
         except FeedPolygonModel.DoesNotExist:
             raise NotFound("FeedPolygon matching query does not exist.")
-        
+
         feed_polygon.delete()
         return {"success": True}

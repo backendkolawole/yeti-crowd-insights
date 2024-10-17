@@ -227,7 +227,7 @@ class FeedPolygonDetails(generics.RetrieveUpdateDestroyAPIView):
     def get_object(self):
         event_id = self.kwargs['event_pk']
         feed_id = self.kwargs['feed_pk']
-        polygon_id = self.kwargs['pk']
+        polygon_id = self.kwargs['pk'] 
         return self.use_case.get_feed_polygon(polygon_id=polygon_id, feed_id=feed_id, event_id=event_id)
 
     def perform_update(self, serializer):
@@ -247,6 +247,15 @@ class ZoneCount(generics.ListAPIView):
     serializer_class = ZoneCountSerializer
     use_case = ZoneCountUseCase(ZoneCountRepository())
     permission_classes = [IsAdminUser, IsAuthenticated]
+    
+    # def perform_create(self, serializer):
+
+    #     user = self.request.user
+    #     print(user)
+    #     serializer.save(client=user)
+
+    #     return self.use_case.create_event(client=user, data=serializer.validated_data)
+
 
     def get_queryset(self):
         

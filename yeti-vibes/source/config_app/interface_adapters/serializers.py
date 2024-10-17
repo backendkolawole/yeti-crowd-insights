@@ -6,7 +6,8 @@ class FeedPolygonSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = FeedPolygon
-        fields = "__all__"
+        # fields = "__all__"
+        exclude = ['feeds']
 
 
 class ClientSerializer(serializers.ModelSerializer):
