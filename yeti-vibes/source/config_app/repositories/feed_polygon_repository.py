@@ -6,9 +6,9 @@ from rest_framework.exceptions import NotFound
 
 class FeedPolygonRepository:
 
-    def create_feed_polygon(self, feed_id, event_id, data):
+    def create_feed_polygon(self, feed_id, event_id, client, data):
         try:
-            event = Event.objects.get(event_id=event_id)
+            event = Event.objects.get(client = client, event_id=event_id)
         except Event.DoesNotExist:
             raise NotFound("No Event Found")
 
@@ -29,8 +29,6 @@ class FeedPolygonRepository:
 
         feed_polygons = FeedPolygonModel.objects.filter(feeds=feed)
 
-        # return [
-        #     FeedPolygon(polygon_id=feed_polygon.polygon_id, feed_id=feed_polygon.feed_id, polygon_name=feed_polygon.polygon_name, feed_polygons=feed_polygon.feed_polygons, polygon_color=feed_polygon.polygon_color) for feed_polygon in feed_polygons]
         return feed_polygons
 
     def get_feed_polygon(self, polygon_id, feed_id, event_id):
@@ -41,27 +39,27 @@ class FeedPolygonRepository:
         feed = Feed.objects.get(feed_id=feed_id, event=event)
         try:
             feed_polygon = FeedPolygonModel.objects.get(
-                feed=feed, polygon_id=polygon_id)
+                feeds=feed, polygon_id=polygon_id)
         except FeedPolygonModel.DoesNotExist:
             raise NotFound("FeedPolygon matching query does not exist.")
-        return FeedPolygon(polygon_id=feed_polygon.polygon_id, feed_id=feed_polygon.feed, polygon_name=feed_polygon.polygon_name, feed_polygons=feed_polygon.feed_polygons, polygon_color=feed_polygon.polygon_color)
+        return feed_polygon
 
     def update_feed_polygon(self, polygon_id, feed_id, event_id, data):
         try:
             event = Event.objects.get(event_id=event_id)
         except Event.DoesNotExist:
             raise NotFound("No Event Found")
-        feed = Feed.objects.get(id=feed_id, event=event)
+        feed = Feed.objects.get(feed_id=feed_id, event=event)
         try:
             feed_polygon = FeedPolygonModel.objects.get(
-                feed=feed, polygon_id=polygon_id)
+                feeds=feed, polygon_id=polygon_id)
         except FeedPolygonModel.DoesNotExist:
             raise NotFound("FeedPolygon matching query does not exist.")
 
         for key, value in data.items():
             setattr(feed_polygon, key, value)
         feed_polygon.save()
-        return FeedPolygon(polygon_id=feed_polygon.polygon_id, feed_id=feed_polygon.feed_id, polygon_name=feed_polygon.polygon_name, feed_polygons=feed_polygon.feed_polygons, polygon_color=feed_polygon.polygon_color)
+        return feed_polygon
 
     def delete_feed_polygon(self, polygon_id, feed_id, event_id):
         try:
@@ -69,10 +67,10 @@ class FeedPolygonRepository:
         except Event.DoesNotExist:
             raise NotFound("No Event Found")
 
-        feed = Feed.objects.get(id=feed_id, event=event)
+        feed = Feed.objects.get(feed_id=feed_id, event=event)
         try:
             feed_polygon = FeedPolygonModel.objects.get(
-                feed=feed, polygon_id=polygon_id)
+                feeds=feed, polygon_id=polygon_id)
         except FeedPolygonModel.DoesNotExist:
             raise NotFound("FeedPolygon matching query does not exist.")
 

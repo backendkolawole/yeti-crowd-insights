@@ -209,9 +209,11 @@ class FeedPolygonList(generics.ListCreateAPIView):
     permission_classes = [IsAdminUser, IsAuthenticated]
 
     def perform_create(self, serializer):
+        client = self.request.user
+
         event_id = self.kwargs['event_pk']
         feed_id = self.kwargs['feed_pk']
-        return self.use_case.create_feed_polygon(feed_id=feed_id, event_id=event_id, data=serializer.validated_data)
+        return self.use_case.create_feed_polygon(feed_id=feed_id, event_id=event_id, client = client, data=serializer.validated_data)
 
     def get_queryset(self):
         event_id = self.kwargs['event_pk']

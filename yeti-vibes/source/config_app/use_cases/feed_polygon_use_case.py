@@ -5,8 +5,8 @@ class FeedPolygonUseCase:
     def __init__(self, repository: FeedPolygonRepository):
         self.repository = repository
 
-    def create_feed_polygon(self, feed_id, event_id, data):
-        return self.repository.create_feed_polygon(feed_id=feed_id, event_id=event_id, data=data)
+    def create_feed_polygon(self, feed_id, event_id, client, data):
+        return self.repository.create_feed_polygon(feed_id=feed_id, event_id=event_id, client = client,  data=data)
     
     def get_all_feed_polygons(self, feed_id, event_id):
         return self.repository.get_all_feed_polygons(feed_id=feed_id, event_id=event_id)
