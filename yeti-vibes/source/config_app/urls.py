@@ -10,13 +10,13 @@ urlpatterns = [
     path('events/<int:event_pk>/feed/', FeedList.as_view(), name="feed-list"),
     path('events/<int:event_pk>/feed/<int:feed_pk>/',
          FeedDetail.as_view(), name='feed-detail'),
-    path('events/<int:event_pk>/feed/<int:feed_pk>/feed-polygon/',
+    path('events/<int:event_pk>/feed/<int:feed_pk>/feed-polygons/',
          FeedPolygonList.as_view(), name='feed-polygon-list'),
-    path('events/<int:event_pk>/feed/<int:feed_pk>/feed-polygon/<int:pk>/',
+    path('events/<int:event_pk>/feed/<int:feed_pk>/feed-polygons/<int:pk>/',
          FeedPolygonDetails.as_view(), name='feed-polygon-detail'),
-    path('events/<int:event_pk>/feed/<int:feed_pk>/start/', StartEventView.as_view(), name='start-event'),
+    path('events/<int:event_pk>/feed/<int:feed_pk>/start/',
+         StartEventView.as_view(), name='start-event'),
     path('events/status/',
          EventStatusView.as_view(), name='event-status'),
     path("profile", MyAccount.as_view(), name="feed_list")
 ]
-

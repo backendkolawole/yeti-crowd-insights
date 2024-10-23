@@ -19,72 +19,61 @@ from ultralytics.utils.plotting import Annotator, colors
 track_history = defaultdict(list)
 
 current_region = None
-counting_regions = [
-    {
-        "name": "YOLOv8 Polygon Region",
-        # Polygon points
-        "polygon": Polygon([(50, 80), (250, 20), (450, 80), (400, 350), (100, 350)]),
-        "counts": 0,
-        "dragging": False,
-        "region_color": (255, 42, 4),  # BGR Value
-        "text_color": (255, 255, 255),  # Region Text Color
-    }
-]
 
 
-def mouse_callback(event, x, y, flags, param):
-    """
-    Handles mouse events for region manipulation.
+# def mouse_callback(event, x, y, flags, param):
+#     """
+#     Handles mouse events for region manipulation.
 
-    Parameters:
-        event (int): The mouse event type (e.g., cv2.EVENT_LBUTTONDOWN).
-        x (int): The x-coordinate of the mouse pointer.
-        y (int): The y-coordinate of the mouse pointer.
-        flags (int): Additional flags passed by OpenCV.
-        param: Additional parameters passed to the callback (not used in this function).
+#     Parameters:
+#         event (int): The mouse event type (e.g., cv2.EVENT_LBUTTONDOWN).
+#         x (int): The x-coordinate of the mouse pointer.
+#         y (int): The y-coordinate of the mouse pointer.
+#         flags (int): Additional flags passed by OpenCV.
+#         param: Additional parameters passed to the callback (not used in this function).
 
-    Global Variables:
-        current_region (dict): A dictionary representing the current selected region.
+#     Global Variables:
+#         current_region (dict): A dictionary representing the current selected region.
 
-    Mouse Events:
-        - LBUTTONDOWN: Initiates dragging for the region containing the clicked point.
-        - MOUSEMOVE: Moves the selected region if dragging is active.
-        - LBUTTONUP: Ends dragging for the selected region.
+#     Mouse Events:
+#         - LBUTTONDOWN: Initiates dragging for the region containing the clicked point.
+#         - MOUSEMOVE: Moves the selected region if dragging is active.
+#         - LBUTTONUP: Ends dragging for the selected region.
 
-    Notes:
-        - This function is intended to be used as a callback for OpenCV mouse events.
-        - Requires the existence of the 'counting_regions' list and the 'Polygon' class.
+#     Notes:
+#         - This function is intended to be used as a callback for OpenCV mouse events.
+#         - Requires the existence of the 'counting_regions' list and the 'Polygon' class.
 
-    Example:
-        >>> cv2.setMouseCallback(window_name, mouse_callback)
-    """
-    global current_region
+#     Example:
+#         >>> cv2.setMouseCallback(window_name, mouse_callback)
+#     """
+#     global current_region
 
-    # Mouse left button down event
-    if event == cv2.EVENT_LBUTTONDOWN:
-        for region in counting_regions:
-            if region["polygon"].contains(Point((x, y))):
-                current_region = region
-                current_region["dragging"] = True
-                current_region["offset_x"] = x
-                current_region["offset_y"] = y
+#     # Mouse left button down event
+#     if event == cv2.EVENT_LBUTTONDOWN:
+#         for region in counting_regions:
+#             if region["polygon"].contains(Point((x, y))):
+#                 current_region = region
+#                 current_region["dragging"] = True
+#                 current_region["offset_x"] = x
+#                 current_region["offset_y"] = y
 
-    # Mouse move event
-    elif event == cv2.EVENT_MOUSEMOVE:
-        if current_region is not None and current_region["dragging"]:
-            dx = x - current_region["offset_x"]
-            dy = y - current_region["offset_y"]
-            current_region["polygon"] = Polygon(
-                [(p[0] + dx, p[1] + dy)
-                 for p in current_region["polygon"].exterior.coords]
-            )
-            current_region["offset_x"] = x
-            current_region["offset_y"] = y
+#     # Mouse move event
+#     elif event == cv2.EVENT_MOUSEMOVE:
+#         if current_region is not None and current_region["dragging"]:
+#             dx = x - current_region["offset_x"]
+#             dy = y - current_region["offset_y"]
+#             current_region["polygon"] = Polygon(
+#                 [(p[0] + dx, p[1] + dy)
+#                  for p in current_region["polygon"].exterior.coords]
+#             )
+#             current_region["offset_x"] = x
+#             current_region["offset_y"] = y
 
-    # Mouse left button up event
-    elif event == cv2.EVENT_LBUTTONUP:
-        if current_region is not None and current_region["dragging"]:
-            current_region["dragging"] = False
+#     # Mouse left button up event
+#     elif event == cv2.EVENT_LBUTTONUP:
+#         if current_region is not None and current_region["dragging"]:
+#             current_region["dragging"] = False
 
 
 def run(
@@ -97,7 +86,8 @@ def run(
     track_thickness,
     region_thickness,
     event_id,
-    feed_id
+    feed_id,
+    polygons
 ):
     """
     Run Region counting on a video using YOLOv8 and ByteTrack.
@@ -141,15 +131,28 @@ def run(
         videocapture.get(3)), int(videocapture.get(4))
     fps, fourcc = int(videocapture.get(5)), cv2.VideoWriter_fourcc(*"mp4v")
 
-    # connect to a postgresql database server
-    conn = psycopg2.connect(database="yeti-crowd-insights",
-                            user="postgres",
-                            host='localhost',
-                            password="1Aa@36052546postgres",
-                            port=5432)
+    # # connect to a postgresql database server
+    # conn = psycopg2.connect(database="yeti-crowd-insights",
+    #                         user="postgres",
+    #                         host='localhost',
+    #                         password="1Aa@36052546postgres",
+    #                         port=5432)
 
-    # Open a cursor to perform database operations
-    cur = conn.cursor()
+    # # Open a cursor to perform database operations
+    # cur = conn.cursor()
+
+    counting_regions = [
+        {
+            "name": "YOLOv8 Polygon Region",
+            # Polygon points
+            "polygon": Polygon(polygon.feed_polygons),
+            "counts": 0,
+            "dragging": False,
+            "region_color": (255, 42, 4),  # BGR Value
+            "text_color": (255, 255, 255),  # Region Text Color
+            "polygon_id": polygon.polygon_id
+        } for polygon in polygons
+    ]
 
     # Iterate over video frames
     while videocapture.isOpened():
@@ -184,7 +187,9 @@ def run(
                     cls, True), thickness=track_thickness)
 
                 # Check if detection inside region
+                # region, polygon
                 for region in counting_regions:
+
                     if region["polygon"].contains(Point((bbox_center[0], bbox_center[1]))):
                         region["counts"] += 1
 
@@ -192,27 +197,29 @@ def run(
                         if track_id not in objects_in_region:
                             objects_in_region[track_id] = True
                             current_count += 1
-                            
-                            # # Insert data 
+
+                            # # Insert data
                             # current_timestamp = datetime.now()
                             # sql = f"""INSERT INTO people_in_regions (feed_id, count_type, current_count, ts)
                             #     VALUES (
                             #         '1', 'in', '{current_count}', '{current_timestamp}')
                             #     """
                             # cur.execute(sql)
-                            print(f"Object {track_id} has entered the region, current count is: {current_count}")
+                            print(
+                                f"Object {track_id} has entered the region, current count is: {current_count}")
                     else:
                         # Object has left the region
                         if track_id in objects_in_region:
-                            
+
                             current_count -= 1
-                            
+
                             # # Insert data
                             # sql = f"""INSERT INTO people_in_regions (feed_id, count_type, current_count, ts)
                             #     VALUES ('1', 'out', '{current_count}', '{current_timestamp}')
                             #     """
                             # cur.execute(sql)
-                            print(f"Object {track_id} has left the region, current_count is: {current_count}")
+                            print(
+                                f"Object {track_id} has left the region, current_count is: {current_count}")
                             del objects_in_region[track_id]
 
         # Draw regions (Polygons/Rectangles)
@@ -248,8 +255,8 @@ def run(
         if view_img:
             if vid_frame_count == 1:
                 cv2.namedWindow("Ultralytics YOLOv8 Region Counter Movable")
-                cv2.setMouseCallback(
-                    "Ultralytics YOLOv8 Region Counter Movable", mouse_callback)
+                # cv2.setMouseCallback(
+                #     "Ultralytics YOLOv8 Region Counter Movable", mouse_callback)
             cv2.imshow("Ultralytics YOLOv8 Region Counter Movable", frame)
 
         for region in counting_regions:  # Reinitialize count for each region
@@ -258,9 +265,10 @@ def run(
         if cv2.waitKey(1) & 0xFF == ord("q"):
             break
 
-    print(f" video frame count: {vid_frame_count}, current_count: {current_count}")
-    conn.commit()
-    cur.close()
-    conn.close()
+    print(
+        f" video frame count: {vid_frame_count}, current_count: {current_count}")
+    # conn.commit()
+    # cur.close()
+    # conn.close()
     videocapture.release()
     cv2.destroyAllWindows()

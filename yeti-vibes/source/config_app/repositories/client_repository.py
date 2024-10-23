@@ -9,12 +9,12 @@ class ClientRepository:
     def create_client(self, data):
         client = ClientModel(**data)
         client.save()
-        return Client(id=client.id, username=client.username, email=client.email)
+        return client
     
     def get_all_clients(self):
         clients = ClientModel.objects.all()
     
-        return [Client(id=client.id, username=client.username, email=client.email) for client in clients]
+        return clients
 
     def get_client(self, client_id):
         try:
@@ -33,7 +33,7 @@ class ClientRepository:
         for key, value in data.items():
             setattr(client, key, value)
         client.save()
-        return Client(id=client.id, username=client.username, email=client.email)
+        return client
 
     def delete_client(self, client_id):
         try:
@@ -49,5 +49,5 @@ class ClientRepository:
         except ClientModel.DoesNotExist:
             raise NotFound("Account not found")
         
-        return Client(id=client.id, username=client.username, email=client.email)
+        return client
     

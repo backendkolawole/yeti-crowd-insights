@@ -39,7 +39,8 @@ class Feed(models.Model):
 
 class FeedPolygon(models.Model):
     polygon_id = models.AutoField(primary_key=True)
-    feeds = models.ManyToManyField(Feed, related_name="feed_polygons")
+    feed = models.ForeignKey(
+        Feed, on_delete=models.CASCADE, related_name="feed_polygons")
     polygon_name = models.CharField(max_length=255)
 
     # Storing polygon as a list of tuples
@@ -59,8 +60,8 @@ class EventStatus(models.Model):
     event_id = models.IntegerField()
     status = models.CharField(max_length=5)
     timestamp = models.DateTimeField(auto_now_add=True)
-    
-    
+
+
 class ZoneCount(models.Model):
     event = models.ForeignKey(
         Event, on_delete=models.CASCADE, related_name="zone_counts")

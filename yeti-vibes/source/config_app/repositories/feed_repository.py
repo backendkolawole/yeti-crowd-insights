@@ -14,7 +14,7 @@ class FeedRepository:
 
         feed = FeedModel(event = feed_event, **data)
         feed.save()
-        return Feed(feed_id=feed.feed_id, event=feed.event, feed_name=feed.feed_name, rtsp_link=feed.rtsp_link, is_active=feed.is_active)
+        return feed
     
     
     def get_all_feed(self, client, event_id):
@@ -26,7 +26,7 @@ class FeedRepository:
         
         feeds = FeedModel.objects.filter(event = feed_event)
         
-        return [Feed(feed_id = feed.feed_id, event = feed.event, feed_name = feed.feed_name, rtsp_link = feed.rtsp_link, is_active=feed.is_active) for feed in feeds]
+        return feeds
     
 
     def get_feed(self, client, event_id, feed_id):

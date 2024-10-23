@@ -8,16 +8,14 @@ class FeedPolygonRepository:
 
     def create_feed_polygon(self, feed_id, event_id, client, data):
         try:
-            event = Event.objects.get(client = client, event_id=event_id)
+            event = Event.objects.get(client=client, event_id=event_id)
         except Event.DoesNotExist:
             raise NotFound("No Event Found")
 
         feed = Feed.objects.get(feed_id=feed_id, event=event)
 
-        feed_polygon = FeedPolygonModel(**data)
+        feed_polygon = FeedPolygonModel(feed=feed, **data)
         feed_polygon.save()
-        feed_polygon.feeds.add(feed)
-
         return feed_polygon
 
     def get_all_feed_polygons(self, feed_id, event_id):
@@ -27,7 +25,7 @@ class FeedPolygonRepository:
             raise NotFound("No Event Found")
         feed = Feed.objects.get(feed_id=feed_id, event=event)
 
-        feed_polygons = FeedPolygonModel.objects.filter(feeds=feed)
+        feed_polygons = FeedPolygonModel.objects.filter(feed=feed)
 
         return feed_polygons
 
@@ -39,7 +37,7 @@ class FeedPolygonRepository:
         feed = Feed.objects.get(feed_id=feed_id, event=event)
         try:
             feed_polygon = FeedPolygonModel.objects.get(
-                feeds=feed, polygon_id=polygon_id)
+                feed=feed, polygon_id=polygon_id)
         except FeedPolygonModel.DoesNotExist:
             raise NotFound("FeedPolygon matching query does not exist.")
         return feed_polygon
@@ -52,7 +50,7 @@ class FeedPolygonRepository:
         feed = Feed.objects.get(feed_id=feed_id, event=event)
         try:
             feed_polygon = FeedPolygonModel.objects.get(
-                feeds=feed, polygon_id=polygon_id)
+                feed=feed, polygon_id=polygon_id)
         except FeedPolygonModel.DoesNotExist:
             raise NotFound("FeedPolygon matching query does not exist.")
 
@@ -70,7 +68,7 @@ class FeedPolygonRepository:
         feed = Feed.objects.get(feed_id=feed_id, event=event)
         try:
             feed_polygon = FeedPolygonModel.objects.get(
-                feeds=feed, polygon_id=polygon_id)
+                feed=feed, polygon_id=polygon_id)
         except FeedPolygonModel.DoesNotExist:
             raise NotFound("FeedPolygon matching query does not exist.")
 

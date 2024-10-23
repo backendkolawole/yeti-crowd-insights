@@ -1,7 +1,7 @@
 from rest_framework import generics
 from rest_framework.permissions import IsAdminUser
 from config_app.models import Feed, FeedPolygon, Event, ZoneCount
-from config_app.interface_adapters.serializers import FeedSerializer, FeedPolygonSerializer, EventSerializer, ClientSerializer, EventStatusSerializer, ZoneCountSerializer
+from config_app.interface_adapters.serializers import FeedSerializer, FeedPolygonSerializer, EventSerializer, EventCreateSerializer,  ClientSerializer, EventStatusSerializer, ZoneCountSerializer, FeedDetailSerializer
 from config_app.use_cases.client_use_case import ClientUseCase
 from config_app.use_cases.event_use_case import EventUseCase
 from config_app.use_cases.feed_use_case import FeedUseCase
@@ -93,7 +93,7 @@ class EventList(generics.ListAPIView):
 
 class EventCreateView(generics.CreateAPIView):
     queryset = Event.objects.all()
-    serializer_class = EventSerializer
+    serializer_class = EventCreateSerializer
     use_case = EventUseCase(EventRepository())
     permission_classes = [IsAdminUser, IsAuthenticated]
 
@@ -126,6 +126,29 @@ class EventDetail(generics.RetrieveUpdateDestroyAPIView):
     def perform_delete(self, instance):
         user = self.request.user
         return self.use_case.delete_event(client=user, event_id=instance.event_id)
+
+
+class EventDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Event.objects.all()
+    serializer_class = EventSerializer
+    use_case = EventUseCase(EventRepository())
+    permission_classes = [IsAdminUser, IsAuthenticated]
+
+    def get_object(self):
+        user = self.request.user
+        event_id = self.kwargs['event_pk']
+        return self.use_case.get_event(client=user, event_id=event_id)
+
+    def perform_update(self, serializer):
+        user = self.request.user
+        event_id = self.kwargs['event_pk']
+
+        return self.use_case.update_event(client=user, event_id=event_id, data=serializer.validated_data)
+
+    def perform_delete(self, instance):
+        user = self.request.user
+        return self.use_case.delete_event(client=user, event_id=instance.event_id)
+
 
 
 class StartEventView(generics.ListAPIView):
@@ -178,7 +201,7 @@ class FeedList(generics.ListCreateAPIView):
 
 class FeedDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Feed.objects.all()
-    serializer_class = FeedSerializer
+    serializer_class = FeedDetailSerializer
     permission_classes = [IsAdminUser, IsAuthenticated]
     use_case = FeedUseCase(FeedRepository())
 
@@ -225,6 +248,8 @@ class FeedPolygonDetails(generics.RetrieveUpdateDestroyAPIView):
 
     serializer_class = FeedPolygonSerializer
     use_case = FeedPolygonUseCase(FeedPolygonRepository())
+    permission_classes = [IsAdminUser, IsAuthenticated]
+
 
     def get_object(self):
         event_id = self.kwargs['event_pk']
