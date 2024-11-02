@@ -1,5 +1,5 @@
 from django.urls import path
-from config_app.interface_adapters.views import ClientDetails, ClientList, EventDetail, EventList, EventCreateView, FeedDetail, FeedList, FeedPolygonList, FeedPolygonDetails, StartEventView, EventStatusView, MyAccount
+from config_app.interface_adapters.views import ClientDetails, ClientList, EventDetail, EventList, EventCreateView, FeedDetail, FeedList, FeedPolygonList, FeedPolygonDetails, StartEventView, EventStatusView, MyAccount, StartFeedView, StopFeedView, FeedStatus
 
 urlpatterns = [
     path('', ClientList.as_view(), name='client-list'),
@@ -15,8 +15,16 @@ urlpatterns = [
     path('events/<int:event_pk>/feed/<int:feed_pk>/feed-polygons/<int:pk>/',
          FeedPolygonDetails.as_view(), name='feed-polygon-detail'),
     path('events/<int:event_pk>/feed/<int:feed_pk>/start/',
-         StartEventView.as_view(), name='start-event'),
-    path('events/status/',
-         EventStatusView.as_view(), name='event-status'),
+         StartFeedView.as_view(), name='start-feed'),
+    path('events/<int:event_pk>/feed/<int:feed_pk>/stop/',
+         StopFeedView.as_view(), name='stop-feed'),
+    path('events/<int:event_pk>/feed/status/',
+         FeedStatusView.as_view(), name='feed-status'),
+#     path('events/<int:event_pk>/feed/<int:feed_pk>/start/',
+#          StartEventView.as_view(), name='start-event'),
+     # path('events/<int:event_pk>/feed/<int:feed_pk>/stop/',
+     #     StopEventView.as_view(), name='stop-event'),
+#     path('events/status/',
+#          EventStatusView.as_view(), name='event-status'),
     path("profile", MyAccount.as_view(), name="feed_list")
 ]

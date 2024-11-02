@@ -1,26 +1,20 @@
 from rest_framework import generics
 from rest_framework.permissions import IsAdminUser
-from config_app.models import Feed, FeedPolygon, Event, ZoneCount
+from config_app.models import Feed, FeedPolygon, Event, ZoneCount, Client, EventStatus, FeedStatus
 from config_app.interface_adapters.serializers import FeedSerializer, FeedPolygonSerializer, EventSerializer, EventCreateSerializer,  ClientSerializer, EventStatusSerializer, ZoneCountSerializer, FeedDetailSerializer
 from config_app.use_cases.client_use_case import ClientUseCase
 from config_app.use_cases.event_use_case import EventUseCase
 from config_app.use_cases.feed_use_case import FeedUseCase
 from config_app.use_cases.feed_polygon_use_case import FeedPolygonUseCase
-from config_app.use_cases.start_event_use_case import StartEventUseCase
-from config_app.use_cases.event_status_use_case import EventStatusUseCase
 from config_app.use_cases.zone_count_use_case import ZoneCountUseCase
 from config_app.repositories.client_repository import ClientRepository
 from config_app.repositories.event_repository import EventRepository
 from config_app.repositories.feed_repository import FeedRepository
 from config_app.repositories.feed_polygon_repository import FeedPolygonRepository
-from config_app.repositories.start_event_repository import StartEventRepository
-from config_app.repositories.event_status_repository import EventStatusRepository
 from config_app.repositories.zone_count_repository import ZoneCountRepository
-from config_app.models import Client, EventStatus
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework import status
-from rest_framework.exceptions import PermissionDenied
 
 
 class ClientList(generics.ListCreateAPIView):
@@ -150,33 +144,54 @@ class EventDetail(generics.RetrieveUpdateDestroyAPIView):
         return self.use_case.delete_event(client=user, event_id=instance.event_id)
 
 
+# class StartEventView(generics.ListAPIView):
+#     queryset = EventStatus.objects.all()
+#     serializer_class = EventStatusSerializer
+#     use_case = EventUseCase(EventRepository())
+#     permission_classes = [IsAdminUser, IsAuthenticated]
 
-class StartEventView(generics.ListAPIView):
-    use_case = StartEventUseCase(StartEventRepository())
-    permission_classes = [IsAdminUser, IsAuthenticated]
+#     def get(self, request, event_pk, feed_pk):
+#         user = self.request.user
+#         event_id = event_pk
+#         feed_id = feed_pk
 
-    def get(self, request, event_pk, feed_pk):
-        event_id = event_pk
-        feed_id = feed_pk
+#         # Call the use case to start the event
+#         event_status = self.use_case.start_the_event(
+#             client=user, event_id=event_id, feed_id=feed_id)
 
-        event_status_id = self.use_case.count_in_polygon(event_id, feed_id)
+#         # Serialize the event status before returning it
+#         serializer = self.get_serializer(event_status)
+#         return Response(serializer.data, status=status.HTTP_200_OK)
 
-        return Response({"event_status_id": event_status_id}, status=status.HTTP_200_OK)
+
+# class StopEventView(generics.ListAPIView):
+#     queryset = EventStatus.objects.all()
+#     serializer_class = EventStatusSerializer
+#     use_case = EventUseCase(EventRepository())
+#     permission_classes = [IsAdminUser, IsAuthenticated]
+
+#     def get(self, request, event_pk, feed_pk):
+#         event_id = event_pk
+#         feed_id = feed_pk
+
+#         event_status_id = self.use_case.stop_the_event(event_id, feed_id)
+
+#         return Response({"event_status_id": event_status_id}, status=status.HTTP_200_OK)
 
 
-class EventStatusView(generics.ListAPIView):
-    queryset = EventStatus.objects.all()
-    serializer_class = EventStatusSerializer
-    use_case = EventStatusUseCase(EventStatusRepository())
-    permission_classes = [IsAdminUser, IsAuthenticated]
+# class EventStatusView(generics.ListAPIView):
+#     queryset = EventStatus.objects.all()
+#     serializer_class = EventStatusSerializer
+#     use_case = EventStatusUseCase(EventStatusRepository())
+#     permission_classes = [IsAdminUser, IsAuthenticated]
 
-    def get(self, request):
-        
-        statuses = self.use_case.get_all_event_statuses()  # This should return a queryset
-        serializer = self.serializer_class(
-            statuses, many=True)  # Serialize the queryset
-        # Return serialized data wrapped in a Response
-        return Response(serializer.data)
+#     def get(self, request):
+
+#         statuses = self.use_case.get_all_event_statuses()  # This should return a queryset
+#         serializer = self.serializer_class(
+#             statuses, many=True)  # Serialize the queryset
+#         # Return serialized data wrapped in a Response
+#         return Response(serializer.data)
 
 
 class FeedList(generics.ListCreateAPIView):
@@ -236,7 +251,7 @@ class FeedPolygonList(generics.ListCreateAPIView):
 
         event_id = self.kwargs['event_pk']
         feed_id = self.kwargs['feed_pk']
-        return self.use_case.create_feed_polygon(feed_id=feed_id, event_id=event_id, client = client, data=serializer.validated_data)
+        return self.use_case.create_feed_polygon(feed_id=feed_id, event_id=event_id, client=client, data=serializer.validated_data)
 
     def get_queryset(self):
         event_id = self.kwargs['event_pk']
@@ -250,11 +265,10 @@ class FeedPolygonDetails(generics.RetrieveUpdateDestroyAPIView):
     use_case = FeedPolygonUseCase(FeedPolygonRepository())
     permission_classes = [IsAdminUser, IsAuthenticated]
 
-
     def get_object(self):
         event_id = self.kwargs['event_pk']
         feed_id = self.kwargs['feed_pk']
-        polygon_id = self.kwargs['pk'] 
+        polygon_id = self.kwargs['pk']
         return self.use_case.get_feed_polygon(polygon_id=polygon_id, feed_id=feed_id, event_id=event_id)
 
     def perform_update(self, serializer):
@@ -269,12 +283,64 @@ class FeedPolygonDetails(generics.RetrieveUpdateDestroyAPIView):
         return self.use_case.delete_feed_polygon(polygon_id=instance.id, feed_id=feed_id, event_id=event_id)
 
 
+class StartFeedView(generics.CreateAPIView):
+    queryset = FeedStatus.objects.all()
+    serializer_class = FeedStatusSerializer
+    use_case = FeedUseCase(FeedRepository())
+    permission_classes = [IsAdminUser, IsAuthenticated]
+
+    def get(self, request, event_pk, feed_pk):
+        user = self.request.user
+        event_id = event_pk
+        feed_id = feed_pk
+
+        # Call the use case to start the event
+        self.use_case.start_the_feed(
+            client=user, event_id=event_id, feed_id=feed_id)
+
+        return Response({"message": "Video feed started"}, status=status.HTTP_200_OK)
+
+
+class StopFeedView(generics.DestroyAPIView):
+    queryset = FeedStatus.objects.all()
+    serializer_class = FeedStatusSerializer
+    use_case = FeedUseCase(FeedRepository())
+    permission_classes = [IsAdminUser, IsAuthenticated]
+
+    def post(self, request, *args, **kwargs):
+        event_id = self.kwargs["event_pk"]
+        feed_id = self.kwargs["feed_pk"]
+        
+        feed_status = self.use_case.stop_the_feed(event_id, feed_id)
+        
+
+        return Response({"feed_status": feed_status}, status=status.HTTP_200_OK)
+    
+
+class FeedStatusView(generics.ListAPIView):
+    queryset = FeedStatus.objects.all()
+    serializer_class = FeedStatusSerializer
+    use_case = FeedUseCase(FeedRepository())
+    permission_classes = [IsAdminUser, IsAuthenticated]
+
+    def get(self, request):
+
+        statuses = self.use_case.get_all_feed_statuses()  # This should return a queryset
+        serializer = self.serializer_class(
+            statuses, many=True)  # Serialize the queryset
+        # Return serialized data wrapped in a Response
+        return Response(serializer.data)
+    
+
+
+
+    
 class ZoneCount(generics.ListAPIView):
     queryset = ZoneCount.objects.all()
     serializer_class = ZoneCountSerializer
     use_case = ZoneCountUseCase(ZoneCountRepository())
     permission_classes = [IsAdminUser, IsAuthenticated]
-    
+
     # def perform_create(self, serializer):
 
     #     user = self.request.user
@@ -283,104 +349,7 @@ class ZoneCount(generics.ListAPIView):
 
     #     return self.use_case.create_event(client=user, data=serializer.validated_data)
 
-
     def get_queryset(self):
-        
+
         zone_counts = self.use_case.get_all_zone_counts()  # This should return a queryset
         pass
-
-
-
-
-# from django.contrib.auth.models import User
-# # from config_app.serializers import
-# from rest_framework import generics
-# from rest_framework.permissions import IsAdminUser
-# from .models import Feed, FeedPolygon, Event, Client
-# from .serializers import FeedSerializer, FeedPolygonSerializer, EventSerializer, ClientSerializer
-# from rest_framework.exceptions import NotFound
-
-
-# class ClientList(generics.ListCreateAPIView):
-#     queryset = Client.objects.all()
-#     serializer_class = ClientSerializer
-#     # permission_classes = [IsAdminUser]
-
-
-# class ClientDetails(generics.RetrieveUpdateDestroyAPIView):
-#     queryset = Client.objects.all()
-#     serializer_class = ClientSerializer
-#     # permission_classes = [IsAdminUser]
-
-
-# class EventList(generics.ListCreateAPIView):
-#     queryset = Event.objects.all()
-#     serializer_class = EventSerializer
-#     # permission_classes = [IsAdminUser]
-
-#     # def get_queryset(self):
-#     #     pk = self.kwargs.get('pk')
-#     #     customer = Client.objects.get(pk=pk)
-#     #     return Event.objects.get(customer=customer)
-
-
-#     def get_queryset(self):
-#         try:
-#             customer = Client.objects.get(pk=self.kwargs['pk'])
-#         except Client.DoesNotExist:
-#             raise NotFound("Client not found.")
-#         return Event.objects.get(customer=customer)
-
-
-# class EventDetail(generics.RetrieveUpdateDestroyAPIView):
-#     queryset = Event.objects.all()
-#     serializer_class = EventSerializer
-#     # permission_classes = [IsAdminUser]
-
-
-# class FeedList(generics.ListCreateAPIView):
-#     queryset = Feed.objects.all()
-#     serializer_class = FeedSerializer
-#     # permission_classes = [IsAdminUser]
-
-
-#     # def get_queryset(self):
-#     #     pk = self.kwargs.get('pk')
-#     #     event = Event.objects.get(pk=pk)
-#     #     return Feed.objects.filter(feed_event=event)
-
-#     def get_queryset(self):
-#         pk = self.kwargs.get('pk')  # Adjust this based on how you're retrieving the ID
-#         try:
-#             event = Event.objects.get(pk=pk)
-#         except Event.DoesNotExist:
-#             raise NotFound("Event matching query does not exist.")
-#         return Feed.objects.get(feed_event=event)
-
-#     def perform_create(self, serializer):
-#         pk = self.kwargs.get('pk')
-#         event = Event.objects.get(pk=pk)
-#         serializer.save(feed_event=event)
-
-
-# class FeedDetail(generics.RetrieveUpdateDestroyAPIView):
-#     queryset = Feed.objects.all()
-#     serializer_class = FeedSerializer
-#     # permission_classes = [IsAdminUser]
-
-
-# class FeedPolygonList(generics.ListCreateAPIView):
-
-#     def get_queryset(self):
-#         """
-#         This view should return a list of all the purchases for
-#         the user as determined by the username portion of the URL.
-#         """
-#         pk = self.kwargs.get('pk')
-#         return FeedPolygon.objects.filter(feed_id=pk)
-
-
-# class FeedPolygonDetails(generics.RetrieveUpdateDestroyAPIView):
-#     queryset = FeedPolygon.objects.all()
-#     serializer_class = FeedPolygonSerializer
-#     # permission_classes = [IsAdminUser]

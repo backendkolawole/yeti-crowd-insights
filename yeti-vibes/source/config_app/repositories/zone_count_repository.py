@@ -14,6 +14,7 @@ class ZoneCountRepository:
             event_id=zone_count.event_id,
             polygon_id=zone_count.polygon_id,
             count=zone_count.count,
+            count_type = zone_count.count_type,
             timestamp=zone_count.timestamp  
         )
         zone_count.save()

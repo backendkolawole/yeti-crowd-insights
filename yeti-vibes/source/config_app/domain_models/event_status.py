@@ -1,6 +1,6 @@
 class EventStatus:
-    def __init__(self, event_id, status, timestamp):
-        self.event_id = event_id
+    def __init__(self, event, status, timestamp):
+        self.event = event
         self.status = status
         self.timestamp = timestamp
         

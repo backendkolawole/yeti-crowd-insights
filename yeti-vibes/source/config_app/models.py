@@ -57,7 +57,13 @@ class FeedPolygon(models.Model):
 
 
 class EventStatus(models.Model):
-    event_id = models.IntegerField()
+    event = models.ForeignKey(Event, on_delete=models.CASCADE)
+    status = models.CharField(max_length=5)
+    timestamp = models.DateTimeField(auto_now_add=True)
+    
+
+class FeedStatus(models.Model):
+    feed = models.ForeignKey(Feed, on_delete=models.CASCADE)
     status = models.CharField(max_length=5)
     timestamp = models.DateTimeField(auto_now_add=True)
 
@@ -68,6 +74,7 @@ class ZoneCount(models.Model):
     polygon = models.ForeignKey(
         FeedPolygon, on_delete=models.CASCADE, related_name="zone_counts")
     count = models.IntegerField()
+    count_type = models.CharField(max_length=5, default = "in")
     timestamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

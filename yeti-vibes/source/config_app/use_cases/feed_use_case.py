@@ -1,4 +1,8 @@
 from config_app.repositories.feed_repository import FeedRepository
+from config_app.models import Feed as FeedModel, EventStatus as EventStatusModel, Event as EventModel
+from rest_framework.exceptions import NotFound
+from datetime import datetime
+
 
 
 class FeedUseCase:
@@ -19,6 +23,15 @@ class FeedUseCase:
 
     def delete_feed(self, client, event_id, feed_id):
         return self.repository.delete_feed(client=client, event_id=event_id, feed_id=feed_id)
+    
+    def start_the_feed(self, client, event_id, feed_id):
+        return self.repositoru.start_the_feed(client=client, event_id=event_id, feed_id=feed_id)
+
+    def stop_the_feed(self, client, event_id, feed_id):
+        return self.repository.stop_the_feed(client=client, event_id=event_id, feed_id=feed_id)
+    
+    def get_all_feed_statuses(self):
+        return self.repository.get_all_feed_statuses()
 
     def configure_zones_on_frame(self):
         pass

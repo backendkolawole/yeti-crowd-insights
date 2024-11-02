@@ -1,5 +1,6 @@
 # Ultralytics YOLO 🚀, AGPL-3.0 license
 
+from config_app.models import ZoneCount as ZoneCountModel
 import argparse
 from collections import defaultdict
 from pathlib import Path
@@ -87,7 +88,8 @@ def run(
     region_thickness,
     event_id,
     feed_id,
-    polygons
+    polygons,
+    timestamp
 ):
     """
     Run Region counting on a video using YOLOv8 and ByteTrack.
@@ -205,6 +207,15 @@ def run(
                             #         '1', 'in', '{current_count}', '{current_timestamp}')
                             #     """
                             # cur.execute(sql)
+
+                            zone_count = ZoneCountModel(
+                                event_id=event_id,
+                                polygon_id=region["polygon_id"],
+                                count=current_count,
+                                count_type="in",
+                                timestamp=datetime.now()
+                            )
+                            zone_count.save()
                             print(
                                 f"Object {track_id} has entered the region, current count is: {current_count}")
                     else:
@@ -218,6 +229,14 @@ def run(
                             #     VALUES ('1', 'out', '{current_count}', '{current_timestamp}')
                             #     """
                             # cur.execute(sql)
+                            zone_count = ZoneCountModel(
+                                event_id=event_id,
+                                polygon_id=region["polygon_id"],
+                                count=current_count,
+                                count_type="out",
+                                timestamp=datetime.now()
+                            )
+                            zone_count.save()
                             print(
                                 f"Object {track_id} has left the region, current_count is: {current_count}")
                             del objects_in_region[track_id]
