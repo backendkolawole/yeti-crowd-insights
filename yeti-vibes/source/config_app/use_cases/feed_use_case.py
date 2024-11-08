@@ -25,7 +25,7 @@ class FeedUseCase:
         return self.repository.delete_feed(client=client, event_id=event_id, feed_id=feed_id)
     
     def start_the_feed(self, client, event_id, feed_id):
-        return self.repositoru.start_the_feed(client=client, event_id=event_id, feed_id=feed_id)
+        return self.repository.start_the_feed(client=client, event_id=event_id, feed_id=feed_id)
 
     def stop_the_feed(self, client, event_id, feed_id):
         return self.repository.stop_the_feed(client=client, event_id=event_id, feed_id=feed_id)

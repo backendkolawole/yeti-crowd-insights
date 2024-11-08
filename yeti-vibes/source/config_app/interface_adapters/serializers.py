@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from config_app.models import Feed, FeedPolygon, Event, EventStatus, Client, ZoneCount
+from config_app.models import Feed, FeedPolygon, Event, EventStatus, Client, ZoneCount, FeedStatus
 
 
 class FeedPolygonSerializer(serializers.ModelSerializer):
@@ -76,6 +76,14 @@ class FeedDetailSerializer(serializers.ModelSerializer):
         return instance
 
 
+class FeedStatusSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = FeedStatus
+        
+        # Include all relevant fields
+        fields = ['feed', 'status', "timestamp"]
+        
+        
 class EventStatusSerializer(serializers.ModelSerializer):
     class Meta:
         model = EventStatus

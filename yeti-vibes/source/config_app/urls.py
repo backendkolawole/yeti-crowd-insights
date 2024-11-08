@@ -1,5 +1,5 @@
 from django.urls import path
-from config_app.interface_adapters.views import ClientDetails, ClientList, EventDetail, EventList, EventCreateView, FeedDetail, FeedList, FeedPolygonList, FeedPolygonDetails, StartEventView, EventStatusView, MyAccount, StartFeedView, StopFeedView, FeedStatus
+from config_app.interface_adapters.views import ClientDetails, ClientList, EventDetail, EventList, EventCreateView, FeedDetail, FeedList, FeedPolygonList, FeedPolygonDetails, MyAccount, StartFeedView, StopFeedView, FeedStatusView
 
 urlpatterns = [
     path('', ClientList.as_view(), name='client-list'),

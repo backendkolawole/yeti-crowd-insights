@@ -1,7 +1,7 @@
 from rest_framework import generics
 from rest_framework.permissions import IsAdminUser
 from config_app.models import Feed, FeedPolygon, Event, ZoneCount, Client, EventStatus, FeedStatus
-from config_app.interface_adapters.serializers import FeedSerializer, FeedPolygonSerializer, EventSerializer, EventCreateSerializer,  ClientSerializer, EventStatusSerializer, ZoneCountSerializer, FeedDetailSerializer
+from config_app.interface_adapters.serializers import FeedSerializer, FeedPolygonSerializer, EventSerializer, EventCreateSerializer,  ClientSerializer, EventStatusSerializer, FeedStatusSerializer, ZoneCountSerializer, FeedDetailSerializer
 from config_app.use_cases.client_use_case import ClientUseCase
 from config_app.use_cases.event_use_case import EventUseCase
 from config_app.use_cases.feed_use_case import FeedUseCase
@@ -15,6 +15,8 @@ from config_app.repositories.zone_count_repository import ZoneCountRepository
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework import status
+import threading
+from yolov8_region_counter import stop_feed
 
 
 class ClientList(generics.ListCreateAPIView):
@@ -98,28 +100,6 @@ class EventCreateView(generics.CreateAPIView):
         serializer.save(client=user)
 
         return self.use_case.create_event(client=user, data=serializer.validated_data)
-
-
-class EventDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Event.objects.all()
-    serializer_class = EventSerializer
-    use_case = EventUseCase(EventRepository())
-    permission_classes = [IsAdminUser, IsAuthenticated]
-
-    def get_object(self):
-        user = self.request.user
-        event_id = self.kwargs['event_pk']
-        return self.use_case.get_event(client=user, event_id=event_id)
-
-    def perform_update(self, serializer):
-        user = self.request.user
-        event_id = self.kwargs['event_pk']
-
-        return self.use_case.update_event(client=user, event_id=event_id, data=serializer.validated_data)
-
-    def perform_delete(self, instance):
-        user = self.request.user
-        return self.use_case.delete_event(client=user, event_id=instance.event_id)
 
 
 class EventDetail(generics.RetrieveUpdateDestroyAPIView):
@@ -293,12 +273,17 @@ class StartFeedView(generics.CreateAPIView):
         user = self.request.user
         event_id = event_pk
         feed_id = feed_pk
-
-        # Call the use case to start the event
-        self.use_case.start_the_feed(
+        
+        feed_status = self.use_case.start_the_feed(
             client=user, event_id=event_id, feed_id=feed_id)
 
-        return Response({"message": "Video feed started"}, status=status.HTTP_200_OK)
+        serializer = self.get_serializer(feed_status)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+        # self.use_case.start_the_feed(
+        #     client=user, event_id=event_id, feed_id=feed_id)
+
+        # return Response({"message": "Video feed started"}, status=status.HTTP_200_OK)
 
 
 class StopFeedView(generics.DestroyAPIView):
@@ -307,15 +292,21 @@ class StopFeedView(generics.DestroyAPIView):
     use_case = FeedUseCase(FeedRepository())
     permission_classes = [IsAdminUser, IsAuthenticated]
 
-    def post(self, request, *args, **kwargs):
+    def get(self, request, *args, **kwargs):
+        global stop_feed
+        stop_feed = True
+        print("Stop feed request received, stop_feed set to True.", stop_feed)
+
+        user = self.request.user
         event_id = self.kwargs["event_pk"]
         feed_id = self.kwargs["feed_pk"]
-        
-        feed_status = self.use_case.stop_the_feed(event_id, feed_id)
-        
 
-        return Response({"feed_status": feed_status}, status=status.HTTP_200_OK)
-    
+        feed_status = self.use_case.stop_the_feed(
+            client=user, event_id=event_id, feed_id=feed_id)
+
+        serializer = self.get_serializer(feed_status)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
 
 class FeedStatusView(generics.ListAPIView):
     queryset = FeedStatus.objects.all()
@@ -330,11 +321,8 @@ class FeedStatusView(generics.ListAPIView):
             statuses, many=True)  # Serialize the queryset
         # Return serialized data wrapped in a Response
         return Response(serializer.data)
-    
 
 
-
-    
 class ZoneCount(generics.ListAPIView):
     queryset = ZoneCount.objects.all()
     serializer_class = ZoneCountSerializer

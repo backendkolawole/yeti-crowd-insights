@@ -1,7 +1,6 @@
 from config_app.domain_models.event import Event
 from rest_framework.exceptions import NotFound
 from config_app.models import EventStatus as EventStatusModel, Event as EventModel
-from yolov8_region_counter import run
 from datetime import datetime
 
 

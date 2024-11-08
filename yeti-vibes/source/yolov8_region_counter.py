@@ -22,59 +22,7 @@ track_history = defaultdict(list)
 current_region = None
 
 
-# def mouse_callback(event, x, y, flags, param):
-#     """
-#     Handles mouse events for region manipulation.
-
-#     Parameters:
-#         event (int): The mouse event type (e.g., cv2.EVENT_LBUTTONDOWN).
-#         x (int): The x-coordinate of the mouse pointer.
-#         y (int): The y-coordinate of the mouse pointer.
-#         flags (int): Additional flags passed by OpenCV.
-#         param: Additional parameters passed to the callback (not used in this function).
-
-#     Global Variables:
-#         current_region (dict): A dictionary representing the current selected region.
-
-#     Mouse Events:
-#         - LBUTTONDOWN: Initiates dragging for the region containing the clicked point.
-#         - MOUSEMOVE: Moves the selected region if dragging is active.
-#         - LBUTTONUP: Ends dragging for the selected region.
-
-#     Notes:
-#         - This function is intended to be used as a callback for OpenCV mouse events.
-#         - Requires the existence of the 'counting_regions' list and the 'Polygon' class.
-
-#     Example:
-#         >>> cv2.setMouseCallback(window_name, mouse_callback)
-#     """
-#     global current_region
-
-#     # Mouse left button down event
-#     if event == cv2.EVENT_LBUTTONDOWN:
-#         for region in counting_regions:
-#             if region["polygon"].contains(Point((x, y))):
-#                 current_region = region
-#                 current_region["dragging"] = True
-#                 current_region["offset_x"] = x
-#                 current_region["offset_y"] = y
-
-#     # Mouse move event
-#     elif event == cv2.EVENT_MOUSEMOVE:
-#         if current_region is not None and current_region["dragging"]:
-#             dx = x - current_region["offset_x"]
-#             dy = y - current_region["offset_y"]
-#             current_region["polygon"] = Polygon(
-#                 [(p[0] + dx, p[1] + dy)
-#                  for p in current_region["polygon"].exterior.coords]
-#             )
-#             current_region["offset_x"] = x
-#             current_region["offset_y"] = y
-
-#     # Mouse left button up event
-#     elif event == cv2.EVENT_LBUTTONUP:
-#         if current_region is not None and current_region["dragging"]:
-#             current_region["dragging"] = False
+stop_feed = False
 
 
 def run(
@@ -112,6 +60,7 @@ def run(
     """
     vid_frame_count = 0
     current_count = 0
+    global stop_feed
 
     # Initialize a dictionary to track objects in regions
     objects_in_region = {}
@@ -133,16 +82,6 @@ def run(
         videocapture.get(3)), int(videocapture.get(4))
     fps, fourcc = int(videocapture.get(5)), cv2.VideoWriter_fourcc(*"mp4v")
 
-    # # connect to a postgresql database server
-    # conn = psycopg2.connect(database="yeti-crowd-insights",
-    #                         user="postgres",
-    #                         host='localhost',
-    #                         password="1Aa@36052546postgres",
-    #                         port=5432)
-
-    # # Open a cursor to perform database operations
-    # cur = conn.cursor()
-
     counting_regions = [
         {
             "name": "YOLOv8 Polygon Region",
@@ -157,7 +96,8 @@ def run(
     ]
 
     # Iterate over video frames
-    while videocapture.isOpened():
+    while videocapture.isOpened() and not stop_feed:
+        print(stop_feed)
         success, frame = videocapture.read()
         if not success:
             break
@@ -200,14 +140,6 @@ def run(
                             objects_in_region[track_id] = True
                             current_count += 1
 
-                            # # Insert data
-                            # current_timestamp = datetime.now()
-                            # sql = f"""INSERT INTO people_in_regions (feed_id, count_type, current_count, ts)
-                            #     VALUES (
-                            #         '1', 'in', '{current_count}', '{current_timestamp}')
-                            #     """
-                            # cur.execute(sql)
-
                             zone_count = ZoneCountModel(
                                 event_id=event_id,
                                 polygon_id=region["polygon_id"],
@@ -224,11 +156,6 @@ def run(
 
                             current_count -= 1
 
-                            # # Insert data
-                            # sql = f"""INSERT INTO people_in_regions (feed_id, count_type, current_count, ts)
-                            #     VALUES ('1', 'out', '{current_count}', '{current_timestamp}')
-                            #     """
-                            # cur.execute(sql)
                             zone_count = ZoneCountModel(
                                 event_id=event_id,
                                 polygon_id=region["polygon_id"],
@@ -286,8 +213,66 @@ def run(
 
     print(
         f" video frame count: {vid_frame_count}, current_count: {current_count}")
-    # conn.commit()
-    # cur.close()
-    # conn.close()
+
     videocapture.release()
     cv2.destroyAllWindows()
+
+def stop_the_feed():
+    global stop_feed
+    stop_feed = True
+    print("Video feed has been requested to stop.")
+        
+        
+# def mouse_callback(event, x, y, flags, param):
+#     """
+#     Handles mouse events for region manipulation.
+
+#     Parameters:
+#         event (int): The mouse event type (e.g., cv2.EVENT_LBUTTONDOWN).
+#         x (int): The x-coordinate of the mouse pointer.
+#         y (int): The y-coordinate of the mouse pointer.
+#         flags (int): Additional flags passed by OpenCV.
+#         param: Additional parameters passed to the callback (not used in this function).
+
+#     Global Variables:
+#         current_region (dict): A dictionary representing the current selected region.
+
+#     Mouse Events:
+#         - LBUTTONDOWN: Initiates dragging for the region containing the clicked point.
+#         - MOUSEMOVE: Moves the selected region if dragging is active.
+#         - LBUTTONUP: Ends dragging for the selected region.
+
+#     Notes:
+#         - This function is intended to be used as a callback for OpenCV mouse events.
+#         - Requires the existence of the 'counting_regions' list and the 'Polygon' class.
+
+#     Example:
+#         >>> cv2.setMouseCallback(window_name, mouse_callback)
+#     """
+#     global current_region
+
+#     # Mouse left button down event
+#     if event == cv2.EVENT_LBUTTONDOWN:
+#         for region in counting_regions:
+#             if region["polygon"].contains(Point((x, y))):
+#                 current_region = region
+#                 current_region["dragging"] = True
+#                 current_region["offset_x"] = x
+#                 current_region["offset_y"] = y
+
+#     # Mouse move event
+#     elif event == cv2.EVENT_MOUSEMOVE:
+#         if current_region is not None and current_region["dragging"]:
+#             dx = x - current_region["offset_x"]
+#             dy = y - current_region["offset_y"]
+#             current_region["polygon"] = Polygon(
+#                 [(p[0] + dx, p[1] + dy)
+#                  for p in current_region["polygon"].exterior.coords]
+#             )
+#             current_region["offset_x"] = x
+#             current_region["offset_y"] = y
+
+#     # Mouse left button up event
+#     elif event == cv2.EVENT_LBUTTONUP:
+#         if current_region is not None and current_region["dragging"]:
+#             current_region["dragging"] = False

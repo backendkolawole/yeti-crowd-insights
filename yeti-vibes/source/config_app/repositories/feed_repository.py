@@ -4,6 +4,9 @@ from rest_framework.exceptions import NotFound
 from config_app.models import Feed as FeedModel, FeedStatus as FeedStatusModel
 from rest_framework.exceptions import NotFound
 from datetime import datetime
+from yolov8_region_counter import run, stop_the_feed
+import threading
+from yolov8_region_counter import stop_feed
 
 
 class FeedRepository:
@@ -66,51 +69,53 @@ class FeedRepository:
 
     def start_the_feed(self, client, event_id, feed_id):
         try:
-            feed = FeedModel.objects.get(event_id=event_id, feed_id=feed_id)
-        except FeedModel.DoesNotExist:
-            raise NotFound("No Feed Found")
+            event = Event.objects.get(client=client, event_id=event_id)
+        except Event.DoesNotExist:
+            raise NotFound("No Event Found")
 
+        try:
+            feed = FeedModel.objects.get(event=event, feed_id=feed_id)
+        except FeedModel.DoesNotExist:
+            raise NotFound("No feed found")
         polygons = feed.feed_polygons.all()
 
         rtsp_link = feed.rtsp_link
 
         current_timestamp = datetime.now()
 
-        # return count_people_in_polygon(self.rtsp_link)
-        run(
-            weights="yolov8n.pt",
-            source='Shopping, People, Commerce, Mall, Many, Crowd, Walking   Free Stock video footage   YouTube.mp4',
-            device="cpu",
-            view_img=True,
-            classes=[0],
-            line_thickness=2,
-            track_thickness=2,
-            region_thickness=2,
-            event_id=event_id,
-            feed_id=feed_id,
-            polygons=polygons,
-            timestamp=current_timestamp
-        )
+        # Start the feed in a separate thread
+        thread = threading.Thread(
+            target=run, args=("yolov8n.pt",
+                              'Shopping, People, Commerce, Mall, Many, Crowd, Walking   Free Stock video footage   YouTube.mp4', "cpu", True, [0], 2, 2, 2, event_id, feed_id, polygons, current_timestamp))
+        thread.start()
 
         feed_status = FeedStatusModel(
-            feed_id=feed, status="start", timestamp=current_timestamp)
+            feed=feed, status="start", timestamp=current_timestamp)
 
         feed_status.save()
         return feed_status
 
     def stop_the_feed(self, client, event_id, feed_id):
+
         try:
-            feed = FeedModel.objects.get(event_id=event_id, feed_id=feed_id)
+            event = Event.objects.get(client=client, event_id=event_id)
+        except Event.DoesNotExist:
+            raise NotFound("No Event Found")
+
+        try:
+            feed = FeedModel.objects.get(event=event, feed_id=feed_id)
         except FeedModel.DoesNotExist:
-            raise NotFound("No Feed Found")
+            raise NotFound("No feed found")
         current_timestamp = datetime.now()
+        stop_the_feed()
+        # print("stop feed", stop_feed)
 
         feed_status = FeedStatusModel(
-            feed_id=feed, status="stop", timestamp=current_timestamp)
+            feed=feed, status="stop", timestamp=current_timestamp)
 
         feed_status.save()
         return feed_status
-    
+
     def get_all_feed_statuses(self):
 
         feed_statuses = FeedStatusModel.objects.all()
