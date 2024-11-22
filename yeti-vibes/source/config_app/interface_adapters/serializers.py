@@ -14,7 +14,7 @@ class ClientSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Client
-        fields = ["id", "username", "email"]
+        fields = ["id", "username", "email", "password"]
 
     def create(self, validated_data):
         return Client.objects.create(**validated_data)
@@ -39,7 +39,7 @@ class EventSerializer(serializers.ModelSerializer):
         model = Event
         fields = ['event_id', 'event_name',
                   'description', 'end_date', 'is_active']
-        
+
     def update(self, instance, validated_data):
         instance.event_name = validated_data.get(
             'event_name', instance.event_name)
@@ -79,11 +79,11 @@ class FeedDetailSerializer(serializers.ModelSerializer):
 class FeedStatusSerializer(serializers.ModelSerializer):
     class Meta:
         model = FeedStatus
-        
+
         # Include all relevant fields
         fields = ['feed', 'status', "timestamp"]
-        
-        
+
+
 class EventStatusSerializer(serializers.ModelSerializer):
     class Meta:
         model = EventStatus
@@ -95,3 +95,8 @@ class ZoneCountSerializer(serializers.ModelSerializer):
     class Meta:
         model = ZoneCount
         fields = ['event', 'polygon', 'count', 'timestamp']
+
+
+class LoginSerializer(serializers.Serializer):
+    username = serializers.CharField(required=True)
+    password = serializers.CharField(required=True, write_only=True)

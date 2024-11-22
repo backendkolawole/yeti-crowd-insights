@@ -1,0 +1,6 @@
+.env
+venv
+Dockerfile
+myvirtualenviron
+myvenv
+__pycache__

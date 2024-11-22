@@ -217,12 +217,20 @@ def run(
     videocapture.release()
     cv2.destroyAllWindows()
 
+
 def stop_the_feed():
     global stop_feed
     stop_feed = True
     print("Video feed has been requested to stop.")
-        
-        
+    
+    
+
+def start_the_feed():
+    global stop_feed
+    stop_feed = False
+    print("Video feed has been requested to start.")
+
+
 # def mouse_callback(event, x, y, flags, param):
 #     """
 #     Handles mouse events for region manipulation.

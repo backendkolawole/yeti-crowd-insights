@@ -37,12 +37,17 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'rest_framework',
     'config_app',
+    # 'oauth2_provider',
+    # 'social_django',
+    # 'drf_social_oauth2',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'drf_yasg',
+
 ]
 
 MIDDLEWARE = [
@@ -68,6 +73,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
@@ -125,6 +132,39 @@ AUTH_USER_MODEL = "config_app.Client"
 #     ]
 # }
 
+# REST_FRAMEWORK = {
+#     'DEFAULT_AUTHENTICATION_CLASSES': (
+#         # 'oauth2_provider.ext.rest_framework.OAuth2Authentication',  # django-oauth-toolkit < 1.0.0
+#         # django-oauth-toolkit >= 1.0.0
+#         'oauth2_provider.contrib.rest_framework.OAuth2Authentication',
+#         'drf_social_oauth2.authentication.SocialAuthentication',
+#     ),
+# }
+
+# AUTHENTICATION_BACKENDS = (
+#     # Google  OAuth2
+#     'social_core.backends.google.GoogleOAuth2',
+#     'drf_social_oauth2.backends.DjangoOAuth2',
+#     'django.contrib.auth.backends.ModelBackend',
+# )
+
+# # Google configuration
+# SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = "76380560521-75pe2k7ksp08lco986bjtrhtubnpkhg0.apps.googleusercontent.com"
+# SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = "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"
+
+
+# "client_secret":"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"
+
+# "client_id":"969762097085-eg8oh70q92hp6rc6eipb6fbav3kceipk.apps.googleusercontent.com"
+
+
+# Define SOCIAL_AUTH_GOOGLE_OAUTH2_SCOPE to get extra permissions from Google.
+# SOCIAL_AUTH_GOOGLE_OAUTH2_SCOPE = [
+#     'https://www.googleapis.com/auth/userinfo.email',
+#     'https://www.googleapis.com/auth/userinfo.profile',
+# ]
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
@@ -146,3 +186,8 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+LOGIN_URL = None
+LOGOUT_URL = None
+LOGIN_REDIRECT_URL = None

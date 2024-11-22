@@ -10,6 +10,7 @@ from django.contrib.auth.models import AbstractUser
 
 class Client(AbstractUser):
     email = models.EmailField(unique=True)
+    
 
 
 class Event(models.Model):

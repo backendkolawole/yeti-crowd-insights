@@ -4,7 +4,7 @@ from rest_framework.exceptions import NotFound
 from config_app.models import Feed as FeedModel, FeedStatus as FeedStatusModel
 from rest_framework.exceptions import NotFound
 from datetime import datetime
-from yolov8_region_counter import run, stop_the_feed
+from yolov8_region_counter import run, stop_the_feed, start_the_feed
 import threading
 from yolov8_region_counter import stop_feed
 
@@ -82,6 +82,7 @@ class FeedRepository:
         rtsp_link = feed.rtsp_link
 
         current_timestamp = datetime.now()
+        start_the_feed()
 
         # Start the feed in a separate thread
         thread = threading.Thread(
